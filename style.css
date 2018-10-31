@@ -1,4 +1,17 @@
 body{
     color: red;
+}
+
+h1.header{
+    padding: 23%;
+    vertical-align: top;
+    margin-top: 0;
+    display: inline;
+}
+head{
+    border: 5px solid black;
+}
+input.header{
+    display: inline;
 
 }
