@@ -16,7 +16,7 @@ h1.header{
     margin-top: 25px;
     display: inline;
 }
-.head {
+head {
     border-width: 5px;
     border-style: solid;
     border-color: black;
