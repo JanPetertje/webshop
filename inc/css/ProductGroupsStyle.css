@@ -1,0 +1,10 @@
+body {
+    background-color: antiquewhite;
+}
+
+h1.header{
+    padding: 23%;
+    vertical-align: top;
+    margin-top: 25px;
+    display: inline;
+}
