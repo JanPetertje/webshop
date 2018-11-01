@@ -15,9 +15,9 @@ h1.header{
     vertical-align: top;
     margin-top: 25px;
     display: inline;
-    background-color: blue;
+    /*background-color: blue;*/
 }
-head {
+.top {
     border-width: 5px;
     border-style: solid;
     border-color: black;
@@ -26,4 +26,7 @@ form{
     float: right;
     margin-top: 25px;
     margin-left: 50px;
+}
+h1.pop{
+    text-align: center
 }
