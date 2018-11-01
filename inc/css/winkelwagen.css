@@ -1,3 +1,9 @@
-.p {
+p.titel {
+
+    text-align: center;
+    font-size: 80px;
+    padding: 0px;
+    height: 0px;
+    margin-top: 0px;
 
 }
