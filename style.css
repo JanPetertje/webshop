@@ -15,6 +15,7 @@ h1.header{
     vertical-align: top;
     margin-top: 25px;
     display: inline;
+    background-color: blue;
 }
 .head {
     border-width: 5px;
