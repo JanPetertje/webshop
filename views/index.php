@@ -18,7 +18,7 @@
     ?>
 
     <div>
-        <h1>Popular items</h1>
+        <h1> Popular items </h1>
     </div>
 
     <div>
@@ -30,6 +30,10 @@
             <li><a class="productgroepLink">Clothing</a></li>
             <li><a class="productgroepLink">Shipping Products</a></li>
         </ul>
+    </div>
+
+    <div id="fotos">
+
     </div>
 
     </body>
