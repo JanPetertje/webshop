@@ -16,5 +16,13 @@
     include "inc/parts/menu.php";
 
     ?>
+    <div class="container">
+        <form action="login.php">
+            <h1>Login</h1>
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" name="login" value="Login">
+        </form>
+    </div>
     </body>
 </html>
