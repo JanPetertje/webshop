@@ -8,8 +8,11 @@
                 <input type="text" name="search_input">
             </li>
             <li>
+                <a class="loginLink" href="login.php">Login</a>
+            </li>
+            <li>
                 <a href="winkelwagen.php">
-                    <img     src="img/shopping-cart.png" alt="shopping-cart">
+                    <img src="img/shopping-cart.png" alt="shopping-cart">
                 </a>
             </li>
         </ul>

@@ -1,6 +1,6 @@
 .container {
     margin: 0 auto;
-    margin-top: 180px;
+    margin-top: 50px;
     width: 80%;
 }
 
@@ -48,4 +48,14 @@
 
 .container form input:last-of-type:hover {
     background: #52D8FF;
+}
+
+.container form a {
+    display: block;
+    width: 350px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 1.2em;
+    padding: 0;
 }
