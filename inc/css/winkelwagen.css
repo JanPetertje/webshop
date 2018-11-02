@@ -1,18 +1,18 @@
-p.titel {
-
-    text-align: center;
+.titel {
     font-size: 80px;
     padding: 0px;
-    height: 0px;
-    margin-top: 0px;
+    margin:  0 auto;
+    margin-top: 20px;
     font-family: "roboto";
-
+    border-bottom: 1px solid grey;
+    text-align: center;
+    width: 550px;
 }
 
 .myButton {
-    background-color: #4CAF50;
+    background-color: #F0F8FF;
     border: none;
-    color: white;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -22,3 +22,6 @@ p.titel {
     cursor: pointer;
 }
 
+.kopje{
+    font-weight: bold;
+}

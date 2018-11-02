@@ -19,7 +19,9 @@
     ?>
 
 
-    <p class="titel"> winkelwagen </p>
+    <p class="titel">Winkelwagen</p>
+
+    <h1 class="kopje">Product</h1>
 
     <a href="#" class="myButton">order now!</a>
 
