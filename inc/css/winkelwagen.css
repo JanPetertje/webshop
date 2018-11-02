@@ -6,7 +6,7 @@
     font-family: "roboto";
     border-bottom: 1px solid grey;
     text-align: center;
-    width: 550px;
+    width: 1024px;
 }
 
 .myButton {
@@ -26,6 +26,7 @@
     font-weight: bold;
 }
 div.top{
-    width: 1024px;
+    width: 1536px;
+    heigth: 176px;
 
 }
