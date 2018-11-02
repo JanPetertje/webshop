@@ -1,18 +1,16 @@
-div.Group{
+.group{
+    height: 300px;
     border-color: black;
     border-style: solid;
     border-width: medium;
-    margin-right: 78%;
+    margin-right: 72%;
     margin-left: 5%;
     margin-top: 5%;
-    background-image: scr:;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://discountoffice.nl/productImages/8/large/Q891853-2.jpg")
 
 }
 p.test{
     text-align: center;
-}
-
-img.product {
-    height: 300px;
-    width: 400px;
 }
