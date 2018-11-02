@@ -13,6 +13,7 @@
     </head>
 
     <body>
+
     <?php
     include "inc/parts/menu.php";
     ?>
@@ -20,6 +21,7 @@
 
     <p class="titel"> winkelwagen </p>
 
+    <a href="#" class="myButton">order now!</a>
 
 
     </body>

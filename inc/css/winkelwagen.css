@@ -6,5 +6,10 @@ p.titel {
     height: 0px;
     margin-top: 0px;
     font-family: "roboto";
-    font-size: 30px;
+
 }
+
+.myButton {
+    background-color: #00ffff;
+}
+
