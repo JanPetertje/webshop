@@ -18,11 +18,14 @@
     include "inc/parts/menu.php";
     ?>
 
+    <div class="top">
+        <p class="titel">Winkelwagen</p>
+    </div>
 
-    <p class="titel">Winkelwagen</p>
+    <div>
+        <h1 class="kopje">Product</h1>
 
-    <h1 class="kopje">Product</h1>
-
+    </div>
     <a href="#" class="myButton">order now!</a>
 
 
