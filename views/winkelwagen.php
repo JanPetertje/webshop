@@ -26,11 +26,8 @@
         <h2 class="item">item</h2>
         <h3 class="quantity">price</h3>
         <h4 class="price">price</h4>
-        <h5 class="subtotal">subtotal</h5>
-
+<!--maak voor elke header een 1/8,3/8,5/8,7/8 zodat alles netjes te staan komt op de pagina-->
     </div>
-
-<!--    <div class="productbar">item price quantity</div>-->
 
     <a href="#" class="myButton">order now!</a>
 
