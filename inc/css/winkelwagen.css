@@ -24,7 +24,11 @@
 
 .kopje1 {
     font-weight: bold;
-    padding-left: 0px;
+    padding-size: 30px;
+    display: inline-block;
+    padding-left: 14.35%;
+
+
 }
 div.top {
     width: 100vw;
@@ -36,3 +40,5 @@ div.kopjes {
     heigth: 176px;
     border-bottom: 1px solid grey;
 }
+
+

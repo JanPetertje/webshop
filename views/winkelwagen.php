@@ -23,9 +23,9 @@
 
     <div class="kopjes">
         <h1 class="kopje1">Product</h1>
-        <h1 class="item">item</h1>
-        <h1 class="quantity">quantity</h1>
-        <h1 class="price">price</h1>
+        <h1 class="kopje1">price</h1>
+        <h1 class="kopje1">quantity</h1>
+        <h1 class="kopje1">subtotal</h1>
 
 <!--maak voor elke header een 1/8,3/8,5/8,7/8 zodat alles netjes te staan komt op de pagina-->
 
