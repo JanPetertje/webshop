@@ -32,5 +32,9 @@
         </ul>
     </div>
 
+    <div id="fotos">
+
+    </div>
+
     </body>
 </html>

@@ -9,7 +9,9 @@ ul {
     font-size: 28px;
     font-family: Roboto;
     padding-left: 65px;
-    background-color: #000000;
+    padding-right: 100px;
+    padding-bottom: 25px;
+    background-color: #101010;
     color: white ;
 }
 
@@ -24,7 +26,7 @@ a.productgroepLink:visited {
 
 a.productgroepLink:hover {
     color:#00bff6;
-    font-size: 29px;
+    font-weight: bold;
 }
 
 a.productgroepLink:active {
