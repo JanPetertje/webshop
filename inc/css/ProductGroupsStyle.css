@@ -11,6 +11,9 @@
     background-image: url("https://discountoffice.nl/productImages/8/large/Q891853-2.jpg")
 
 }
-p.test{
+
+p.productgroupname{
     text-align: center;
+    float: bottom;
+    padding-top: 230px;
 }

@@ -23,8 +23,7 @@ include "inc/parts/menu.php";
 </div>
 
 <div class="group">
-<!--    <img class="product" src="img/chocoreep.png" alt="chocoreep">-->
-    <p class="test">Title</p>
+    <p class="productgroupname">Title</p>
 </div>
 
 
