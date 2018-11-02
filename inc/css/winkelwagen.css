@@ -4,7 +4,7 @@
     margin:  0 auto;
     margin-top: 20px;
     font-family: "roboto";
-    border-bottom: 1px solid grey;
+    border-bottom: 2px solid grey;
     text-align: center;
     width: 1024px;
 }
@@ -22,11 +22,17 @@
     cursor: pointer;
 }
 
-.kopje{
+.kopje1 {
     font-weight: bold;
+    padding-left: 50px;
 }
-div.top{
+div.top {
     width: 100vw;
     heigth: 176px;
 
+}
+div.kopjes {
+    width: 100vw;
+    heigth: 176px;
+    border-bottom: 1px solid grey;
 }

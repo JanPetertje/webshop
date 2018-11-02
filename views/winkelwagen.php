@@ -22,8 +22,8 @@
         <p class="titel">Winkelwagen</p>
     </div>
 
-    <div>
-        <h1 class="kopje">Product</h1>
+    <div class="kopjes">
+        <h1 class="kopje1">Product</h1>
 
     </div>
     <a href="#" class="myButton">order now!</a>
