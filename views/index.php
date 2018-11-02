@@ -23,12 +23,12 @@
 
     <div>
         <ul>
-            <li>Chocolate</li>
-            <li>USB Products</li>
-            <li>Mugs</li>
-            <li>Toys</li>
-            <li>Clothing</li>
-            <li>Shipping Products</li>
+            <li><a class="productgroepLink" href="">Chocolate</a></li>
+            <li><a class="productgroepLink">USB Products</a></li>
+            <li><a class="productgroepLink">Mugs</a></li>
+            <li><a class="productgroepLink">Toys</a></li>
+            <li><a class="productgroepLink">Clothing</a></li>
+            <li><a class="productgroepLink">Shipping Products</a></li>
         </ul>
     </div>
 

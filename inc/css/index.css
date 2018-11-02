@@ -8,4 +8,25 @@ ul {
     float: left;
     font-size: 28px;
     font-family: Roboto;
+    padding-left: 65px;
+    background-color: #000000;
+    color: white ;
+}
+
+a.productgroepLink:link {
+    text-decoration: none;
+}
+
+a.productgroepLink:visited {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a.productgroepLink:hover {
+    color:#00bff6;
+    font-size: 29px;
+}
+
+a.productgroepLink:active {
+    text-decoration: underline;
 }
