@@ -7,5 +7,6 @@
  */
 
 include "views/ProductGroups.php";
+
 ?>
 
