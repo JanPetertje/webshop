@@ -23,9 +23,18 @@
 
     <div class="kopjes">
         <h1 class="kopje1">Product</h1>
+        <h2 class="item">item</h2>
+        <h3 class="quantity">price</h3>
+        <h4 class="price">price</h4>
+        <h5 class="subtotal">subtotal</h5>
 
     </div>
+
+<!--    <div class="productbar">item price quantity</div>-->
+
     <a href="#" class="myButton">order now!</a>
+
+
 
 
     </body>
