@@ -33,7 +33,7 @@
     </div>
 
     <div id="fotos">
-
+        <img src="img/chocoreep.jpg" alt="chocoreep">
     </div>
 
     </body>
