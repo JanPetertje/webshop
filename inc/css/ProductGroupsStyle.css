@@ -1,5 +1,18 @@
 div.Group{
     border-color: black;
-    border-style: ;
+    border-style: solid;
+    border-width: medium;
+    margin-right: 78%;
+    margin-left: 5%;
+    margin-top: 5%;
+    background-image: scr:;
+
+}
+p.test{
+    text-align: center;
 }
 
+img.product {
+    height: 300px;
+    width: 400px;
+}

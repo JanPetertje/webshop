@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="inc/css/fonts.css">
     <link rel="stylesheet" href="inc/css/main.css">
     <link rel="stylesheet" href="inc/css/winkelwagen.css">
-    <link rel="stylesheet" href="inc/css/ProductGroupsStyles.css">
+    <link rel="stylesheet" href="inc/css/ProductGroupsStyle.css">
 </head>
 
 <body>
@@ -23,8 +23,8 @@ include "inc/parts/menu.php";
 </div>
 
 <div class="Group">
-    <img src="img/chocoreep.jpg" alt="chocoreep">
-    <p Title</p>
+    <img class="product" src="img/chocoreep.png" alt="chocoreep">
+    <p class="test"Title</p>
 </div>
 
 
