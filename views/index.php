@@ -18,7 +18,7 @@
     ?>
 
     <div>
-        <h1>Popular items</h1>
+        <h1> Popular items </h1>
     </div>
 
     <div>
