@@ -38,18 +38,25 @@
     </div>
 
 
+
     <ul>
         <li>
-            <h1>Productnaam</h1>
+            <h1 class="product1">Productnaam</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor fugit, necessitatibus? Adipisci, alias dolore doloremque ex facilis inventore, laborum natus odio odit quas quasi quis reiciendis, repellat reprehenderit tempora voluptas?</p>
         </li>
         <li>
-            <h1>Nog een product</h1>
+            <h1 class="product2"> Nog een product</h1>
             <p>Poep</p>
+        </li>
+        <li>
+        <h1 class="product3"> nog een 3e product</h1>
         </li>
     </ul>
 
+
     <a href="#" class="myButton">order now!</a>
+
+
 
     </body>
 </html>
