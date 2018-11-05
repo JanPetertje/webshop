@@ -23,8 +23,9 @@
     </div>
 
     <div>
-        <ul><li><a class="productgroupLink">Product Groups</a></li>
-            <li><a class="productgroupLink" href="">Chocolate</a></li>
+        <ul>
+            <a class="productgroupLink">Product Groups</a>
+            <li><a class="productgroupLink">Chocolate</a></li>
             <li><a class="productgroupLink">USB Products</a></li>
             <li><a class="productgroupLink">Mugs</a></li>
             <li><a class="productgroupLink">Toys</a></li>
@@ -34,7 +35,7 @@
     </div>
 
     <div id="fotos">
-        <img src="img/chocoreep.jpg" alt="chocoreep">
+        <img src="img/chocoreep.jpg" alt="chocoreep" class="picturesHome">
     </div>
 
     </body>

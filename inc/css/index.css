@@ -15,20 +15,24 @@ ul {
     color: white ;
 }
 
-a.productgroepLink:link {
-    text-decoration: none;
+.picturesHome {
+    width: 20%;
+    height: 20%;
+    padding:1px;
+    border:1px solid #021a40;
+    background-color:#ff0;
 }
 
-a.productgroepLink:visited {
+a.productgroupLink:visited {
     text-decoration: none;
     color: #ffffff;
 }
 
-a.productgroepLink:hover {
+a.productgroupLink:hover {
     color:#00bff6;
     font-weight: bold;
 }
 
-a.productgroepLink:active {
+a.productgroupLink:active {
     text-decoration: underline;
 }
