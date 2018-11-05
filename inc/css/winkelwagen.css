@@ -18,8 +18,14 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    /*margin: 4px 2px;*/
     cursor: pointer;
+    float:right;
+    /*display:block;*/
+    margin-right: 210px;
+    clear:left;
+    margin-top: 380px;
+
 }
 
 .kopje1 {
@@ -40,5 +46,7 @@ div.kopjes {
     heigth: 176px;
     border-bottom: 1px solid grey;
 }
+
+
 
 
