@@ -27,6 +27,8 @@
         <h1 class="kopje1">quantity</h1>
         <h1 class="kopje1">subtotal</h1>
 
+
+
 <!--maak voor elke header een 1/8,3/8,5/8,7/8 zodat alles netjes te staan komt op de pagina-->
 
     </div>
@@ -34,8 +36,6 @@
     <div>
         <img src="https://www.wisfaq.nl/bestanden/q59712img1.gif" class="image">
     </div>
-
-    <a href="#" class="myButton">order now!</a>
 
 
     <ul>
@@ -48,5 +48,8 @@
             <p>Poep</p>
         </li>
     </ul>
+
+    <a href="#" class="myButton">order now!</a>
+
     </body>
 </html>
