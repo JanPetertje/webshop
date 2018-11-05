@@ -31,11 +31,22 @@
 
     </div>
 
+    <div>
+        <img src="https://www.wisfaq.nl/bestanden/q59712img1.gif" class="image">
+    </div>
 
     <a href="#" class="myButton">order now!</a>
 
 
-
-
+    <ul>
+        <li>
+            <h1>Productnaam</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor fugit, necessitatibus? Adipisci, alias dolore doloremque ex facilis inventore, laborum natus odio odit quas quasi quis reiciendis, repellat reprehenderit tempora voluptas?</p>
+        </li>
+        <li>
+            <h1>Nog een product</h1>
+            <p>Poep</p>
+        </li>
+    </ul>
     </body>
 </html>

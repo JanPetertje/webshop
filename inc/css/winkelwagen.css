@@ -18,7 +18,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    /*margin: 4px 2px;*/
+    margin: 4px 2px;
     cursor: pointer;
     float:right;
     /*display:block;*/
@@ -46,7 +46,17 @@ div.kopjes {
     heigth: 176px;
     border-bottom: 1px solid grey;
 }
+img.image {
+    width: 42px;
+    height: 42px;
+    padding-left: 50px;
+    padding-top: 40px;
+}
 
+ul li h1 {
+    display: inline-block;
+}
 
-
-
+ul li p {
+    display: inline-block;
+}
