@@ -24,7 +24,7 @@
 
     <div>
         <ul>
-            <a class="productgroupLink">Product Groups</a>
+            <li><a class="productgroupLink" href="http://localhost:63342/webshopp/ProductGroups.php">Product Groups</a></li>
             <li><a class="productgroupLink">Chocolate</a></li>
             <li><a class="productgroupLink">USB Products</a></li>
             <li><a class="productgroupLink">Mugs</a></li>

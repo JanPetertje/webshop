@@ -23,7 +23,7 @@ include "inc/parts/menu.php";
 </div>
 
 <div class="group">
-    <p class="productgroupname">Title</p>
+    <p class="productgroupname">Chocolate bar</p>
 </div>
 
 
