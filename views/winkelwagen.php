@@ -33,14 +33,15 @@
         <label class="product-details">Product</label>
         <label class="product-price">Price</label>
         <label class="product-quantity">Quantity</label>
-        <label class="product-removal">Remove</label>
+        <label class="product-removal">delete</label>
         <label class="product-line-price">Total</label>
     </div>
 
+<!--    <label class="product-removal">delete</label>-->
 
     <div class="product">
         <div class="product-image">
-<!--            <img src= plaatje >-->
+            <img src= https://upload.wikimedia.org/wikipedia/commons/9/92/The_death.png >
         </div>
         <div class="product-details">
             <div class="product-title"> productnaam </div>

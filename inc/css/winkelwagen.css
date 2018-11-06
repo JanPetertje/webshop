@@ -22,9 +22,9 @@
     cursor: pointer;
     float:right;
     /*display:block;*/
-    margin-right: 210px;
+    margin-right: 60px;
     clear:left;
-    margin-top: 60px;
+    margin-top: 300px;
 
 }
 
@@ -41,17 +41,20 @@
 .product-details { float: left; width: 37%;  }
 .product-price { float: left; width: 12%; }
 .product-quantity { float: left; width: 10%; }
-.product-removal { float: left; width: 9%; }
+.product-removal { float: left; width: 9%; color: white;  }
 .product-line-price { float: left; width: 4%; text-align: right; }
 
-.product-image {
-    text-align: center; }
+.product-image  {
+    text-align: center;
+}
 img {
-    width: 80px;
+    width: 70px;
 }
 
+
+
 .column-labels {
-height: 200px; }
+height: 40px; }
 
 
 
