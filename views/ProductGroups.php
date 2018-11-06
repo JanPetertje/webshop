@@ -50,6 +50,7 @@ include "inc/parts/menu.php";
             <div class="col-lg-5 group1">
                 <p class="productgroupname">Chocolate bar</p>
             </div>
+
 <!--<div class="group1">-->
 <!--    <p class="productgroupname">Chocolate bar</p>-->
 <!--</div>-->
