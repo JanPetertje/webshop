@@ -17,7 +17,7 @@
 
     ?>
     <div class="container">
-        <form action="register.php">
+        <form method="post" action="register.php">
             <h1>Register</h1>
             <input type="text" name="first_name" placeholder="First name">
             <input type="text" name="last_name" placeholder="Last name">
