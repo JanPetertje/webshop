@@ -41,37 +41,56 @@
 
 <!--    <label class="product-removal">delete</label>-->
 
-<!--    <div>-->
-<!--        <ul>-->
-<!---->
-<!--          <li> </li>-->
-<!---->
-<!--        </ul>-->
-<!---->
-<!--    </div>-->
-
-
-
-
-    <div class="product">
-        <div class="product-image">
-            <img src= https://upload.wikimedia.org/wikipedia/commons/9/92/The_death.png >
-        </div>
-        <div class="product-details">
-            <div class="product-title"> productnaam </div>
-            <p class="product-description"> beschrijving </p>
-        </div>
-        <div class="product-price">12.99</div>
-        <div class="product-quantity">
-            <input type="number" value="2" min="1">
-        </div>
-        <div class="product-removal">
-            <button class="remove-product">
-                Remove
-            </button>
-        </div>
-        <div class="product-line-price2">25.98</div>
+    <div>
+        <ul style="list-style-type:none">
+          <li>
+              <div class="product1">
+                  <div class="product-image">
+                      <img src= https://upload.wikimedia.org/wikipedia/commons/9/92/The_death.png >
+                  </div>
+                  <div class="product-details">
+                      <div class="product-title"> productnaam </div>
+                      <p class="product-description"> beschrijving </p>
+                  </div>
+                  <div class="product-price">12.99</div>
+                  <div class="product-quantity">
+                      <input type="number" value="2" min="1">
+                  </div>
+                  <div class="product-removal">
+                      <button class="remove-product">
+                          Remove
+                      </button>
+                  </div>
+                  <div class="product-line-price2">25.98</div>
+              </div>
+          </li>
+        </ul>
     </div>
+
+
+
+
+
+
+<!--    <div class="product">-->
+<!--        <div class="product-image">-->
+<!--            <img src= https://upload.wikimedia.org/wikipedia/commons/9/92/The_death.png >-->
+<!--        </div>-->
+<!--        <div class="product-details">-->
+<!--            <div class="product-title"> productnaam </div>-->
+<!--            <p class="product-description"> beschrijving </p>-->
+<!--        </div>-->
+<!--        <div class="product-price">12.99</div>-->
+<!--        <div class="product-quantity">-->
+<!--            <input type="number" value="2" min="1">-->
+<!--        </div>-->
+<!--        <div class="product-removal">-->
+<!--            <button class="remove-product">-->
+<!--                Remove-->
+<!--            </button>-->
+<!--        </div>-->
+<!--        <div class="product-line-price2">25.98</div>-->
+<!--    </div>-->
 
 
 

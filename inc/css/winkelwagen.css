@@ -38,6 +38,10 @@
      */
 
 
+.product1 {
+    width: 100%;
+}
+
 .product-image { float: left; width: 20%;
 }
 
@@ -108,3 +112,4 @@ ul li h1 {
 ul li p {
     display: inline-block;
 }
+
