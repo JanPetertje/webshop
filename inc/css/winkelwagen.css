@@ -37,12 +37,33 @@
 
      */
 
-.product-image { float: left; width: 20%; }
-.product-details { float: left; width: 37%;  }
-.product-price { float: left; width: 12%; }
-.product-quantity { float: left; width: 10%; }
-.product-removal { float: left; width: 9%; color: white;  }
-.product-line-price { float: left; width: 4%; text-align: right; }
+.product-image { float: left; width: 20%;
+}
+
+.product-details { float: left; width: 30%;
+}
+
+.product-price { float: left; width: 10%; }
+
+.product-quantity { float: left; width: 9%;
+}
+
+.product-removal { float: left; width: 9%;
+    text-align: center;
+}
+
+.remove-product {
+
+    text-align: center;
+}
+
+.product-line-price { float: left; width: 4%; text-align: right;
+    padding-left: 150px;
+}
+
+.product-line-price2 { float: left;
+   padding-left: 40px;
+}
 
 .product-image  {
     text-align: center;
@@ -51,10 +72,13 @@ img {
     width: 70px;
 }
 
-
+.remove-product{
+    float: right;
+}
 
 .column-labels {
 height: 40px; }
+
 
 
 

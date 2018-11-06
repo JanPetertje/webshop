@@ -33,9 +33,11 @@
         <label class="product-details">Product</label>
         <label class="product-price">Price</label>
         <label class="product-quantity">Quantity</label>
-        <label class="product-removal">delete</label>
+<!--        <label class="product-removal">delete</label>-->
         <label class="product-line-price">Total</label>
     </div>
+
+
 
 <!--    <label class="product-removal">delete</label>-->
 
@@ -56,8 +58,9 @@
                 Remove
             </button>
         </div>
-        <div class="product-line-price">25.98</div>
+        <div class="product-line-price2">25.98</div>
     </div>
+
 
 
 
