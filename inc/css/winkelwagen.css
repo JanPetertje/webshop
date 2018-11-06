@@ -28,14 +28,34 @@
 
 }
 
-.kopje1 {
-    font-weight: bold;
-    padding-size: 30px;
-    display: inline-block;
-    padding-left: 16.432%;
-    font-size: 20px;
+/*.kopje1 {*/
+    /*font-weight: bold;*/
+    /*padding-size: 30px;*/
+    /*display: inline-block;*/
+    /*padding-left: 16.432%;*/
+    /*font-size: 20px;*
 
+     */
+
+.product-image { float: left; width: 20%; }
+.product-details { float: left; width: 37%;  }
+.product-price { float: left; width: 12%; }
+.product-quantity { float: left; width: 10%; }
+.product-removal { float: left; width: 9%; }
+.product-line-price { float: left; width: 4%; text-align: right; }
+
+.product-image {
+    text-align: center; }
+img {
+    width: 80px;
 }
+
+.column-labels {
+height: 200px; }
+
+
+
+
 div.top {
     width: 100vw;
     heigth: 176px;

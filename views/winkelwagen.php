@@ -21,37 +21,70 @@
         <p class="titel">Winkelwagen</p>
     </div>
 
-    <div class="kopjes">
-        <h1 class="kopje1">Product</h1>
-        <h1 class="kopje1">price</h1>
-        <h1 class="kopje1">quantity</h1>
-        <h1 class="kopje1">subtotal</h1>
+<!--    <div class="kopjes">-->
+<!--        <h1 class="kopje1">Product</h1>-->
+<!--        <h1 class="kopje1">price</h1>-->
+<!--        <h1 class="kopje1">quantity</h1>-->
+<!--        <h1 class="kopje1">subtotal</h1>-->
+
+
+    <div class="column-labels">
+        <label class="product-image">Image</label>
+        <label class="product-details">Product</label>
+        <label class="product-price">Price</label>
+        <label class="product-quantity">Quantity</label>
+        <label class="product-removal">Remove</label>
+        <label class="product-line-price">Total</label>
+    </div>
+
+
+    <div class="product">
+        <div class="product-image">
+<!--            <img src= plaatje >-->
+        </div>
+        <div class="product-details">
+            <div class="product-title"> productnaam </div>
+            <p class="product-description"> beschrijving </p>
+        </div>
+        <div class="product-price">12.99</div>
+        <div class="product-quantity">
+            <input type="number" value="2" min="1">
+        </div>
+        <div class="product-removal">
+            <button class="remove-product">
+                Remove
+            </button>
+        </div>
+        <div class="product-line-price">25.98</div>
+    </div>
+
+
 
 
 
 <!--maak voor elke header een 1/8,3/8,5/8,7/8 zodat alles netjes te staan komt op de pagina-->
 
-    </div>
+<!--    </div>-->
+<!---->
+<!--    <div>-->
+<!--        <img src="https://www.wisfaq.nl/bestanden/q59712img1.gif" class="image">-->
+<!--    </div>-->
 
-    <div>
-        <img src="https://www.wisfaq.nl/bestanden/q59712img1.gif" class="image">
-    </div>
 
 
-
-    <ul>
-        <li>
-            <h1 class="product1">Productnaam</h1>
-            <p>poephoofd</p>
-        </li>
-        <li>
-            <h1 class="product2"> Nog een product</h1>
-            <p>Poep</p>
-        </li>
-        <li>
-        <h1 class="product3"> nog een 3e product</h1>
-        </li>
-    </ul>
+<!--    <ul>-->
+<!--        <li>-->
+<!--            <h1 class="product1">Productnaam</h1>-->
+<!--            <p>poephoofd</p>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <h1 class="product2"> Nog een product</h1>-->
+<!--            <p>Poep</p>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--        <h1 class="product3"> nog een 3e product</h1>-->
+<!--        </li>-->
+<!--    </ul>-->
 
 
     <a href="#" class="myButton">order now!</a>
