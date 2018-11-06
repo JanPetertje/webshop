@@ -19,7 +19,7 @@
     ?>
 
     <div>
-        <h1> Popular items </h1>
+        <h1>Popular items</h1>
     </div>
 
     <div>
@@ -30,13 +30,52 @@
             <li><a class="productgroupLink">Mugs</a></li>
             <li><a class="productgroupLink">Toys</a></li>
             <li><a class="productgroupLink">Clothing</a></li>
-            <li><a class="productgroupLink">Shipping Products</a></li>
+            <li><a class="productgroupLink">Shipping Products<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></a></li>
         </ul>
     </div>
 
-    <div id="fotos">
-        <img src="img/chocoreep.jpg" alt="chocoreep" class="picturesHome">
+    <div>
+        <img src="img/chocoreep.jpg" alt="chocoreep" class="picturesHome"
+             style="position: relative;
+             left: 75px;
+             top: 0px;">
+
+        <img src="img/chocoreep.jpg" alt="chocoreep" class="picturesHome"
+             style="position: relative;
+             left: 105px;
+             top: 0px;">
+
+        <img src="img/chocoreep.jpg" alt="chocoreep" class="picturesHome"
+             style="position: relative;
+             left: 135px;
+             top: 0px;">
+
+        <img src="img/chocoreep.jpg" alt="chocoreep" class="picturesHome"
+             style="position: relative;
+             left: 75px;
+             top: 50px;">
+
+        <img src="img/chocoreep.jpg" alt="chocoreep" class="picturesHome"
+             style="position: relative;
+             left: 105px;
+             top: 50px;">
+
+        <img src="img/chocoreep.jpg" alt="chocoreep" class="picturesHome"
+             style="position: relative;
+             left: 135px;
+             top: 50px;">
+
     </div>
 
+
+
     </body>
+    <footer>
+        <div style="background-color: #8AC007 ">
+            <div class="footer">
+            Disclaimer van WWI - Copyrights 2018
+            </div>
+        </div>
+    </footer>
+
 </html>
