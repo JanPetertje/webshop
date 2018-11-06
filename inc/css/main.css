@@ -36,6 +36,7 @@ h1 {
     text-transform: uppercase;
     font-family: "Roboto";
     font-weight: 500;
+    font-size: 2em;
 }
 
 .menu-content h1 span {
