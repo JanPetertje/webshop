@@ -33,10 +33,30 @@ include "inc/parts/menu.php";
     </ul>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 group1">
+            <p class="productgroupname">Chocolate bar</p>
+        </div>
+        <div class="col-lg-5 group1">
+                <p class="productgroupname">Chocolate bar</p>
+        </div>
+    </div>
 
-<div class="group">
-    <p class="productgroupname">Chocolate bar</p>
-</div>
+    <div class="row">
+        <div class="col-lg-5 group1">
+            <p class="productgroupname">Chocolate bar</p>
+        </div>
+            <div class="col-lg-5 group1">
+                <p class="productgroupname">Chocolate bar</p>
+            </div>
+<!--<div class="group1">-->
+<!--    <p class="productgroupname">Chocolate bar</p>-->
+<!--</div>-->
+
+<!--<div class="group1">-->
+<!--    <p class="productgroupname">Chocolate bar</p>-->
+<!--</div>-->
 
 
 

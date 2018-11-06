@@ -1,21 +1,21 @@
-.group{
+
+.group1{
     height: 300px;
     border-color: black;
     border-style: solid;
     border-width: medium;
-    margin-right: 72%;
-    margin-left: 5%;
-    margin-top: 5%;
+    /*margin-right: 52%;*/
+    margin-left: 8%;
+    margin-top: 1%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("https://discountoffice.nl/productImages/8/large/Q891853-2.jpg")
-
+    background-image: url("https://discountoffice.nl/productImages/8/large/Q891853-2.jpg");
 }
 
 p.productgroupname{
     text-align: center;
     float: bottom;
-    padding-top: 230px;
+    padding-top: 250px;
 }
 a.productgroupLink:link {
     text-decoration: none;
@@ -37,7 +37,11 @@ ul {
     font-family: Roboto;
     padding-left: 65px;
     padding-right: 100px;
-    padding-bottom: 25px;
+    padding-bottom: 100%;
     background-color: #101010;
     color: white;
+}
+.product{
+    float: left;
+
 }
