@@ -92,7 +92,6 @@
 
 
 
-
 <!--    <div class="product">-->
 <!--        <div class="product-image">-->
 <!--            <img src= https://upload.wikimedia.org/wikipedia/commons/9/92/The_death.png >-->
