@@ -42,18 +42,29 @@
     width: 100%;
 }
 
-.product-image { float: left; width: 20%;
+.product-image {
+    float: left;
+    width: 20%;
 }
 
-.product-details { float: left; width: 30%;
+.product-details {
+    float: left;
+    width: 30%;
 }
 
-.product-price { float: left; width: 10%; }
-
-.product-quantity { float: left; width: 9%;
+.product-price {
+    float: left;
+    width: 10%;
 }
 
-.product-removal { float: left; width: 9%;
+.product-quantity {
+    float: left;
+    width: 9%;
+}
+
+.product-removal {
+    float: left;
+    width: 9%;
     text-align: center;
 }
 
