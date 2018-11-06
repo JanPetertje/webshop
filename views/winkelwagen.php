@@ -40,7 +40,7 @@
 
 
 <!--    <label class="product-removal">delete</label>-->
-
+<?php $quantity = 2;?>
     <div>
         <ul style="list-style-type:none">
           <li>
@@ -52,16 +52,16 @@
                       <div class="product-title"> productnaam </div>
                       <p class="product-description"> beschrijving </p>
                   </div>
-                  <div class="product-price">12.99</div>
+                  <div class="product-price"><?php $prijsgrim = 12.99; print($prijsgrim); ?></div>
                   <div class="product-quantity">
-                      <input type="number" value="2" min="1">
+                      <input type="number" value="<?php print($quantity);?>" min="1">
                   </div>
                   <div class="product-removal">
                       <button class="remove-product">
                           Remove
                       </button>
                   </div>
-                  <div class="product-line-price2">25.98</div>
+                  <div class="product-line-price2"> <?php $subprijs = $prijsgrim * $quantity; print($subprijs);?></div>
               </div>
           </li>
             <li>
@@ -73,16 +73,16 @@
                         <div class="product-title"> productnaam </div>
                         <p class="product-description"> beschrijving </p>
                     </div>
-                    <div class="product-price">12.99</div>
+                    <div class="product-price"><?php $prijsgrim = 12.99; print($prijsgrim); ?></div>
                     <div class="product-quantity">
-                        <input type="number" value="2" min="1">
+                        <input type="number" value="<?php print($quantity);?>" min="1">
                     </div>
                     <div class="product-removal">
                         <button class="remove-product">
                             Remove
                         </button>
                     </div>
-                    <div class="product-line-price2">25.98</div>
+                    <div class="product-line-price2"> <?php $subprijs = $prijsgrim * $quantity; print($subprijs);?></div>
                 </div>
             </li>
         </ul>
