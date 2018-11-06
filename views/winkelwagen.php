@@ -42,7 +42,7 @@
     <ul>
         <li>
             <h1 class="product1">Productnaam</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor fugit, necessitatibus? Adipisci, alias dolore doloremque ex facilis inventore, laborum natus odio odit quas quasi quis reiciendis, repellat reprehenderit tempora voluptas?</p>
+            <p>poephoofd</p>
         </li>
         <li>
             <h1 class="product2"> Nog een product</h1>
