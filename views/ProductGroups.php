@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WWI | ProductGroups</title>
-    <link rel="stylesheet" href="inc/css/fonts.css">
-    <link rel="stylesheet" href="inc/css/main.css">
+    <?php
+
+
+    include "inc/parts/head.php";
+    ?>
+
     <link rel="stylesheet" href="inc/css/winkelwagen.css">
     <link rel="stylesheet" href="inc/css/ProductGroupsStyle.css">
 </head>
@@ -21,6 +20,19 @@ include "inc/parts/menu.php";
 <div class="top">
     <p class="titel">Product Groups</p>
 </div>
+
+<div>
+    <ul>
+        <li><a class="productgroupLink" href="views/ProductGroups.php">Product Groups</a></li>
+        <li><a class="productgroupLink">Chocolate</a></li>
+        <li><a class="productgroupLink">USB Products</a></li>
+        <li><a class="productgroupLink">Mugs</a></li>
+        <li><a class="productgroupLink">Toys</a></li>
+        <li><a class="productgroupLink">Clothing</a></li>
+        <li><a class="productgroupLink">Shipping Products</a></li>
+    </ul>
+</div>
+
 
 <div class="group">
     <p class="productgroupname">Chocolate bar</p>

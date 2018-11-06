@@ -17,3 +17,27 @@ p.productgroupname{
     float: bottom;
     padding-top: 230px;
 }
+a.productgroupLink:link {
+    text-decoration: none;
+}
+a.productgroupLink:visited {
+    text-decoration: none;
+    color: #ffffff;
+}
+a.productgroupLink:hover {
+    color:#00bff6;
+    font-weight: bold;
+}
+a.productgroupLink:active {
+    text-decoration: underline;
+}
+ul {
+    float: left;
+    font-size: 28px;
+    font-family: Roboto;
+    padding-left: 65px;
+    padding-right: 100px;
+    padding-bottom: 25px;
+    background-color: #101010;
+    color: white;
+}
