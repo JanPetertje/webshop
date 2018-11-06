@@ -46,7 +46,7 @@
           <li>
               <div class="product1">
                   <div class="product-image">
-                      <img src= https://upload.wikimedia.org/wikipedia/commons/9/92/The_death.png >
+                      <img src= https://upload.wikimedia.org/wikipedia/commons/9/92/The_death.png class="grim">
                   </div>
                   <div class="product-details">
                       <div class="product-title"> productnaam </div>
