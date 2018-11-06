@@ -41,6 +41,18 @@
 
 <!--    <label class="product-removal">delete</label>-->
 
+<!--    <div>-->
+<!--        <ul>-->
+<!---->
+<!--          <li> </li>-->
+<!---->
+<!--        </ul>-->
+<!---->
+<!--    </div>-->
+
+
+
+
     <div class="product">
         <div class="product-image">
             <img src= https://upload.wikimedia.org/wikipedia/commons/9/92/The_death.png >
@@ -64,9 +76,7 @@
 
 
 
-
-
-<!--maak voor elke header een 1/8,3/8,5/8,7/8 zodat alles netjes te staan komt op de pagina-->
+    <!--maak voor elke header een 1/8,3/8,5/8,7/8 zodat alles netjes te staan komt op de pagina-->
 
 <!--    </div>-->
 <!---->
