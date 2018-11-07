@@ -21,7 +21,7 @@
             <input type="text" name="last_name" placeholder="Last name">
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
-            <input type="text" name="email" placeholder="E-mail">
+            <input type="email" name="email" placeholder="E-mail">
             <input type="text" name="address" placeholder="Address">
             <input type="text" name="city" placeholder="City">
             <input type="text" name="phone" placeholder="Phone number">

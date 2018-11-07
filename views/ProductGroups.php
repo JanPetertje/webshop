@@ -32,24 +32,16 @@ include "inc/parts/menu.php";
         <li><a class="productgroupLink">Shipping Products</a></li>
     </ul>
 </div>
-
+<li class="webshop">
 <div class="container">
     <div class="row">
         <div class="col-lg-5 group1">
+            <img src= https://discountoffice.nl/productImages/8/large/Q891853-2.jpg class="foto">
             <p class="productgroupname">Chocolate bar</p>
-        </div>
-        <div class="col-lg-5 group1">
-                <p class="productgroupname">Chocolate bar</p>
         </div>
     </div>
+</li>
 
-    <div class="row">
-        <div class="col-lg-5 group1">
-            <p class="productgroupname">Chocolate bar</p>
-        </div>
-            <div class="col-lg-5 group1">
-                <p class="productgroupname">Chocolate bar</p>
-            </div>
 
 <!--<div class="group1">-->
 <!--    <p class="productgroupname">Chocolate bar</p>-->
