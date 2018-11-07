@@ -18,7 +18,7 @@
     ?>
 
     <div class="top">
-        <p class="titel">Winkelwagen</p>
+        <p class="titel">ShOpP1nG C@rT</p>
     </div>
 
 <!--    <div class="kopjes">-->
@@ -43,6 +43,8 @@
 <?php $quantity = 2;?>
     <div>
         <ul style="list-style-type:none">
+
+
           <li>
               <div class="product1">
                   <div class="product-image">
@@ -84,6 +86,29 @@
                     </div>
                     <div class="product-line-price2"> <?php $subprijs = $prijsgrim * $quantity; print($subprijs);?></div>
                 </div>
+            </li>
+            <li>
+
+                <div class="totalprice" style = "clear:both:">
+
+                    <label> Subtotaal </label>
+                    <div class = "subtotal-values" id = "cart-total" > 74 </div>
+
+                    <label> Tax </label>
+                    <div class = "subtotal-values" id = "cart-total" > 10000% </div>
+
+                    <label> Shipping </label>
+                    <div class = "subtotal-values" id = "cart-total" > free </div>
+
+                    <label> TOTAL </label>
+                    <div class = "subtotal-values" id = "cart-total" > 500 </div>
+
+
+                </div>
+
+            </li>
+            <li>
+                <a href="#" class="myButton">order now!</a>
             </li>
         </ul>
     </div>
@@ -140,7 +165,7 @@
 <!--    </ul>-->
 
 
-    <a href="#" class="myButton">order now!</a>
+
 
 
 

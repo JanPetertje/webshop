@@ -1,5 +1,5 @@
 .titel {
-    font-size: 80px;
+    font-size: 60px;
     padding: 0px;
     margin:  0 auto;
     margin-top: 20px;
@@ -24,7 +24,7 @@
     /*display:block;*/
     margin-right: 60px;
     clear:left;
-    margin-top: 300px;
+    margin-top: 45px;
 
 }
 
@@ -36,6 +36,25 @@
     /*font-size: 20px;*
 
      */
+
+.column-labels{
+    padding-left: 40px;
+}
+
+.totalprice {
+    width: 42px;
+    height: 42px;
+    padding-left: 1100px;
+    padding-top: 180px;
+}
+
+.subtotal-values {
+    float: left;
+    padding-left: 130px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 
 
 .product1 {
