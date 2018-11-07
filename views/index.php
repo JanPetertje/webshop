@@ -35,7 +35,7 @@
             <li><a class="productgroupLink" href="product.php?name=Furry%20Footwear">Furry Footwear</a></li>
             <li><a class="productgroupLink" href="product.php?name=Toys">Toys</a></li>
             <li><a class="productgroupLink" href="product.php?name=Packaging%20Materials">Packaging Materials</Materials></a></li>
-            <li><a class="productgroupLink" href="product.php?name=Shipping%20Products">Shipping Products</a></li><br>
+            <li><a class="productgroupLink" href="product.php?name=Shipping%20Products">Shipping Products</a></li><br><br>
         </ul>
     </div>
 
