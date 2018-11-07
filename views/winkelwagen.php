@@ -18,7 +18,7 @@
     ?>
 
     <div class="top">
-        <p class="titel">ShOpP1nG C@rT</p>
+        <p class="titel">Shopping Cart.</p>
     </div>
 
 <!--    <div class="kopjes">-->
@@ -46,7 +46,7 @@
 
 
           <li>
-              <div class="product1">
+              <div class="product1" style="clear:both">
                   <div class="product-image">
                       <img src= https://upload.wikimedia.org/wikipedia/commons/9/92/The_death.png class="grim">
                   </div>
@@ -91,16 +91,16 @@
 
                 <div class="totalprice" style = "clear:both:">
 
-                    <label> Subtotaal </label>
-                    <div class = "subtotal-values" id = "cart-total" > 74 </div>
+                    <div class = "subtotal-values"> subtotal:</div>
+                        <div class = "subtotal-values" id = "cart-total" > 74 </div>
 
-                    <label> Tax </label>
+                    <div class = "subtotal-values"> tax: </div>
                     <div class = "subtotal-values" id = "cart-total" > 10000% </div>
 
-                    <label> Shipping </label>
+                    <div class = "subtotal-values"> shipping: </div>
                     <div class = "subtotal-values" id = "cart-total" > free </div>
 
-                    <label> TOTAL </label>
+                    <div class = "subtotal-values"> Total: </div>
                     <div class = "subtotal-values" id = "cart-total" > 500 </div>
 
 
