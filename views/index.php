@@ -41,13 +41,11 @@
     </div>
 
     <div class="imagesborder">
-
         <div>
        <img src="img/chocoreep.png" alt="chocoreep" class="picturesHome"
              style="position: relative;
              left: 75px;
              top: 0px;">
-        Chocolate Bar
         <img src="img/chocoreep.png" alt="chocoreep" class="picturesHome"
              style="position: relative;
              left: 105px;
