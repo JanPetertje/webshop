@@ -26,26 +26,28 @@
         <ul class="list">
             <br><a class="productgroupLink" href="ProductGroups.php">Product Groups  </a><br><br>
             <li><a class="productgroupLink" href="product.php">Novelty Items</a></li>
-            <li><a class="productgroupLink">Clothing</a></li>
-            <li><a class="productgroupLink">Mugs</a></li>
-            <li><a class="productgroupLink">T-Shirts</a></li>
-            <li><a class="productgroupLink">Clothing</a></li>
-            <li><a class="productgroupLink">Airline Novelties</a></li>
-            <li><a class="productgroupLink">Computing Novelties</a></li>
-            <li><a class="productgroupLink">USB Novelties</a></li>
-            <li><a class="productgroupLink">Furry Footwear</a></li>
-            <li><a class="productgroupLink">Toys</a></li>
-            <li><a class="productgroupLink">Packaging Materials</Materials></a></li>
-            <li><a class="productgroupLink">Shipping Products</a></li><br>
+            <li><a class="productgroupLink" href="product.php">Clothing</a></li>
+            <li><a class="productgroupLink" href="product.php">Mugs</a></li>
+            <li><a class="productgroupLink" href="product.php">T-Shirts</a></li>
+            <li><a class="productgroupLink" href="product.php">Clothing</a></li>
+            <li><a class="productgroupLink" href="product.php">Airline Novelties</a></li>
+            <li><a class="productgroupLink" href="product.php">Computing Novelties</a></li>
+            <li><a class="productgroupLink" href="product.php">USB Novelties</a></li>
+            <li><a class="productgroupLink" href="product.php">Furry Footwear</a></li>
+            <li><a class="productgroupLink" href="product.php">Toys</a></li>
+            <li><a class="productgroupLink" href="product.php">Packaging Materials</Materials></a></li>
+            <li><a class="productgroupLink" href="product.php">Shipping Products</a></li><br>
         </ul>
     </div>
 
     <div class="imagesborder">
-        <img src="img/chocoreep.png" alt="chocoreep" class="picturesHome"
+
+        <div>
+       <img src="img/chocoreep.png" alt="chocoreep" class="picturesHome"
              style="position: relative;
              left: 75px;
              top: 0px;">
-
+        Chocolate Bar
         <img src="img/chocoreep.png" alt="chocoreep" class="picturesHome"
              style="position: relative;
              left: 105px;
@@ -70,6 +72,7 @@
              style="position: relative;
              left: 135px;
              top: 50px;">
+        </div>
     </div>
 
 
