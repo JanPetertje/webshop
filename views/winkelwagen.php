@@ -133,7 +133,7 @@
                 <div class="totalprice" style = "clear:both:">
 
                     <label> subtotal </label>
-                    <div class = "subtotal-values" id = "cart-total" > 74 </div>
+                    <div class = "subtotal-values" id = "cart-total" > $74 </div>
 
                    <label> Tax </label>
                     <div class = "subtotal-values" id = "cart-total" > 100% </div>
@@ -142,7 +142,7 @@
                     <div class = "subtotal-values" id = "cart-total" > free </div>
 
                     <label> TOTAL </label>
-                    <div class = "subtotal-values" id = "cart-total" > 500 </div>
+                    <div class = "subtotal-values" id = "cart-total" > $500 </div>
 
 
                 </div>
