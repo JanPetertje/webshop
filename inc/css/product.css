@@ -1,0 +1,38 @@
+ul.list {
+    float: left;
+    line-height: 42px;
+    font-size: 28px;
+    font-family: Roboto;
+    margin-left: 5px;
+    padding-left: 65px;
+    padding-right: 100px;
+    padding-bottom: 23px;
+    color: white;
+    border: 2px solid #ffffff;
+    background-color: #101010;
+}
+a.productgroupLink:link {
+    text-decoration: none;
+    color: white;
+}
+a.productgroupLink:visited {
+    text-decoration: none;
+    color: #ffffff;
+}
+a.productgroupLink:hover {
+    color:#00bff6;
+}
+a.productgroupLink:active {
+    text-decoration: none;
+    font-weight: bold;
+}
+.titel {
+    font-size: 60px;
+    padding: 0px;
+    margin:  0 auto;
+    margin-top: 20px;
+    font-family: "roboto";
+    border-bottom: 2px solid grey;
+    text-align: center;
+    width: 1024px;
+}
