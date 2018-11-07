@@ -14,8 +14,9 @@ if(isset($_POST["login"])) {
 
     if($stmt->execute()) {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        print_r($result);
+        echo "<script>alert('You have successfully logged in!');</script>";
+
+        }
 
 
     }
-}
