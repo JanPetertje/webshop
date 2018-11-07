@@ -15,6 +15,7 @@
 
     <?php
     include "inc/parts/menu.php";
+    include "inc/parts/db.php";
     ?>
 
     <div class="top">
@@ -51,7 +52,7 @@
                       <img src= https://b.kisscc0.com/20180717/cyw/kisscc0-fortnite-skin-battle-royale-game-dance-dab-fortnite-click-5b4dbcea9e6494.8478354315318212906488.jpg class="grim">
                   </div>
                   <div class="product-details">
-                      <div class="product-title"> productnaam </div>
+                      <div class="product-title"> Productnaam</div>
                       <p class="product-description"> beschrijving </p>
                   </div>
                   <div class="product-price"><?php $prijsgrim = 12.99; print($prijsgrim); ?></div>
