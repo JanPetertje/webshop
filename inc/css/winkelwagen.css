@@ -24,7 +24,7 @@
     /*display:block;*/
     margin-right: 315px;
     clear:left;
-    margin-top: 45px;
+    margin-top: 40px;
 
 }
 
@@ -37,6 +37,8 @@
 
      */
 
+
+
 .label-subtotal {
     font-size: 20px;
 
@@ -48,7 +50,7 @@
 }
 
 .totalprice {
-    width: 42px;
+    width: 40px;
     height: 42px;
     padding-left: 1100px;
     padding-top: 180px;

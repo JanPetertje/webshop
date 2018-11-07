@@ -48,7 +48,7 @@
           <li>
               <div class="product1" style="clear:both">
                   <div class="product-image">
-                      <img src= https://upload.wikimedia.org/wikipedia/commons/9/92/The_death.png class="grim">
+                      <img src= https://b.kisscc0.com/20180717/cyw/kisscc0-fortnite-skin-battle-royale-game-dance-dab-fortnite-click-5b4dbcea9e6494.8478354315318212906488.jpg class="grim">
                   </div>
                   <div class="product-details">
                       <div class="product-title"> productnaam </div>
@@ -69,7 +69,7 @@
             <li>
                 <div class="product1" style="clear:both">
                     <div class="product-image">
-                        <img src= https://upload.wikimedia.org/wikipedia/commons/9/92/The_death.png class="grim">
+                        <img src= https://banner2.kisspng.com/20180613/gpo/kisspng-fortnite-battle-royale-minecraft-battle-royale-gam-fortnite-skins-5b20aced2df673.8941036815288680771883.jpg class="grim">
                     </div>
                     <div class="product-details">
                         <div class="product-title"> productnaam </div>
@@ -88,19 +88,60 @@
                 </div>
             </li>
             <li>
+                <div class="product1" style="clear:both">
+                    <div class="product-image">
+                        <img src= https://banner2.kisspng.com/20180613/gpo/kisspng-fortnite-battle-royale-minecraft-battle-royale-gam-fortnite-skins-5b20aced2df673.8941036815288680771883.jpg class="grim">
+                    </div>
+                    <div class="product-details">
+                        <div class="product-title"> productnaam </div>
+                        <p class="product-description"> beschrijving </p>
+                    </div>
+                    <div class="product-price"><?php $prijsgrim = 12.99; print($prijsgrim); ?></div>
+                    <div class="product-quantity">
+                        <input type="number" value="<?php print($quantity);?>" min="1">
+                    </div>
+                    <div class="product-removal">
+                        <button class="remove-product">
+                            Remove
+                        </button>
+                    </div>
+                    <div class="product-line-price2"> <?php $subprijs = $prijsgrim * $quantity; print($subprijs);?></div>
+                </div>
+            </li>
+            <li>
+                <div class="product1" style="clear:both">
+                    <div class="product-image">
+                        <img src= https://banner2.kisspng.com/20180613/gpo/kisspng-fortnite-battle-royale-minecraft-battle-royale-gam-fortnite-skins-5b20aced2df673.8941036815288680771883.jpg class="grim">
+                    </div>
+                    <div class="product-details">
+                        <div class="product-title"> productnaam </div>
+                        <p class="product-description"> beschrijving </p>
+                    </div>
+                    <div class="product-price"><?php $prijsgrim = 12.99; print($prijsgrim); ?></div>
+                    <div class="product-quantity">
+                        <input type="number" value="<?php print($quantity);?>" min="1">
+                    </div>
+                    <div class="product-removal">
+                        <button class="remove-product">
+                            Remove
+                        </button>
+                    </div>
+                    <div class="product-line-price2"> <?php $subprijs = $prijsgrim * $quantity; print($subprijs);?></div>
+                </div>
+            </li>
 
                 <div class="totalprice" style = "clear:both:">
 
-                    <div class = "subtotal-values"> subtotal:</div>
-                        <div class = "subtotal-values" id = "cart-total" > 74 </div>
+                    <label> subtotal </label>
+                    <div class = "subtotal-values" id = "cart-total" > 74 </div>
 
-                    <div class = "subtotal-values"> tax: </div>
-                    <div class = "subtotal-values" id = "cart-total" > 10000% </div>
+                   <label> Tax </label>
+                    <div class = "subtotal-values" id = "cart-total" > 100% </div>
 
-                    <div class = "subtotal-values"> shipping: </div>
+                   <label> Shipping </label>
                     <div class = "subtotal-values" id = "cart-total" > free </div>
 
-                    <div class = "subtotal-values"> Total: </div>
+                    <label> TOTAL </label>
                     <div class = "subtotal-values" id = "cart-total" > 500 </div>
 
 
