@@ -25,7 +25,7 @@
     <div>
         <ul class="list">
             <br><a class="productgroupLink" href="ProductGroups.php">Product Groups  </a><br><br>
-            <li><a class="productgroupLink">Novelty Items</a></li>
+            <li><a class="productgroupLink" href="product.php">Novelty Items</a></li>
             <li><a class="productgroupLink">Clothing</a></li>
             <li><a class="productgroupLink">Mugs</a></li>
             <li><a class="productgroupLink">T-Shirts</a></li>
