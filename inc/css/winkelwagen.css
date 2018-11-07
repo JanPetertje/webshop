@@ -22,7 +22,7 @@
     cursor: pointer;
     float:right;
     /*display:block;*/
-    margin-right: 60px;
+    margin-right: 315px;
     clear:left;
     margin-top: 45px;
 
@@ -37,8 +37,10 @@
 
      */
 
+
 .column-labels{
     padding-left: 40px;
+    font-size: 25px;
 }
 
 .totalprice {
@@ -46,19 +48,27 @@
     height: 42px;
     padding-left: 1100px;
     padding-top: 180px;
+
 }
+
+
 
 .subtotal-values {
     float: left;
-    padding-left: 130px;
+    padding-left: 420px;
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 20px;
 }
 
-
+.totalprice label {
+    font-size: 20px;
+    padding-left: 300px;
+}
 
 .product1 {
     width: 100%;
+    font-size: 25px;
 }
 
 .product-image {
@@ -93,7 +103,7 @@
 }
 
 .product-line-price { float: left; width: 4%; text-align: right;
-    padding-left: 150px;
+    padding-left: 180px;
 }
 
 .product-line-price2 { float: left;
