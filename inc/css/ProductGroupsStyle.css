@@ -9,7 +9,7 @@
     margin-top: 1%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("https://discountoffice.nl/productImages/8/large/Q891853-2.jpg");
+    /*background-image: url("https://discountoffice.nl/productImages/8/large/Q891853-2.jpg");*/
 }
 
 p.productgroupname{
@@ -44,4 +44,9 @@ ul {
 .product{
     float: left;
 
+}
+
+.foto{
+    width: 300;
+    height: 300;
 }

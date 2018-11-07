@@ -5,7 +5,9 @@
         </a>
         <ul>
             <li>
-                <input type="text" name="search_input">
+                <form method="get" action="searchresults.php">
+               <input type="text" name="search_input">
+                </form>
             </li>
             <li>
                 <a class="loginLink" href="login.php">Login</a>
