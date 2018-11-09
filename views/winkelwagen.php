@@ -15,7 +15,7 @@
 
     <?php
     include "inc/parts/menu.php";
-//    include "inc/parts/db.php";
+    include "inc/parts/db.php";
     ?>
 
     <div class="top">
@@ -52,10 +52,10 @@
                       <img src= https://b.kisscc0.com/20180717/cyw/kisscc0-fortnite-skin-battle-royale-game-dance-dab-fortnite-click-5b4dbcea9e6494.8478354315318212906488.jpg class="grim">
                   </div>
                   <div class="product-details">
-                      <div class="product-title"> Productnaam</div>
-                      <p class="product-description"> beschrijving </p>
+                      <div class="product-title"> <?php print($name); ?></div>
+                      <p class="product-description"> <?php print($description); ?> </p>
                   </div>
-                  <div class="product-price"><?php $prijsgrim = 12.99; print($prijsgrim); ?></div>
+                  <div class="product-price"><?php print($price); ?></div>
                   <div class="product-quantity">
                       <input type="number" value="<?php print($quantity);?>" min="1">
                   </div>
@@ -64,7 +64,7 @@
                           Remove
                       </button>
                   </div>
-                  <div class="product-line-price2"> <?php $subprijs = $prijsgrim * $quantity; print($subprijs);?></div>
+                  <div class="product-line-price2"> <?php $subprice = $price * $quantity; print($subprice);?></div>
               </div>
           </li>
             <li>
