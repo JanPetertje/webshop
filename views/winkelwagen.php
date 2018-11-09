@@ -67,69 +67,6 @@
                   <div class="product-line-price2"> <?php $subprice = $price * $quantity; print($subprice);?></div>
               </div>
           </li>
-            <li>
-                <div class="product1" style="clear:both">
-                    <div class="product-image">
-                        <img src= https://banner2.kisspng.com/20180613/gpo/kisspng-fortnite-battle-royale-minecraft-battle-royale-gam-fortnite-skins-5b20aced2df673.8941036815288680771883.jpg class="grim">
-                    </div>
-                    <div class="product-details">
-                        <div class="product-title"> productnaam </div>
-                        <p class="product-description"> beschrijving </p>
-                    </div>
-                    <div class="product-price"><?php $prijsgrim = 12.99; print($prijsgrim); ?></div>
-                    <div class="product-quantity">
-                        <input type="number" value="<?php print($quantity);?>" min="1">
-                    </div>
-                    <div class="product-removal">
-                        <button class="remove-product">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="product-line-price2"> <?php $subprijs = $prijsgrim * $quantity; print($subprijs);?></div>
-                </div>
-            </li>
-            <li>
-                <div class="product1" style="clear:both">
-                    <div class="product-image">
-                        <img src= https://banner2.kisspng.com/20180613/gpo/kisspng-fortnite-battle-royale-minecraft-battle-royale-gam-fortnite-skins-5b20aced2df673.8941036815288680771883.jpg class="grim">
-                    </div>
-                    <div class="product-details">
-                        <div class="product-title"> productnaam </div>
-                        <p class="product-description"> beschrijving </p>
-                    </div>
-                    <div class="product-price"><?php $prijsgrim = 12.99; print($prijsgrim); ?></div>
-                    <div class="product-quantity">
-                        <input type="number" value="<?php print($quantity);?>" min="1">
-                    </div>
-                    <div class="product-removal">
-                        <button class="remove-product">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="product-line-price2"> <?php $subprijs = $prijsgrim * $quantity; print($subprijs);?></div>
-                </div>
-            </li>
-            <li>
-                <div class="product1" style="clear:both">
-                    <div class="product-image">
-                        <img src= https://banner2.kisspng.com/20180613/gpo/kisspng-fortnite-battle-royale-minecraft-battle-royale-gam-fortnite-skins-5b20aced2df673.8941036815288680771883.jpg class="grim">
-                    </div>
-                    <div class="product-details">
-                        <div class="product-title"> productnaam </div>
-                        <p class="product-description"> beschrijving </p>
-                    </div>
-                    <div class="product-price"><?php $prijsgrim = 12.99; print($prijsgrim); ?></div>
-                    <div class="product-quantity">
-                        <input type="number" value="<?php print($quantity);?>" min="1">
-                    </div>
-                    <div class="product-removal">
-                        <button class="remove-product">
-                            Remove
-                        </button>
-                    </div>
-                    <div class="product-line-price2"> <?php $subprijs = $prijsgrim * $quantity; print($subprijs);?></div>
-                </div>
-            </li>
 
                 <div class="totalprice" style = "clear:both:">
 
