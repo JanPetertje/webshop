@@ -38,14 +38,34 @@
         <label class="product-line-price">Total</label>
     </div>
 
-
-
 <!--    <label class="product-removal">delete</label>-->
-<?php $quantity = 2;?>
+<?php
+$quantity = 2;
+$products = array(215, 75);
+?>
     <div>
         <ul style="list-style-type:none">
+            <?php
+            foreach($products as $productnumbre => $product_id){
 
+            $productname = $conn->prepare("SELECT stockitemname FROM stockitems WHERE StockItemID = $product_id");
+            $productname->execute();
+            while ($row = $productname->fetch()) {
+            $name = $row["stockitemname"];
+            }
 
+            $productdesc = $conn->prepare("SELECT searchdetails FROM stockitems WHERE StockItemID = $product_id");
+            $productdesc->execute();
+            while ($row = $productdesc->fetch()) {
+            $description = $row["searchdetails"];
+            }
+
+            $productprice = $conn->prepare("SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = $product_id");
+            $productprice->execute();
+            while ($row = $productprice->fetch()) {
+            $price = $row["RecommendedRetailPrice"];
+            }
+            ?>
           <li>
               <div class="product1" style="clear:both">
                   <div class="product-image">
@@ -67,6 +87,7 @@
                   <div class="product-line-price2"> <?php $subprice = $price * $quantity; print($subprice);?></div>
               </div>
           </li>
+            <?php } ?>
 
                 <div class="totalprice" style = "clear:both:">
 
