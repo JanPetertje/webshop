@@ -15,7 +15,7 @@
 
     <?php
     include "inc/parts/menu.php";
-    include "inc/parts/db.php";
+//    include "inc/parts/db.php";
     ?>
 
     <div class="top">
