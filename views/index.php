@@ -16,12 +16,21 @@
 
     <?php
     include "inc/parts/menu.php";
+    include "inc/parts/db.php";
     ?>
 
     <div>
         <h1>Popular items</h1>
     </div>
 
+    <div>
+        $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
+        $productgroups->execute();
+        while ($row = $productgroups->fetch()) {
+        $groupnames = $row["StockGroupName"];
+        print ("<li><a class='productgroupLink' href='product.php?name=Novelty%20Items'> $groupnames</a></li>");
+        }
+    </div>
     <div>
         <ul class="list">
             <br><a class="productgroupLink" href="ProductGroups.php">Product Groups  </a><br><br>

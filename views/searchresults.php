@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" href="inc/css/fonts.css">
         <link rel="stylesheet" href="inc/css/main.css">
+        <link rel="stylesheet" href="inc/css/searchresults.css">
 
         <?php
         include "inc/parts/menu.php";
@@ -18,25 +19,29 @@
     </h1>
     </div>
 
-    <div style="background-color: black; height: 100%; color: white;">
+    <div class="border">
         <?php
-        $products = array("hats", "cups", "dog");
+        $products = array("Novelty Items", "Clothing", "Mugs", "T-Shirts", "Airline Novelties", "Computing Novelties", "USB Novelties", "Furry Footwear", "Toys", "Packaging Materials", "Shipping Products");
         $x = 0;
         foreach ($products as $key => $product) {
             if ($product == $searchinput) {
-                print "<br>Results found!";
+                print "Results found!";
                 $x = 1;
                 return;
             } elseif (empty($searchinput)) {
-                print "No input - error";
+                print "Please enter a search objective - Error";
                 $x = 1;
                 return;
             }
         }
         if ($x == 0) {
-            print "No results for $searchinput";
+            print "<u>No results</u> found, please try another.";
         }
         ?>
+    </div>
+
+    <div>
+        Resultaten
     </div>
     </body>
 </html>
