@@ -27,7 +27,7 @@ include "inc/parts/db.php";
     <label class="product-details">Product</label>
     <label class="product-price">Price</label>
     <label class="product-quantity">Quantity</label>
-    <label class="product-line-price">Total</label>
+    <label class="product-line-price">Subtotal</label>
 </div>
 
 <?php
@@ -66,7 +66,7 @@ $products = array(215, 75);
                         <div class="product-title"> <?php print($name); ?></div>
                         <p class="product-description"> <?php print($description); ?> </p>
                     </div>
-                    <div class="product-price"><?php print($price); ?></div>
+                    <div class="product-price"><?php print("$".$price); ?></div>
                     <div class="product-quantity">
                         <input type="number" value="<?php print($quantity);?>" min="1">
                     </div>
@@ -75,15 +75,15 @@ $products = array(215, 75);
                             Remove
                         </button>
                     </div>
-                    <div class="product-line-price2"> <?php $subprice = $price * $quantity; print($subprice);?></div>
+                    <div class="product-line-price2"> <?php $subprice = $price * $quantity; print("$".$subprice);?></div>
                 </div>
             </li>
         <?php } ?>
 
         <div class="totalprice" style = "clear:both:">
 
-            <label> subtotal </label>
-            <div class = "subtotal-values" id = "cart-total" > $74 </div>
+            <label> Total </label>
+            <div class = "subtotal-values" id = "cart-total" > €75 </div>
 
             <label> Tax </label>
             <div class = "subtotal-values" id = "cart-total" > 100% </div>
