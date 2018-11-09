@@ -22,23 +22,14 @@ include "inc/parts/db.php";
     <p class="titel">Shopping Cart.</p>
 </div>
 
-<!--    <div class="kopjes">-->
-<!--        <h1 class="kopje1">Product</h1>-->
-<!--        <h1 class="kopje1">price</h1>-->
-<!--        <h1 class="kopje1">quantity</h1>-->
-<!--        <h1 class="kopje1">subtotal</h1>-->
-
-
 <div class="column-labels">
     <label class="product-image">Image</label>
     <label class="product-details">Product</label>
     <label class="product-price">Price</label>
     <label class="product-quantity">Quantity</label>
-    <!--        <label class="product-removal">delete</label>-->
     <label class="product-line-price">Total</label>
 </div>
 
-<!--    <label class="product-removal">delete</label>-->
 <?php
 $quantity = 2;
 $products = array(215, 75);
