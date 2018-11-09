@@ -45,8 +45,11 @@
              style="position: relative;
              left: 75px;
              top: 0px;">
-        <img src="img/chocoreep.png" alt="chocoreep" class="picturesHome"
-             style="position: relative;
+        <img src="img/USB-Rocket-Launcher.png" alt="chocoreep" class="picturesHome"
+             style="
+             background-color: white;
+             padding-top: 30px;
+             position: relative;
              left: 105px;
              top: 0px;">
 
