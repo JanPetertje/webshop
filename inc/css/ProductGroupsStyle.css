@@ -16,10 +16,10 @@
 
 .group2{
     /*height: 50%;*/
-    /*!*border-color: black;*!*/
-    /*!*border-style: solid;*!*/
-    /*!*border-width: medium;*!*/
-    /*!*margin-right: 52%;*!*/
+    /*border-color: black;*/
+    /*border-style: solid;*/
+    /*border-width: medium;*/
+    /*margin-right: 52%;*/
     /*margin-left: 8%;*/
     /*margin-top: 1%;*/
     background-image: url("http://pluspng.com/img-png/clothing-hd-png-forever-21-clothing-1183.png");
@@ -29,10 +29,11 @@
     width: 70%;
 
 }
-p.productgroupname{
+.productgroupname{
     text-align: center;
     float: bottom;
-    padding-top: 250px;
+    /*padding-top: 250px;*/
+
 }
 
 .product{

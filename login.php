@@ -15,7 +15,7 @@ if(isset($_POST["login"])) {
     if($stmt->execute()) {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         echo "<script>alert('You have successfully logged in!');</script>";
-        header("Location: http://localhost:63342/webshopp/index.php");
+        header("Location: index.php");
 
 
     }

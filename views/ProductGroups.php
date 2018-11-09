@@ -23,7 +23,7 @@ include "inc/parts/menu.php";
 </div>
 
 <div class="grid-container">
-    <div class="grid-item"><p class="productgroupname group1">Novelty Items</p></div>
+    <div class="grid-item"><a class="productgroupname group" href="https://www.w3schools.com">Novelty Items</a></div>
     <div class="grid-item"><p class="productgroupname group2">Clothing</p></div>
     <div class="grid-item">3</div>
     <div class="grid-item">4</div>
