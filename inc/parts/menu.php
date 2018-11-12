@@ -1,7 +1,7 @@
 <div class="menu">
     <div class="menu-content">
         <a href="index.php">
-            <h1><span>World</span> <span>Wide</span> Importers</h1>
+            <h1><span>Wide</span> <span>World</span> Importers</h1>
         </a>
         <ul>
             <li>
