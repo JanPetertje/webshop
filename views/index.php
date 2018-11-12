@@ -32,7 +32,7 @@
             $productgroups->execute();
             while ($row = $productgroups->fetch()) {
                 $groupnames = $row["StockGroupName"];
-                print ("<li><a class='productgroupLink' href='product.php?name=Novelty%20Items'> $groupnames</a></li>");
+                print ("<li><a class='productgroupLink' href='product.php?name=$groupnames'>$groupnames </a></li>");
             }
             print"<br><br><br>";
             ?>

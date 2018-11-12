@@ -8,15 +8,15 @@
 
     <body>
     <?php
-    $name = ($_GET["name"])
-    ?>
-    <?php
+    $productGroup = ($_GET);
+    $productGroup = $productGroup["name"];
+
     include "inc/parts/menu.php";
     include "inc/parts/db.php";
     ?>
 
     <div class="top">
-        <p class="titel"><?php echo $name ?></p>
+        <p class="titel"><?php print $productGroup;?></p>
     </div>
     <ul class="list">
         <br><a class="productgroupLink" href="ProductGroups.php">Product Groups  </a><br><br>
@@ -26,7 +26,7 @@
         $productgroups->execute();
         while ($row = $productgroups->fetch()) {
             $groupnames = $row["StockGroupName"];
-            print ("<li><a class='productgroupLink' href='product.php?name='> $groupnames</a></li>");
+            print ("<li><a class='productgroupLink' href='product.php?name=$groupnames'> $groupnames</a></li>");
         }
         print"<br><br><br>";
         ?>
