@@ -15,7 +15,9 @@
 
 <body>
     <?php
-    print "PRODUCT";
+    $product = $_GET;
+    $product = $product["productname"];
+    print $product;
     ?>
 </body>
 </html>

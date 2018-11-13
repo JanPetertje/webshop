@@ -40,7 +40,7 @@
         while ($row = $searchresults->fetch()) {
             $productName = $row["StockItemName"];
             $Price = $row["RecommendedRetailPrice"];
-            print ($productName . " $" .  $Price ."<br>");
+            print ("<a href='views/productpage.php?productname=$productName'>".$productName . "</a> $" .  $Price ."<br>");
         }
         $pdo = NULL;
 
