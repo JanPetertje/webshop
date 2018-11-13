@@ -6,6 +6,7 @@
 
         <?php
         include "inc/parts/menu.php";
+        include "inc/parts/db.php";
         ?>
     </head>
     <body>
@@ -41,7 +42,16 @@
     </div>
 
     <div>
-        Resultaten
+        <?php
+
+        $searchresults = $conn->prepare("SELECT StockItemName FROM stockitems WHERE StockItemName LIKE '%$searchinput%'");
+        $searchresults->execute();
+        while ($row = $searchresults->fetch()) {
+            $productName = $row["StockItemName"];
+            print($productName . "<br>");
+        }
+
+        ?>
     </div>
     </body>
 </html>
