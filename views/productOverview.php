@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="inc/css/fonts.css">
         <link rel="stylesheet" href="inc/css/main.css">
-        <link rel="stylesheet" href="inc/css/product.css">
+        <link rel="stylesheet" href="inc/css/productOverview.css">
     </head>
 
     <body>
@@ -26,7 +26,7 @@
         $productgroups->execute();
         while ($row = $productgroups->fetch()) {
             $groupnames = $row["StockGroupName"];
-            print ("<li><a class='productgroupLink' href='product.php?name=$groupnames'> $groupnames</a></li>");
+            print ("<li><a class='productgroupLink' href='productOverview.php?name=$groupnames'> $groupnames</a></li>");
         }
         print"<br><br><br>";
         ?>
