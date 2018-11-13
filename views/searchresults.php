@@ -12,44 +12,37 @@
     <body>
     <div>
        <h1>
-    <?php
+        <?php
         $searchinput = $_GET;
         $searchinput = $searchinput["search_input"];
         print "Results for: ".$searchinput;
         ?>
-    </h1>
+        </h1>
     </div>
 
     <div class="border">
         <?php
-        $products = array("Novelty Items", "Clothing", "Mugs", "T-Shirts", "Airline Novelties", "Computing Novelties", "USB Novelties", "Furry Footwear", "Toys", "Packaging Materials", "Shipping Products");
-        $x = 0;
-        foreach ($products as $key => $product) {
-            if ($product == $searchinput) {
-                print "Results found!";
-                $x = 1;
-                return;
-            } elseif (empty($searchinput)) {
-                print "Please enter a search objective - Error";
-                $x = 1;
-                return;
-            }
+        $countResults = $conn->prepare("SELECT count(StockItemName) AS aantal FROM stockitems WHERE StockItemName LIKE '%$searchinput%'");
+        $countResults->execute();
+        while ($row = $countResults->fetch()) {
+            $aantal = $row["aantal"];
+            print $aantal . " results found";
         }
-        if ($x == 0) {
-            print "<u>No results</u> found, please try another.";
-        }
+        $pdo = NULL;
+
         ?>
     </div>
 
-    <div>
+    <div class="resultList">
         <?php
-
-        $searchresults = $conn->prepare("SELECT StockItemName FROM stockitems WHERE StockItemName LIKE '%$searchinput%'");
+        $searchresults = $conn->prepare("SELECT StockItemName, RecommendedRetailPrice FROM stockitems WHERE StockItemName LIKE '%$searchinput%'");
         $searchresults->execute();
         while ($row = $searchresults->fetch()) {
             $productName = $row["StockItemName"];
-            print($productName . "<br>");
+            $Price = $row["RecommendedRetailPrice"];
+            print($productName . " $" .  $Price ."<br>");
         }
+        $pdo = NULL;
 
         ?>
     </div>

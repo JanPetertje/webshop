@@ -34,6 +34,8 @@
                 $groupnames = $row["StockGroupName"];
                 print ("<li><a class='productgroupLink' href='product.php?name=$groupnames'>$groupnames</a></li>");
             }
+            $pdo = NULL;
+
             print"<br><br><br>";
             ?>
         </ul>
