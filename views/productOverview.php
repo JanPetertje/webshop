@@ -29,8 +29,33 @@
             print ("<li><a class='productgroupLink' href='productOverview.php?name=$groupnames'> $groupnames</a></li>");
         }
         print"<br><br><br>";
+
         ?>
+
     </ul>
+
+
+    <div class="text">
+    <?php
+
+    $productname = $conn->prepare("Select StockGroupName, StockItemName, sg. StockGroupID from stockitemstockgroups sg join stockitems s on sg.StockItemId = s.StockItemID join stockgroups st on sg.StockGroupID = st.StockGroupID order by StockGroupID");
+    $productname->execute();
+    while ($row = $productname->fetch()) {
+        $productnames = $row["StockItemName"];
+        $stockgroupID = $row["StockGroupID"];
+        $group = $row["StockGroupName"];
+
+
+        if ($productGroup == $group) {
+            print ( $stockgroupID . ": " . $productnames . "<br>");
+        }
+    }
+
+    ?>
+
+
+
+    </div>
 
     </body>
 </html>
