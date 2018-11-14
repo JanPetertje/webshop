@@ -44,6 +44,16 @@
         }
         $pdo = NULL;
 
+        $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
+        $productgroups->execute();
+        while ($row = $productgroups->fetch()) {
+            $groupnames = $row["StockGroupName"];
+            if ($groupnames == $searchinput || $groupnames = strtolower($searchinput)) {
+                print"<a href='ProductGroups.php'> *You searched for a category, press here to go to the productgroup page.* </a>";
+                return FALSE;
+            }
+        }
+        $pdo = NULL;
         ?>
     </div>
     </body>
