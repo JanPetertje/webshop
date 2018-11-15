@@ -1,3 +1,4 @@
+<body>
 <div class="menu">
     <div class="menu-content">
         <a href="index.php">
@@ -20,3 +21,7 @@
         </ul>
     </div>
 </div>
+<?php
+include "inc/parts/footer.php";
+?>
+</body>

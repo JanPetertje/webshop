@@ -14,7 +14,6 @@
 <?php
 
 include "inc/parts/menu.php";
-
 ?>
 <h1>Login succesfull</h1>
 <h1><a href="index.php">Click here to return to the homepage</a></h1>
