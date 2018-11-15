@@ -42,7 +42,7 @@ if (isset($_GET["removee"])) {
     $getal = $_GET["removee"];
     unset($_SESSION[$getal]);
 }
-//error_reporting(0);
+error_reporting(0);
 ?>
 <div>
     <ul style="list-style-type:none">
