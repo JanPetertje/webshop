@@ -2,6 +2,7 @@
 
 include "inc/parts/db.php";
 include "views/login.php";
+include "inc/parts/footer.php";
 
 if(isset($_POST["login"])) {
     $username = trim($_POST["username"]);
