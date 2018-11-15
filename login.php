@@ -7,18 +7,27 @@ if(isset($_POST["login"])) {
     $username = trim($_POST["username"]);
     $password = hash("sha256", trim($_POST["password"]));
 
-    $stmt = $conn->prepare("SELECT COUNT(account_id) FROM accounts WHERE username = :user AND password = :psw");
+    $stmt = $conn->prepare("SELECT account_id FROM accounts WHERE username = :user AND password = :psw");
 
     $stmt->bindParam(":user", $username);
     $stmt->bindParam(":psw", $password);
 
-    if($stmt->execute()) {
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo "<script>alert('You have successfully logged in!');</script>";
-        header("Location: index.php");
+
+    $exec = $stmt->execute();
+    $result = $stmt->rowCount();
+
+    if ($result == 1) {
+        echo "<script>alert('login successful')</script>";
+
+        header("Location: inlogsuccess.php");
 
 
+    } else {
+        if ($result != 1) {
+            echo "<script>alert('Username and/or password incorrect.')</script>";
+        }
     }
+}
 
 
-    }
+

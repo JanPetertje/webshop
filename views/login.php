@@ -22,7 +22,7 @@
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
             <input type="submit" name="login" value="Login">
-            <a href="register.php">Registreer nu!</a>
+            <a href="register.php">Register now!</a>
         </form>
     </div>
     </body>
