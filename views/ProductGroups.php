@@ -27,7 +27,7 @@ include "inc/parts/db.php";
     <div class="row">
         <div class="items">
 <?php
-                $productgroups = $pdo->prepare("SELECT StockGroupName FROM stockgroups");
+                $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
 //            $productgroups = $pdo->prepare(state"SELECT StockGroupName FROM stockgroups");
             $productgroups->execute();
             while ($row = $productgroups->fetch()) {
@@ -36,7 +36,7 @@ include "inc/parts/db.php";
                       <img src="https://hlfppt.org/wp-content/uploads/2017/04/placeholder.png" alt="Product picture" class="card-img-top">
                       <div class="card-body">
                       <h5 class="card-title">' . $groupnames . '</h5>
-                      <a class="btn btn-primary" href="productOverview.php?name=' . $groupnames . '">"See more!"</a>
+                      <a class="btn btn-primary" href="productOverview.php?name=' . $groupnames . '">More Products!</a>
                     </div>
                 </div>';
             }
