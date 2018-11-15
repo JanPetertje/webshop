@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "homo";
+$password = "homo";
 $dbname = "wideworldimporters";
 
 try {
