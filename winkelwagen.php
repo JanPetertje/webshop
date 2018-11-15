@@ -1,4 +1,5 @@
 <!doctype html>
+<?php session_start();?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,13 +33,34 @@ include "inc/parts/db.php";
 
 <?php
 $quantity = 2;
-$products = array(215, 75);
+$products = array(215, 75, 72);
+$_SESSION = $products;
 $sum = 0;
+$delete = 0;
+//$tech = count($_SESSION);
+//print($tech);
+//foreach($_SESSION as $productt => $id){
+//    print($productt);
+//}
+//function remove($kut){
+//    $data = $_SESSION[$kut];    // Get the value
+//    unset($data);               // Remove an item (hardcoded the second here)
+//function remove($productnumbre){
+//    unset($this->$_SESSION[$products[$productnumbre]]);
+//    $this->save_cart();
+//    return TRUE;
+//}
+if (isset($_GET["removee"])) {
+//    remove($productnumbre);
+    $getal = $_GET["removee"];
+    unset($_SESSION[$getal]);
+}
+
 ?>
 <div>
     <ul style="list-style-type:none">
         <?php
-            foreach($products as $productnumbre => $product_id) {
+            foreach($_SESSION as $productnumbre => $product_id) {
                 $productname = $conn->prepare("SELECT stockitemname FROM stockitems WHERE StockItemID = $product_id");
                 $productname->execute();
                 while ($row = $productname->fetch()) {
@@ -60,7 +82,7 @@ $sum = 0;
                 <li>
                     <div class="product1" style="clear:both">
                         <div class="product-image">
-                            <img src= https://b.kisscc0.com/20180717/cyw/kisscc0-fortnite-skin-battle-royale-game-dance-dab-fortnite-click-5b4dbcea9e6494.8478354315318212906488.jpg class="grim">
+                            <img src= https://banner2.kisspng.com/20171218/ddc/question-mark-png-5a381257a89243.6425987715136241516905.jpg class="grim">
                         </div>
                         <div class="product-details">
                             <div class="product-title"> <?php print($name); ?></div>
@@ -70,10 +92,8 @@ $sum = 0;
                         <div class="product-quantity">
                             <input type="number" value="<?php print($quantity);?>" min="1">
                         </div>
-                        <div class="product-removal"
-                            <button type="button" name="Delete">
-                                Remove
-                            </button>
+                        <div class="product-removal">
+                            <button onclick="window.location.href='winkelwagen.php?removee=<?php echo $productnumbre; ?>'">Knoppie</button>
                         </div>
                         <div class="product-line-price2"> <?php $subprice = $price * $quantity; print("$".$subprice);?></div>
                     </div>
@@ -85,7 +105,7 @@ $sum = 0;
 
         <div class="totalprice" style = "clear:both:">
 
-            <label> Total </label>
+            <label> Subtotal </label>
             <div class = "subtotal-values" id = "cart-total" > <?php print("$".$sum); ?> </div>
 
             <label> Tax </label>
