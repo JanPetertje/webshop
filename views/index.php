@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="inc/css/fonts.css">
         <link rel="stylesheet" href="inc/css/main.css">
         <link rel="stylesheet" href="inc/css/index.css">
-        
+
     </head>
 
     <body>
@@ -17,14 +17,15 @@
     <?php
     include "inc/parts/menu.php";
     include "inc/parts/db.php";
+    include "inc/parts/head.php";
     ?>
 
     <div>
-        <h1>Popular items</h1>
+        <h1>Welcome to Wide World Importers</h1>
     </div>
 
 
-    <div>
+    <div class="imagesborder">
         <ul class="list">
             <br><a class="productgroupLink" href="ProductGroups.php">Product Groups  </a><br><br>
             <?php
@@ -39,41 +40,32 @@
             print"<br><br><br>";
             ?>
         </ul>
-    </div>
 
-    <div class="imagesborder">
-        <div>
-       <img src="img/chocoreep.png" alt="chocoreep" class="picturesHome"
-             style="position: relative;
-             left: 75px;
-             top: 0px;">
-        <img src="img/USB-Rocket-Launcher.png" alt="chocoreep" class="picturesHome"
-             style="
-             background-color: white;
-             padding-top: 30px;
-             position: relative;
-             left: 105px;
-             top: 0px;">
-
-        <img src="img/chocoreep.png" alt="chocoreep" class="picturesHome"
-             style="position: relative;
-             left: 135px;
-             top: 0px;">
-
-        <img src="img/chocoreep.png" alt="chocoreep" class="picturesHome"
-             style="position: relative;
-             left: 75px;
-             top: 50px;">
-
-        <img src="img/chocoreep.png" alt="chocoreep" class="picturesHome"
-             style="position: relative;
-             left: 105px;
-             top: 50px;">
-
-        <img src="img/chocoreep.png" alt="chocoreep" class="picturesHome"
-             style="position: relative;
-             left: 135px;
-             top: 50px;">
+        <div id="carouselExampleIndicators" class="carousel slide placementSlides" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/WideWorldImportersSplash.png?auto=yes&bg=777&fg=555&text=First slide" alt="First slide" class="images">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Globe.jpg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide" class="images">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/shipping.jpg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide" class="images">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
 

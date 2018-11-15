@@ -46,6 +46,7 @@ $pdo = NULL;
 ?>
 
         </div>
+    </div>
 </div>
 
 <!--                    print ("<li><a class='productgroupLink' href='product.php?name=$groupnames'>$groupnames</a></li>");-->
