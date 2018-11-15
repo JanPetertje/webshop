@@ -17,6 +17,7 @@
 <?php
 include "inc/parts/menu.php";
 include "inc/parts/db.php";
+// De quantity moet een aparte array zijn die ook aangepast wordt als het product er uit wordt gehaald of toegevoegd wordt.
 ?>
 
 <div class="top">
@@ -32,30 +33,16 @@ include "inc/parts/db.php";
 </div>
 
 <?php
-$quantity = 2;
+$quantity = 1;
 $products = array(215, 75, 72);
 $_SESSION = $products;
 $sum = 0;
 $delete = 0;
-//$tech = count($_SESSION);
-//print($tech);
-//foreach($_SESSION as $productt => $id){
-//    print($productt);
-//}
-//function remove($kut){
-//    $data = $_SESSION[$kut];    // Get the value
-//    unset($data);               // Remove an item (hardcoded the second here)
-//function remove($productnumbre){
-//    unset($this->$_SESSION[$products[$productnumbre]]);
-//    $this->save_cart();
-//    return TRUE;
-//}
 if (isset($_GET["removee"])) {
-//    remove($productnumbre);
     $getal = $_GET["removee"];
     unset($_SESSION[$getal]);
 }
-
+//error_reporting(0);
 ?>
 <div>
     <ul style="list-style-type:none">
@@ -90,7 +77,7 @@ if (isset($_GET["removee"])) {
                         </div>
                         <div class="product-price"><?php print("$".$price); ?></div>
                         <div class="product-quantity">
-                            <input type="number" value="<?php print($quantity);?>" min="1">
+                            <input type="number" value="1" min="1">
                         </div>
                         <div class="product-removal">
                             <button onclick="window.location.href='winkelwagen.php?removee=<?php echo $productnumbre; ?>'">Knoppie</button>
@@ -117,9 +104,7 @@ if (isset($_GET["removee"])) {
             <label> TOTAL </label>
             <div class = "subtotal-values" id = "cart-total" > <?php $total = $sum * 1.21; print("$".round($total, 2));?> </div>
 
-
         </div>
-
         </li>
         <li>
             <a href="#" class="myButton">order now!</a>
