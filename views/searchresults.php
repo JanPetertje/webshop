@@ -14,7 +14,7 @@
        <h1>
         <?php
         $searchinput = $_GET;
-        $searchinput = $searchinput["search_input"];
+        $searchinput = filter_var($searchinput["search_input"], FILTER_SANITIZE_STRING);
         print "Results for: ".$searchinput;
         ?>
         </h1>
@@ -43,18 +43,18 @@
             print ("<a href='views/productpage.php?productname=$productName'>".$productName . "</a> $" .  $Price ."<br>");
         }
         $pdo = NULL;
-
-        $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
-        $productgroups->execute();
-        while ($row = $productgroups->fetch()) {
-            $groupnames = $row["StockGroupName"];
-            if ($groupnames == $searchinput || $groupnames = strtolower($searchinput)) {
-                print"<a href='ProductGroups.php'> *You searched for a category, press here to go to the productgroup page.* </a>";
-                return FALSE;
-            }
-        }
-        $pdo = NULL;
+        print "<div style='height: 200px;'>
+        <br><br><br>    
+        <h1><a href='ProductGroups.php' class='productgroupLink'>You just reached the end of this page. If you want to search in productgroups press <b>here</b>.</a></h1>
+        </div>";
         ?>
     </div>
     </body>
+    <footer>
+        <div style="background-color: #8AC007 ">
+            <div class="footer">
+                <a class="productgroupLink"  style="color: #ffffff;" href="https://termsfeed.com/disclaimer/3c8db8ef82c06aa1e0117b04bacccf23">Disclaimer van WWI - Copyrights 2018</a>
+            </div>
+        </div>
+    </footer>
 </html>
