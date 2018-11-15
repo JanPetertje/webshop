@@ -36,3 +36,10 @@ a.productgroupLink:active {
     text-align: center;
     width: 1024px;
 }
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    padding: 15px;
+}

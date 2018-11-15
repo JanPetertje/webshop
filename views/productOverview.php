@@ -4,6 +4,10 @@
         <link rel="stylesheet" href="inc/css/fonts.css">
         <link rel="stylesheet" href="inc/css/main.css">
         <link rel="stylesheet" href="inc/css/productOverview.css">
+        <?php
+        include "inc/parts/head.php";
+        ?>
+
     </head>
 
     <body>
@@ -34,8 +38,9 @@
 
     </ul>
 
-
-    <div class="text">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="items">
     <?php
 
     $productname = $conn->prepare("Select StockGroupName, StockItemName, sg. StockGroupID from stockitemstockgroups sg join stockitems s on sg.StockItemId = s.StockItemID join stockgroups st on sg.StockGroupID = st.StockGroupID order by StockGroupID");
@@ -47,16 +52,21 @@
 
 
         if ($productGroup == $group) {
-            print ( $stockgroupID . ": " . $productnames . "<br>");
+            print '<div class="card product-card">
+                      <img src="https://hlfppt.org/wp-content/uploads/2017/04/placeholder.png" alt="Product picture" class="card-img-top">
+                      <div class="card-body">
+                      <h5 class="card-title">' . $productnames. '</h5>
+                      <a class="btn btn-primary" href="productOverview.php?name=' . $productnames . '">Read More!</a>
+                    </div>
+                </div>';
         }
     }
-
     ?>
 
 
 
     </div>
-
+        </div>
     </body>
 </html>
 
