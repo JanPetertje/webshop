@@ -25,13 +25,14 @@
     $productID = $product["productID"];
     print $productID;
 
-    $searchresults = $conn->prepare("SELECT StockItemID, StockItemName, RecommendedRetailPrice FROM stockitems WHERE StockItemID = '$productID'");
+    $searchresults = $conn->prepare("SELECT StockItemID, StockItemName, Size, RecommendedRetailPrice FROM stockitems WHERE StockItemID = '$productID'");
     $searchresults->execute();
     while ($row = $searchresults->fetch()) {
         $productID = $row["StockItemID"];
         $productName = $row["StockItemName"];
+        $Size = $row["Size"];
         $Price = $row["RecommendedRetailPrice"];
-        print ($productID. " ". $productName . " $" .  $Price ."<br>");
+        print ($productID. " $Size ". $productName . " $" .  $Price ."<br>");
     }
     $pdo = NULL;
     ?>

@@ -47,7 +47,7 @@
     $productname->execute();
     while ($row = $productname->fetch()) {
         $productnames = $row["StockItemName"];
-        $stockgroupID = $row["StockGroupID"];
+        $ProductID = $row["StockGroupID"];
         $group = $row["StockGroupName"];
 
 
@@ -56,7 +56,7 @@
                       <img src="https://hlfppt.org/wp-content/uploads/2017/04/placeholder.png" alt="Product picture" class="card-img-top">
                       <div class="card-body">
                       <h5 class="card-title">' . $productnames. '</h5>
-                      <a class="btn btn-primary" href="productOverview.php?name=' . $productnames . '">Read More!</a>
+                      <a class="btn btn-primary" href="productpage.php?productID=' . $ProductID . '">Read More!</a>
                     </div>
                 </div>';
         }
