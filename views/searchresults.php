@@ -35,12 +35,12 @@
 
     <div class="resultList">
         <?php
-        $searchresults = $conn->prepare("SELECT StockItemName, RecommendedRetailPrice FROM stockitems WHERE StockItemName LIKE '%$searchinput%'");
+        $searchresults = $conn->prepare("SELECT StockItemID, RecommendedRetailPrice FROM stockitems WHERE StockItemName LIKE '%$searchinput%'");
         $searchresults->execute();
         while ($row = $searchresults->fetch()) {
-            $productName = $row["StockItemName"];
+            $productID = $row["StockItemID"];
             $Price = $row["RecommendedRetailPrice"];
-            print ("<a href='views/productpage.php?productname=$productName'>".$productName . "</a> $" .  $Price ."<br>");
+            print ("<a href='productpage.php?productID=$productID'>".$productID . "</a> $" .  $Price ."<br>");
         }
         $pdo = NULL;
         print "<div style='height: 200px;'>
