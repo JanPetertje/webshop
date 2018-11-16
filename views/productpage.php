@@ -36,7 +36,7 @@
     }
     $pdo = NULL;
 
-
+    print ("<img src='img/Products/ID_$productID.jpg'>");
     ?>
 </body>
 
