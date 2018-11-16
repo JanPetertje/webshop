@@ -61,6 +61,21 @@
                 </div>';
         }
     }
+
+
+    $noproduct = $conn->prepare("select count(sg.StockGroupID)totaal from stockgroups s left join stockitemstockgroups sg on sg.StockGroupID = S.stockGroupID Group by s.StockGroupID");
+    $noproduct->execute();
+    while ($row = $noproduct->fetch()) {
+        $noproducts = $row["totaal"];
+
+
+        if ($noproducts == 0) {
+            print ("this productgroup is empty right now :(");
+        }
+
+    }
+
+
     ?>
 
 
