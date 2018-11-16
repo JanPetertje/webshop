@@ -35,6 +35,8 @@
         print ($productID. " $Size ". $productName . " $" .  $Price ."<br>");
     }
     $pdo = NULL;
+
+
     ?>
 </body>
 

@@ -62,7 +62,7 @@
         $pdo = NULL;
         print "<div style='height: 200px;'>
         <br><br><br>    
-        <h1><a href='ProductGroups.php' class='productgroupLink'>You just reached the end of this page. If you want to search in productgroups press <b>here</b>.</a></h1>
+        <h1><a href='ProductGroups.php' class='link'>You just reached the end of this page. If you want to search in productgroups press <b>here</b>.</a></h1>
         </div>";
         ?>
     </div>
