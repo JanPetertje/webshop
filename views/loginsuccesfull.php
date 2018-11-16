@@ -8,6 +8,8 @@
     <title>Login Succesfull</title>
     <link rel="stylesheet" href="inc/css/fonts.css">
     <link rel="stylesheet" href="inc/css/main.css">
+    <link rel="stylesheet" href="inc/css/loginsuccesfull.css">
+
 </head>
 
 <body>
@@ -15,9 +17,11 @@
 
 include "inc/parts/menu.php";
 ?>
-<h1>Login succesfull</h1>
-<h1><a href="index.php">Click here to return to the homepage</a></h1>
 
+<h1>Login succesfull</h1>
+<div class="succesfull">
+<h1><a class="succesfull" href="index.php">Click here to return to the homepage</a></h1>
+</div>
 </body>
 
 </html>
