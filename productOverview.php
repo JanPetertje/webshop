@@ -1,3 +1,5 @@
 <?php
-include "views\productOverview.php";
+
+include "views/productOverview.php";
+
 ?>

@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <?php
+        include "inc/parts/head.php";
+        ?>
+
         <link rel="stylesheet" href="inc/css/fonts.css">
         <link rel="stylesheet" href="inc/css/main.css">
         <link rel="stylesheet" href="inc/css/productOverview.css">
