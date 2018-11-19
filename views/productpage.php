@@ -15,9 +15,30 @@
 
 <body>
     <?php
+    include "inc/parts/menu.php";
+    include "inc/parts/db.php";
+    include "inc/parts/head.php";
+    ?>
+
+    <?php
     $product = $_GET;
-    $product = $product["productname"];
-    print $product;
+    $productID = $product["productID"];
+    print $productID;
+
+    $searchresults = $conn->prepare("SELECT StockItemID, StockItemName, Size, RecommendedRetailPrice FROM stockitems WHERE StockItemID = '$productID'");
+    $searchresults->execute();
+    while ($row = $searchresults->fetch()) {
+        $productID = $row["StockItemID"];
+        $productName = $row["StockItemName"];
+        $Size = $row["Size"];
+        $Price = $row["RecommendedRetailPrice"];
+        print ($productID. " $Size ". $productName . " $" .  $Price ."<br>");
+    }
+    $pdo = NULL;
+
+    print ("<img src='img/Products/ID_$productID.jpg'>");
+
     ?>
 </body>
+
 </html>

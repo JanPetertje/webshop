@@ -36,11 +36,19 @@ a:visited {
     text-decoration: none;
     color: black;
 }
-a:hover {
+a.link:hover {
     color:#00bff6;
+    text-decoration: none;
 }
 a:active {
     text-decoration: none;
     font-weight: bold;
+}
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 15px;
 }
 

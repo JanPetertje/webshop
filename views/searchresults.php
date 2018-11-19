@@ -7,6 +7,7 @@
         <?php
         include "inc/parts/menu.php";
         include "inc/parts/db.php";
+        include "inc/parts/head.php";
         ?>
     </head>
     <body>
@@ -32,29 +33,38 @@
 
         ?>
     </div>
-
-    <div class="resultList">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="items">
+<!--    <div class="resultList">-->
         <?php
-        $searchresults = $conn->prepare("SELECT StockItemName, RecommendedRetailPrice FROM stockitems WHERE StockItemName LIKE '%$searchinput%'");
+        $searchresults = $conn->prepare("SELECT StockItemID, RecommendedRetailPrice, StockItemName FROM stockitems WHERE StockItemName LIKE '%$searchinput%'");
         $searchresults->execute();
         while ($row = $searchresults->fetch()) {
-            $productName = $row["StockItemName"];
+            $productnames = $row["StockItemName"];
+            $productID = $row["StockItemID"];
             $Price = $row["RecommendedRetailPrice"];
-            print ("<a href='views/productpage.php?productname=$productName'>".$productName . "</a> $" .  $Price ."<br>");
+                        print '<div class="card product-card">
+                          <img src="https://hlfppt.org/wp-content/uploads/2017/04/placeholder.png" alt="Product picture" class="card-img-top">
+                          <div class="card-body">
+                          <h5 class="card-title">' . $productnames. '</h5>
+                          <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p>
+                          <a class="btn btn-primary" href="productOverview.php?name=' . $productID . '">Read More!</a>
+                        </div>
+                    </div>';
         }
+      ?>
+
+</div>
+    </div>
+        </div>';
+    <?php
         $pdo = NULL;
         print "<div style='height: 200px;'>
         <br><br><br>    
-        <h1><a href='ProductGroups.php' class='productgroupLink'>You just reached the end of this page. If you want to search in productgroups press <b>here</b>.</a></h1>
+        <h1><a href='ProductGroups.php' class='link'>You just reached the end of this page. If you want to search in productgroups press <b>here</b>.</a></h1>
         </div>";
         ?>
     </div>
     </body>
-    <footer>
-        <div style="background-color: #8AC007 ">
-            <div class="footer">
-                <a class="productgroupLink"  style="color: #ffffff;" href="https://termsfeed.com/disclaimer/3c8db8ef82c06aa1e0117b04bacccf23">Disclaimer van WWI - Copyrights 2018</a>
-            </div>
-        </div>
-    </footer>
 </html>
