@@ -45,11 +45,11 @@
         <div class="row">
             <div class="items">
     <?php
-    $productname = $conn->prepare("Select StockGroupName, StockItemName, sg. StockGroupID from stockitemstockgroups sg join stockitems s on sg.StockItemId = s.StockItemID join stockgroups st on sg.StockGroupID = st.StockGroupID order by StockGroupID");
+    $productname = $conn->prepare("Select StockGroupName, StockItemName, s.StockItemID, sg. StockGroupID from stockitemstockgroups sg join stockitems s on sg.StockItemId = s.StockItemID join stockgroups st on sg.StockGroupID = st.StockGroupID order by StockGroupID");
     $productname->execute();
     while ($row = $productname->fetch()) {
         $productnames = $row["StockItemName"];
-        $ProductID = $row["StockGroupID"];
+        $ProductID = $row["StockItemID"];
         $group = $row["StockGroupName"];
 
 

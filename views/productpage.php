@@ -1,44 +1,101 @@
+<?php
+session_start();
+
+$product = $_GET["productID"];
+
+$stmt = $conn->prepare("SELECT StockItemID, StockItemName, RecommendedRetailPrice, MarketingComments FROM stockitems WHERE StockItemID = :id");
+
+$stmt->bindParam(":id", $product);
+
+if ($stmt->execute()) {
+    $result = $stmt->fetch();
+}
+
+if(isset($_GET["buy"])) {
+    $item = [
+        "id" => $result["StockItemID"],
+        "name" => $result["StockItemName"],
+        "price" => $result["RecommendedRetailPrice"],
+        "quantity" => "1"
+    ];
+
+    $cart = $_SESSION["ShoppingCart"];
+
+    array_push($cart, $item);
+
+    $_SESSION["ShoppingCart"] = $cart;
+}
+
+?>
 <!doctype html>
 <html lang="en">
+    <head>
+        <?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WWI</title>
-    <link rel="stylesheet" href="inc/css/fonts.css">
-    <link rel="stylesheet" href="inc/css/main.css">
-    <link rel="stylesheet" href="inc/css/index.css">
+        include "inc/parts/head.php";
 
-</head>
-
-<body>
+        ?>
+        <link rel="stylesheet" href="inc/css/productpage.css">
+    </head>
+    <body>
     <?php
+
     include "inc/parts/menu.php";
-    include "inc/parts/db.php";
-    include "inc/parts/head.php";
-    ?>
 
+    ?>
+    <div class="container-fluid">
+        <div class="row info-row">
+            <div class="col-lg-5">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active productImage">
+                            <img class="d-block w-100 h-100" src="https://amp.businessinsider.com/images/57f4036d9bd978d11b8b478f-750-375.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item productImage">
+                            <img class="d-block w-100 h-100" src="https://reviewed-com-res.cloudinary.com/image/fetch/s--7ev_7Hn4--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_642/https://reviewed-production.s3.amazonaws.com/attachment/aa7ee39e5eab474d/air-fryer.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item productImage">
+                            <img class="d-block w-100 h-100" src="https://cdn-images-1.medium.com/max/1600/1*z96WPBDM0g1p59TlibghsA.png" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <form action="productpage.php" method="get">
+                    <ul class="property-list">
+                        <?php
+
+                        echo '<li>
+                            <h1>' . $result["StockItemName"] . '</h1>
+                        </li>
+                        <li>
+                            <p>' . $result["MarketingComments"] . '</p>
+                        </li>
+                        <li>
+                            <p class="price">€ ' . $result["RecommendedRetailPrice"] . '</p>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary" href="productpage.php?productID=' . $result["StockItemID"] . '&buy=true">Add to shopping cart</a>
+                        </li>';
+
+                        ?>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
     <?php
-    $product = $_GET;
-    $productID = $product["productID"];
-    print $productID;
 
-    $searchresults = $conn->prepare("SELECT StockItemID, StockItemName, Size, RecommendedRetailPrice FROM stockitems WHERE StockItemID = '$productID'");
-    $searchresults->execute();
-    while ($row = $searchresults->fetch()) {
-        $productID = $row["StockItemID"];
-        $productName = $row["StockItemName"];
-        $Size = $row["Size"];
-        $Price = $row["RecommendedRetailPrice"];
-        print ($productID. " $Size ". $productName . " $" .  $Price ."<br>");
-    }
-    $pdo = NULL;
-
-    print ("<img src='img/Products/ID_$productID.jpg'>");
+    include "inc/parts/footer.php";
 
     ?>
-</body>
-
+    </body>
 </html>

@@ -21,7 +21,4 @@
         </ul>
     </div>
 </div>
-<?php
-include "inc/parts/footer.php";
-?>
 </body>
