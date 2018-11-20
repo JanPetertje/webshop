@@ -16,6 +16,7 @@ if(isset($_GET["buy"])) {
         "id" => $result["StockItemID"],
         "name" => $result["StockItemName"],
         "price" => $result["RecommendedRetailPrice"],
+        "description" => $result["MarketingComments"],
         "quantity" => "1"
     ];
 
