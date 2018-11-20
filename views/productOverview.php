@@ -80,7 +80,7 @@
         $countid = $row["totaal"];
         $names = $row["StockGroupName"];
 
-        if ($countid < 5 && $names == $productGroup) print "<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='link'> this productgroup has no products, press to go to the other productgroups </a></h1></div>";
+        if ($countid < 5 && $names == $productGroup) print "<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='link'> this productgroupp has no products, press to go to the other productgroups </a></h1></div>";
     }
 
     ?>
