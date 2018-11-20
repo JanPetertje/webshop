@@ -1,9 +1,12 @@
+h1 {
+    text-align: center;
+}
+
 .border {
-    padding-top: 25px;
+    padding-top: 10px;
     padding-left: 10px;
     background-color: #101010;
     height: 50px;
-
     color: white;
     font-size: 19px;
     text-align: center;
