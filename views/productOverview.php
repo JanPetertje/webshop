@@ -55,7 +55,7 @@
 
         if ($productGroup == $group) {
             print '<div class="card product-card">
-                      <img src="https://hlfppt.org/wp-content/uploads/2017/04/placeholder.png" alt="Product picture" class="card-img-top">
+                      <img src="img/products/' . $ProductID . '.jpg" alt="Product picture" class="card-img-top">
                       <div class="card-body">
                       <h5 class="card-title">' . $productnames. '</h5>
                       <a class="btn btn-primary" href="productpage.php?productID=' . $ProductID . '">Read More!</a>

@@ -45,7 +45,7 @@
             $productID = $row["StockItemID"];
             $Price = $row["RecommendedRetailPrice"];
                         print '<div class="card product-card">
-                          <img src="https://hlfppt.org/wp-content/uploads/2017/04/placeholder.png" alt="Product picture" class="card-img-top">
+                          <img src="img/products/' . $productID . '.jpg"alt="Product picture" class="card-img-top">
                           <div class="card-body">
                           <h5 class="card-title">' . $productnames. '</h5>
                           <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p>
