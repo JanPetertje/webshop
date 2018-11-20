@@ -57,7 +57,7 @@
 
 </div>
     </div>
-        </div>';
+        </div>
     <?php
     $pdo = NULL;
     print "<div style='height: 200px;'>
