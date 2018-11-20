@@ -49,7 +49,7 @@
                           <div class="card-body">
                           <h5 class="card-title">' . $productnames. '</h5>
                           <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p>
-                          <a class="btn btn-primary" href="productOverview.php?name=' . $productID . '">Read More!</a>
+                          <a class="btn btn-primary" href="productpage.php?productID=' . $productID . '">Read More!</a>
                         </div>
                     </div>';
         }
