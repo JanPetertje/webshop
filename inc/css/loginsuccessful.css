@@ -16,7 +16,7 @@ a.successful:visited {
     color: deepskyblue;
 }
 a.successful:hover {
-    color:#00bff6;
+    color: blue;
 }
 a.successful:active {
     text-decoration: none;
