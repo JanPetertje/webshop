@@ -7,7 +7,7 @@
 .property-list li {
     margin: 0;
     padding: 0;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .property-list li:last-of-type {
@@ -42,4 +42,8 @@
 
 .info-row {
     margin-top: 50px;
+}
+
+.price span.badge {
+    font-size: 2em;
 }

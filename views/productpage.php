@@ -11,7 +11,19 @@ if ($stmt->execute()) {
     $result = $stmt->fetch();
 }
 
+$stmt2 = $conn->prepare("SELECT QuantityOnHand FROM stockitemholdings WHERE StockItemID = :id");
+
+$stmt2->bindParam(":id", $product);
+
+if($stmt2->execute()) {
+    $result2 = $stmt2->fetch();
+}
+
 if(isset($_GET["buy"])) {
+    if($result["MarketingComments"] == "") {
+        $result["MarketingComments"] = "No description available.";
+    }
+
     $item = [
         "id" => $result["StockItemID"],
         "name" => $result["StockItemName"],
@@ -78,13 +90,16 @@ if(isset($_GET["buy"])) {
                             <h1>' . $result["StockItemName"] . '</h1>
                         </li>
                         <li>
+                            <p class="price"><span class="badge badge-success">€ ' . $result["RecommendedRetailPrice"] . '</span></p>
+                        </li>
+                        <li>
                             <p>' . $result["MarketingComments"] . '</p>
                         </li>
                         <li>
-                            <p class="price">€ ' . $result["RecommendedRetailPrice"] . '</p>
+                            <a class="btn btn-primary" href="productpage.php?productID=' . $result["StockItemID"] . '&buy=true">Add to shopping cart</a>
                         </li>
                         <li>
-                            <a class="btn btn-primary" href="productpage.php?productID=' . $result["StockItemID"] . '&buy=true">Add to shopping cart</a>
+                            <p>Available: <span class="badge badge-info">' . number_format($result2["QuantityOnHand"]) . '</span></p>
                         </li>';
 
                         ?>
