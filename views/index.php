@@ -18,6 +18,7 @@
     include "inc/parts/menu.php";
     include "inc/parts/db.php";
     include "inc/parts/head.php";
+
     ?>
 
     <div>
@@ -70,7 +71,9 @@
     </div>
 
 
-
+<?php
+include "inc/parts/footer.php"
+?>
     </body>
 
 </html>

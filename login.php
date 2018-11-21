@@ -1,15 +1,16 @@
+
 <?php
 
 include "inc/parts/db.php";
 include "views/login.php";
 include "inc/parts/footer.php";
 
+
 if(isset($_POST["login"])) {
     $username = trim($_POST["username"]);
     $password = hash("sha256", trim($_POST["password"]));
 
     $stmt = $conn->prepare("SELECT account_id FROM accounts WHERE username = :user AND password = :psw");
-
     $stmt->bindParam(":user", $username);
     $stmt->bindParam(":psw", $password);
 
@@ -18,9 +19,11 @@ if(isset($_POST["login"])) {
     $result = $stmt->rowCount();
 
     if ($result == 1) {
-        echo "<script>alert('login successful')</script>";
+        $acc_id = $stmt->fetch();
+        $usernumber = $acc_id;
+        $_SESSION["loggedUser"] = $usernumber;
 
-        header("Location: inlogsuccess.php");
+        header("Location: inlogsuccessful.php");
 
 
     } else {

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,10 +9,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login Succesfull</title>
+    <title>Login Successful</title>
     <link rel="stylesheet" href="inc/css/fonts.css">
     <link rel="stylesheet" href="inc/css/main.css">
-    <link rel="stylesheet" href="inc/css/loginsuccesfull.css">
+    <link rel="stylesheet" href="inc/css/loginsuccessful.css">
 
 </head>
 
@@ -16,11 +20,15 @@
 <?php
 
 include "inc/parts/menu.php";
+
 ?>
 
-<h1>Login succesfull</h1>
-<div class="succesfull">
-<h1><a class="succesfull" href="index.php">Click here to return to the homepage</a></h1>
+<h1 align="center">Login successful!</h1>
+
+<div class="successful">
+
+    <h1 align="center"><a class="successful" href="index.php">Click here to return to the homepage</a></h1>
+
 </div>
 </body>
 

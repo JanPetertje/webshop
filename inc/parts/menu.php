@@ -1,3 +1,7 @@
+<?Php
+
+?>
+
 <body>
 <div class="menu">
     <div class="menu-content">
@@ -11,7 +15,15 @@
                 </form>
             </li>
             <li>
-                <a class="loginLink" href="login.php">Login</a>
+                <?php
+
+                if(isset($_SESSION["loggedUser"])) {
+                  $user_id = $_SESSION["loggedUser"];
+                  echo '<a class="loginLink" href="logout.php">Logout</a>';
+                } else {
+                    echo '<a class="loginLink" href="login.php">Login</a>';
+                }
+                ?>
             </li>
             <li>
                 <a href="winkelwagen.php">
