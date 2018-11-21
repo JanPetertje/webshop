@@ -16,7 +16,7 @@
         <?php
         $searchinput = $_GET;
         $searchinput = filter_var($searchinput["search_input"], FILTER_SANITIZE_STRING);
-        print "Results for: ".$searchinput;
+        print "Results for: " . $searchinput;
         ?>
         </h1>
     </div>
@@ -29,7 +29,7 @@
             $aantal = $row["aantal"];
             print $aantal . " results found";
         }
-        $pdo = NULL;
+        $pdo = null;
 
         ?>
     </div>
@@ -44,22 +44,22 @@
             $productnames = $row["StockItemName"];
             $productID = $row["StockItemID"];
             $Price = $row["RecommendedRetailPrice"];
-                        print '<div class="card product-card">
-                          <img src="img/products/' . $productID . '.jpg"alt="Product picture" class="card-img-top">
+            print '<div class="card product-card">
+                          <img class="product-img" src="img/products/' . $productID . '.jpg"alt="Product picture" class="card-img-top">
                           <div class="card-body">
-                          <h5 class="card-title">' . $productnames. '</h5>
+                          <h5 class="card-title">' . $productnames . '</h5>
                           <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p>
                           <a class="btn btn-primary" href="productpage.php?productID=' . $productID . '">Read More!</a>
                         </div>
                     </div>';
         }
-      ?>
+        ?>
 
 </div>
     </div>
         </div>
     <?php
-    $pdo = NULL;
+    $pdo = null;
     print "<div style='height: 200px;'>
         <br><br><br>    
         <h1><a href='ProductGroups.php' class='link'>You just reached the end of this page. If you want to search in productgroups press <b>here</b>.</a></h1>

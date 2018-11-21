@@ -55,3 +55,7 @@ a:active {
     padding: 15px;
 }
 
+.product-img {
+    height: 300px;
+    object-fit: cover;
+}
