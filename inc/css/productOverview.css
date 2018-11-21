@@ -47,9 +47,14 @@ a:link {
     text-decoration: none;
     color: black;}
 
-.noproducts {
+a.noproducts {
     text-decoration: none;
     color: black;
+    font-size: 40px;
+    text-decoration: none !important;
+    padding-right: 300px;
+    display:block;text-align:center
+
 }
 
 .product-img {

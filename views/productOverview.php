@@ -70,9 +70,11 @@
         </div>
     </div>
 
-    <div class ="noproducts">
+
 
     <?php
+
+
 
     $countids = $conn->prepare("Select count(sg.StockGroupID)totaal, s.StockGroupName from stockitemstockgroups sg right join stockgroups s on sg.StockGroupID = s.StockGroupID group by s.StockGroupID");
     $countids->execute();
@@ -80,11 +82,12 @@
         $countid = $row["totaal"];
         $names = $row["StockGroupName"];
 
-        if ($countid <= 0 && $names == $productGroup) print "<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='link'> this productgroupp has no products, press to go to the other productgroups </a></h1></div>";
+        if ($countid <= 0 && $names == $productGroup) print "<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='noproducts'> This productgroup has no products, <br> press this link to enter the other productgroupspage. </a></h1></div>";
     }
 
     ?>
-    </div>
+
+
     </body>
 
 
