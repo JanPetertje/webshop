@@ -1,12 +1,16 @@
+<?php
+session_start();
+
+$shoppingCart = $_SESSION["ShoppingCart"];
+?>
 <!doctype html>
-<?php session_start();?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Shopping cart</title>
     <link rel="stylesheet" href="inc/css/fonts.css">
     <link rel="stylesheet" href="inc/css/main.css">
     <link rel="stylesheet" href="inc/css/winkelwagen.css">
@@ -17,6 +21,7 @@
 <?php
 include "inc/parts/menu.php";
 include "inc/parts/db.php";
+include "inc/parts/footer.php";
 // De quantity moet een aparte array zijn die ook aangepast wordt als het product er uit wordt gehaald of toegevoegd wordt.
 ?>
 
@@ -33,56 +38,46 @@ include "inc/parts/db.php";
 </div>
 
 <?php
-$quantity = 1;
-$products = array(215, 75, 72);
-$_SESSION = $products;
 $sum = 0;
 $delete = 0;
-if (isset($_GET["removee"])) {
-    $getal = $_GET["removee"];
-    unset($_SESSION[$getal]);
+if (isset($_GET["remove"])) {
+    $getal = $_GET["remove"];
+    unset($_SESSION['ShoppingCart']['id'==$getal]);
+    $_SESSION['ShoppingCart'] = array_values($_SESSION['ShoppingCart']);
 }
-error_reporting(0);
+//error_reporting(0);
 ?>
+
 <div>
     <ul style="list-style-type:none">
         <?php
-            foreach($_SESSION as $productnumbre => $product_id) {
-                $productname = $conn->prepare("SELECT stockitemname FROM stockitems WHERE StockItemID = $product_id");
-                $productname->execute();
-                while ($row = $productname->fetch()) {
-                    $name = $row["stockitemname"];
-                }
+//        if(isset($_SESSION['ShoppingCart']['id'])){
+//            echo "<p class='product-title'> Your shoppingcart is  NOT EMPTYYY BLYAAAAAAT SQUAT FOR MOTHER RUSSIA </p>";
+//        }else{
+//            echo "<p class='product-title'> Your shoppingcart is empij </p>";
+//        }
 
-                $productdesc = $conn->prepare("SELECT searchdetails FROM stockitems WHERE StockItemID = $product_id");
-                $productdesc->execute();
-                while ($row = $productdesc->fetch()) {
-                    $description = $row["searchdetails"];
-                }
 
-                $productprice = $conn->prepare("SELECT RecommendedRetailPrice FROM stockitems WHERE StockItemID = $product_id");
-                $productprice->execute();
-                while ($row = $productprice->fetch()) {
-                    $price = $row["RecommendedRetailPrice"];
-                }
+            foreach($_SESSION["ShoppingCart"] as $item) {
                 ?>
                 <li>
                     <div class="product1" style="clear:both">
                         <div class="product-image">
-                            <img src= https://banner2.kisspng.com/20171218/ddc/question-mark-png-5a381257a89243.6425987715136241516905.jpg class="grim">
+                            <img src=https://cdn-images-1.medium.com/max/960/1*Ks4o8cHj7D4_gUmJhOLdJQ.png  class="grim">
                         </div>
                         <div class="product-details">
-                            <div class="product-title"> <?php print($name); ?></div>
-                            <p class="product-description"> <?php print($description); ?> </p>
+                            <div class="product-title"> <?php echo $item['name']; ?></div>
+                            <p class="product-description"> <?php echo $item['description']; ?> </p>
                         </div>
-                        <div class="product-price"><?php print("$".$price); ?></div>
+                        <div class="product-price" name="price"><?php echo "$" . $item['price']; ?></div>
                         <div class="product-quantity">
-                            <input type="number" value="1" min="1">
+                            <input type="number" name="quantity" value="<?php print $item["quantity"] ?>" min="1">
+                            <button type="submit" onclick="window.location.reload()">Change amount</button>
                         </div>
                         <div class="product-removal">
-                            <button onclick="window.location.href='winkelwagen.php?removee=<?php echo $productnumbre; ?>'">Knoppie</button>
+                            <button onclick="window.location.href='winkelwagen.php?remove=<?php echo $item['id']; ?>'">X</button>
                         </div>
-                        <div class="product-line-price2"> <?php $subprice = $price * $quantity; print("$".$subprice);?></div>
+                        <div class="product-line-price2"> <?php $subprice = $item['price'] * $item['quantity']; print("$".$subprice);?></div>
                     </div>
                 </li>
                 <?php
