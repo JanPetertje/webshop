@@ -39,6 +39,7 @@ if(isset($_GET["buy"])) {
     $_SESSION["ShoppingCart"] = $cart;
 }
 
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -55,14 +56,15 @@ if(isset($_GET["buy"])) {
 
     include "inc/parts/menu.php";
 
-    ?>
-    <div class="container-fluid">
+
+
+    echo '<div class="container-fluid">
         <div class="row info-row">
             <div class="col-lg-5">
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active productImage">
-                            <img class="d-block w-100 h-100" src="https://amp.businessinsider.com/images/57f4036d9bd978d11b8b478f-750-375.jpg" alt="First slide">
+                            <img class="d-block w-100 h-100" src="img/products/' . $product . '.jpg" alt="First slide">
                         </div>
                         <div class="carousel-item productImage">
                             <img class="d-block w-100 h-100" src="https://reviewed-com-res.cloudinary.com/image/fetch/s--7ev_7Hn4--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_642/https://reviewed-production.s3.amazonaws.com/attachment/aa7ee39e5eab474d/air-fryer.jpg" alt="Second slide">
@@ -83,7 +85,8 @@ if(isset($_GET["buy"])) {
             </div>
             <div class="col-lg-7">
                 <form action="productpage.php" method="get">
-                    <ul class="property-list">
+                    <ul class="property-list">'
+                    ?>
                         <?php
 
                         echo '<li>
