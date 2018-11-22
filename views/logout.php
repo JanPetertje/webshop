@@ -23,6 +23,7 @@ include "inc/parts/menu.php"
 <h1 align="center">You have successfully logged out!</h1>
 <div class="successful">
 </div>
+<?php include 'inc/parts/footer.php';?>
 </body>
 
 </html>

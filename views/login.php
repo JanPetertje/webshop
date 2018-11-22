@@ -30,5 +30,6 @@ session_start();
             <a href="register.php">Register now!</a>
         </form>
     </div>
+    <?php include 'inc/parts/footer.php';?>
     </body>
 </html>

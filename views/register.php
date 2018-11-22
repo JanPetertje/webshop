@@ -33,6 +33,7 @@
             <a href="login.php">Terug</a>
         </form>
     </div>
+    <?php include 'inc/parts/footer.php';?>
     </body>
 
 

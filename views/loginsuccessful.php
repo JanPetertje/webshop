@@ -44,6 +44,7 @@ $fetch_name = $arrayfetch_name[0];
   ?>
 
 </div>
+<?php include 'inc/parts/footer.php';?>
 </body>
 
 </html>

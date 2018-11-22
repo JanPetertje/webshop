@@ -4,26 +4,40 @@ session_start();
 <!doctype html>
 <html lang="en">
     <head>
-        <?php
-        include "inc/parts/head.php";
-        ?>
         <link rel="stylesheet" href="inc/css/fonts.css">
         <link rel="stylesheet" href="inc/css/main.css">
         <link rel="stylesheet" href="inc/css/productOverview.css">
         <?php
         include "inc/parts/head.php";
+        include "inc/parts/menu.php";
+        include "inc/parts/db.php";
         ?>
-
     </head>
 
     <body>
-    <?php
-    $productGroup = ($_GET);
-    $productGroup = $productGroup["name"];
+        <?php
+        $productGroup = $_GET;
+        $productGroup = $productGroup['name'];
+        if (empty($productGroup)) {
+            header('location: index.php');
+        }
 
-    include "inc/parts/menu.php";
-    include "inc/parts/db.php";
-    ?>
+        $x = 0;
+        $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
+        $productgroups->execute();
+        while ($row = $productgroups->fetch()) {
+            $groupnames = $row["StockGroupName"];
+            if ($productGroup == $groupnames) {
+                $x = 1;
+            }
+        }
+        if ($x == 0) {
+            header('location: index.php');
+        }
+
+
+        $pdo = NULL;
+        ?>
 
     <div class="top">
         <p class="titel"><?php print $productGroup;?></p>
@@ -89,6 +103,8 @@ session_start();
         if ($countid <= 0 && $names == $productGroup) print "<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='noproducts'> This productgroup has no products, <br> press this link to enter the productgroupspage. </a></h1></div>";
     }
 
+
+    include 'inc/parts/footer.php';
     ?>
 
 
