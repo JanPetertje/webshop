@@ -61,7 +61,7 @@ session_start();
                       <img class="product-img" src="img/products/' . $ProductID . '.jpg" alt="Product picture" class="card-img-top">
                       <div class="card-body">
                       <h5 class="card-title">' . $productnames. '</h5>
-                      <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p>
+                      <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p> 
                       <a class="btn btn-primary" href="productpage.php?productID=' . $ProductID . '">Read More!</a>
                     </div>
                 </div>';
