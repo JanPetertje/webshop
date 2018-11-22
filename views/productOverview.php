@@ -86,7 +86,7 @@ session_start();
         $countid = $row["totaal"];
         $names = $row["StockGroupName"];
 
-        if ($countid <= 0 && $names == $productGroup) print "<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='noproducts'> This productgroup has no products, <br> press this link to enter the other productgroupspage. </a></h1></div>";
+        if ($countid <= 0 && $names == $productGroup) print "<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='noproducts'> This productgroup has no products, <br> press this link to enter the productgroupspage. </a></h1></div>";
     }
 
     ?>
