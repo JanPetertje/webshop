@@ -19,8 +19,7 @@ if(isset($_POST["login"])) {
     $result = $stmt->rowCount();
 
     if ($result == 1) {
-        $acc_id = $stmt->fetch();
-        $usernumber = $acc_id;
+        $usernumber = $stmt->fetch();
         $_SESSION["loggedUser"] = $usernumber;
 
         header("Location: inlogsuccessful.php");

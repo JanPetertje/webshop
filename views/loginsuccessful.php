@@ -20,14 +20,30 @@ session_start();
 <?php
 
 include "inc/parts/menu.php";
+include "inc/parts/db.php";
+if(isset($_SESSION["loggedUser"])) {
+$user_id = $_SESSION["loggedUser"];
+$usernumber = $user_id[0];}
 
+$stmt = $conn->prepare("SELECT first_name FROM accounts WHERE account_id =:id");
+$stmt->bindParam(":id", $usernumber);
+$stmt -> execute();
+$arrayfetch_name = $stmt->fetch();
+$fetch_name = $arrayfetch_name[0];
 ?>
 
 <h1 align="center">Login successful!</h1>
 
 <div class="successful">
 
-    <h1 align="center"><a class="successful" href="index.php">Click here to return to the homepage</a></h1>
+    <?php
+  echo "<div>
+  
+  <h1 align='center'> Welcome $fetch_name. Thank you for logging in!</h1>
+  </div>"
+  ?>
+
+    <h1 align="center"><a class="successful" href="index.php">You can click here to return to the homepage</a></h1>
 
 </div>
 </body>
