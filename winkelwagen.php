@@ -57,7 +57,6 @@ if(isset($_POST['change_amount'])){
         }
     }
 }
-
 //print_r($_SESSION['ShoppingCart']);
 //error_reporting(0);
 ?>
