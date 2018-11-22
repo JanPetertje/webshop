@@ -32,7 +32,7 @@ session_start();
             }
         }
         if ($x == 0) {
-            header('location: index.php');
+            header('location: ProductGroups.php');
         }
 
 
