@@ -48,19 +48,20 @@ session_start();
         <div class="row">
             <div class="items">
     <?php
-    $productname = $conn->prepare("Select StockGroupName, StockItemName, s.StockItemID, sg. StockGroupID from stockitemstockgroups sg join stockitems s on sg.StockItemId = s.StockItemID join stockgroups st on sg.StockGroupID = st.StockGroupID order by StockGroupID");
+    $productname = $conn->prepare("Select StockGroupName, StockItemName, s.StockItemID, sg. StockGroupID, RecommendedRetailPrice from stockitemstockgroups sg join stockitems s on sg.StockItemId = s.StockItemID join stockgroups st on sg.StockGroupID = st.StockGroupID order by StockGroupID");
     $productname->execute();
     while ($row = $productname->fetch()) {
         $productnames = $row["StockItemName"];
         $ProductID = $row["StockItemID"];
         $group = $row["StockGroupName"];
-
+        $Price = $row["RecommendedRetailPrice"];
 
         if ($productGroup == $group) {
             print '<div class="card product-card">
                       <img class="product-img" src="img/products/' . $ProductID . '.jpg" alt="Product picture" class="card-img-top">
                       <div class="card-body">
                       <h5 class="card-title">' . $productnames. '</h5>
+                      <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p>
                       <a class="btn btn-primary" href="productpage.php?productID=' . $ProductID . '">Read More!</a>
                     </div>
                 </div>';
