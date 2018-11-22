@@ -43,8 +43,6 @@ $fetch_name = $arrayfetch_name[0];
   </div>"
   ?>
 
-    <h1 align="center"><a class="successful" href="index.php">You can click here to return to the homepage</a></h1>
-
 </div>
 </body>
 

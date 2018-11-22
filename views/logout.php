@@ -1,4 +1,8 @@
+<?php
 
+header("refresh:3; url=index.php");
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +22,6 @@ include "inc/parts/menu.php"
 ?>
 <h1 align="center">You have successfully logged out!</h1>
 <div class="successful">
-<h1 align="center"><a class="successful" href="index.php"> Click here to return to the homepage</a></h1>
 </div>
 </body>
 
