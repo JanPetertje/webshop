@@ -30,7 +30,7 @@ include "inc/parts/db.php";
     <div class="row">
         <div class="items">
 <?php
-                $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
+            $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
             $productgroups->execute();
             while ($row = $productgroups->fetch()) {
                 $groupnames = $row["StockGroupName"];
@@ -42,9 +42,7 @@ include "inc/parts/db.php";
                     </div>
                 </div>';
             }
-
 $pdo = NULL;
-
 ?>
 
         </div>
