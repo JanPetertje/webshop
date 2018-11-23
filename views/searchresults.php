@@ -23,7 +23,7 @@
 
     <div class="border">
         <?php
-        $countResults = $conn->prepare("SELECT count(StockItemName) AS aantal FROM stockitems WHERE StockItemName LIKE '%$searchinput%'");
+        $countResults = $conn->prepare("SELECT count(*) AS aantal FROM stockitems WHERE StockItemName LIKE '%$searchinput%' OR StockItemID = '$searchinput'");
         $countResults->execute();
         while ($row = $countResults->fetch()) {
             $aantal = $row["aantal"];
@@ -36,7 +36,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="items">
-<!--    <div class="resultList">-->
         <?php
         $searchresults = $conn->prepare("SELECT StockItemID, RecommendedRetailPrice, StockItemName FROM stockitems WHERE StockItemName LIKE '%$searchinput%' OR StockItemID = '$searchinput'" );
         $searchresults->execute();
