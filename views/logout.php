@@ -1,6 +1,6 @@
 <?php
+session_start();
 
-header("refresh:3; url=index.php");
 
 ?>
 <!DOCTYPE html>
@@ -18,12 +18,41 @@ header("refresh:3; url=index.php");
 
 <body>
 <?php
-include "inc/parts/menu.php"
+include "inc/parts/menu.php";
+include "inc/parts/db.php";
+if(isset($_SESSION["loggedUser"])) {
+    $user_id = $_SESSION["loggedUser"];
+    $usernumber = $user_id[0];
+
+
+
+    $stmt = $conn->prepare("SELECT first_name FROM accounts WHERE account_id =:id");
+    $stmt->bindParam(":id", $usernumber);
+    $stmt -> execute();
+    $arrayfetch_name = $stmt->fetch();
+    $fetch_name = $arrayfetch_name[0];}
+else {
+    header('location: index.php');
+}
 ?>
 <h1 align="center">You have successfully logged out!</h1>
+<?php
+echo
+"<div>
+  
+  <h1 align='center'> Goodbye $fetch_name. See you next time</h1>
+  </div>"
+?>
 <div class="successful">
 </div>
-<?php include 'inc/parts/footer.php';?>
+<?php include 'inc/parts/footer.php';
+if(isset($_SESSION["loggedUser"])) {
+    session_destroy();
+    header("refresh:3; url=index.php");
+} else {header('location: index.php');
+}
+?>
+
 </body>
 
 </html>
