@@ -64,7 +64,6 @@
         <h1><a href='ProductGroups.php' class='link'>You just reached the end of this page. If you want to search in productgroups press <b>here</b>.</a></h1>
         </div>";
     ?>
-    </div>
     <?php include 'inc/parts/footer.php';?>
     </body>
 </html>
