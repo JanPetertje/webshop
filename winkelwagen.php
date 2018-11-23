@@ -15,7 +15,6 @@ $shoppingCart = $_SESSION["ShoppingCart"];
     <link rel="stylesheet" href="inc/css/main.css">
     <link rel="stylesheet" href="inc/css/winkelwagen.css">
 </head>
-
 <body>
 
 <?php
