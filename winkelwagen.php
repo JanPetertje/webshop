@@ -22,11 +22,10 @@ $shoppingCart = $_SESSION["ShoppingCart"];
 include "inc/parts/menu.php";
 include "inc/parts/db.php";
 include "inc/parts/footer.php";
-// De quantity moet een aparte array zijn die ook aangepast wordt als het product er uit wordt gehaald of toegevoegd wordt.
 ?>
 
 <div class="top">
-    <p class="titel" style="clear:both">Shopping Cart.</p>
+    <p class="titel" style="clear:both">Shopping Cart</p>
 </div>
 
 <div class="column-labels" style="clear:both">
@@ -69,7 +68,7 @@ if(isset($_POST['change_amount'])){
                 <li>
                     <div class="product1" style="clear:both">
                         <div class="product-image">
-                            <img class="product-img" src="img/Products/' <?php print($item['id']) ?> .jpg'">
+                            <img class="product-img" src="img/Products/<?php print($item['id'])?>.jpg">
                         </div>
                         <div class="product-details">
                             <div class="product-title"> <?php echo $item['name']; ?></div>
@@ -86,7 +85,7 @@ if(isset($_POST['change_amount'])){
                         <div class="product-removal">
                             <button onclick="window.location.href='winkelwagen.php?remove=<?php echo $item['id']; ?>'">X</button>
                         </div>
-                        <div class="product-line-price2"> <?php $subprice = $item['price'] * $item['quantity']; print("€".$subprice);?></div>
+                        <div class="product-line-price2"> <?php $subprice = $item['price'] * $item['quantity']; print("€".number_format($subprice,2));?></div>
                     </div>
                 </li>
                 <?php
@@ -96,17 +95,17 @@ if(isset($_POST['change_amount'])){
 
         <div class="totalprice" style = "clear:both:">
 
-            <label> Subtotal </label>
-            <div class = "subtotal-values" id = "cart-total" > <?php print("€".$sum); ?> </div>
+            <label class="subtotal-values"> Subtotal </label>
+            <div class="subtotal-values"> <?php print("€".number_format($sum, 2)); ?> </div>
 
-            <label> Tax </label>
-            <div class = "subtotal-values" id = "cart-total" > 21% </div>
+            <label class="subtotal-values"> Tax </label>
+            <div class="subtotal-values"> 21% </div>
 
-            <label> Shipping </label>
-            <div class = "subtotal-values" id = "cart-total" > <?php print("injecting trojan succesfull"); ?> </div>
+            <label class="subtotal-values"> Shipping </label>
+            <div class="subtotal-values"> <?php print("injecting trojan succesfull"); ?> </div>
 
-            <label> TOTAL </label>
-            <div class = "subtotal-values" id = "cart-total" > <?php $total = $sum * 1.21; print("€".round($total, 2));?> </div>
+            <label class="subtotal-values"> TOTAL </label>
+            <div class="subtotal-values"> <?php $total = $sum * 1.21; print("€".number_format($total, 2));?> </div>
 
         </div>
         </li>
