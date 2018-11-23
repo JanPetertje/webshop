@@ -61,12 +61,12 @@ if(isset($_GET["buy"])) {
                     <div class="carousel-inner">
                         <div class="carousel-item active productImage">
                             <img class="d-block w-100 h-100" src="img/products/' . $product . '.jpg" alt="First slide">
-                        </div>';
-                        if (file_exists('img/products/' . $product . '_1.jpg')) {echo '<div class="carousel-item productImage">
+                        </div>
+                       <div class="carousel-item productImage">
                             <img class="d-block w-100 h-100" src="img/products/' . $product . '_1.jpg" alt="Second slide">
-                        </div>';}
-                        '<div class="carousel-item productImage">
-                            <img class="d-block w-100 h-100" src="https://cdn-images-1.medium.com/max/1600/1*z96WPBDM0g1p59TlibghsA.png" alt="Third slide">
+                        </div>
+                        <div class="carousel-item productImage">
+                            <img class="d-block w-100 h-100" src="img/products/' . $product . '_2.jpg" alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
