@@ -105,7 +105,10 @@ if(isset($_GET["buy"])) {
                             <p>Available: <span class="badge badge-info">' . number_format($result2["QuantityOnHand"]) . '</span></p>
                         </li>';
 
+                       if (number_format($result2["QuantityOnHand"] >= 1)) { print ("order today before 10PM, tomorrow delivered!"); } else {print ("product is out of stock");}
                         ?>
+
+
                     </ul>
                 </form>
             </div>
