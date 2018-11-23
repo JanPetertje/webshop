@@ -31,9 +31,9 @@ include "inc/parts/footer.php";
 <div class="column-labels" style="clear:both">
     <label class="product-image">Image</label>
     <label class="product-details">Product</label>
-    <label class="product-price">Price</label>
+    <label class="product-price">Price/piece</label>
     <label class="product-quantity">Quantity</label>
-    <label class="product-line-price">Subtotal</label>
+    <label class="product-line-price">Price</label>
 </div>
 
 <?php
@@ -92,20 +92,23 @@ if(isset($_POST['change_amount'])){
                 $sum+= $subprice;
                 }
                 ?>
+        <div class="underline">
 
-        <div class="totalprice" style = "clear:both:">
+        </div>
 
-            <label class="subtotal-values"> Subtotal </label>
-            <div class="subtotal-values"> <?php print("€".number_format($sum, 2)); ?> </div>
+        <div class="totalprice" style="clear:both:">
 
-            <label class="subtotal-values"> Tax </label>
-            <div class="subtotal-values"> 21% </div>
+<!--            <label class="subtotal-values"> Subtotal </label>-->
+            <div class="subtotal-values"> <?php print("<u>Subtotal:</u> €".number_format($sum, 2)); ?> </div>
 
-            <label class="subtotal-values"> Shipping </label>
-            <div class="subtotal-values"> <?php print("injecting trojan succesfull"); ?> </div>
+<!--            <label class="subtotal-values"> Tax </label>-->
+            <div class="subtotal-values"><u>Tax:</u> <?php print(" "); ?> 21% </div>
 
-            <label class="subtotal-values"> TOTAL </label>
-            <div class="subtotal-values"> <?php $total = $sum * 1.21; print("€".number_format($total, 2));?> </div>
+<!--            <label class="subtotal-values"> Shipping </label>-->
+            <div class="subtotal-values"> <?php print("<u>Shipping:</u> injecting trojan successful"); ?> </div>
+
+<!--            <label class="subtotal-values"> TOTAL </label>-->
+            <div class="subtotal-values"> <?php $total = $sum * 1.21; print("<u>TOTAL:</u> €".number_format($total, 2));?> </div>
 
         </div>
         </li>
