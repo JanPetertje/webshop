@@ -36,13 +36,14 @@ else {
     header('location: index.php');
 }
 ?>
+<?php
+echo "<div class='log'>
 
-<h1 align="center">Login successful!</h1>
+<h1 align='center'>Login successful!</h1>
 
-<div class="successful">
+<div class='successful'>
 
-    <?php
-  echo "<div>
+
   
   <h1 align='center'> Welcome $fetch_name. Thank you for logging in!</h1>
   </div>"

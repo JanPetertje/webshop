@@ -33,14 +33,11 @@ if(isset($_SESSION["loggedUser"])) {
     $fetch_name = $arrayfetch_name[0];}
 else {
     header('location: index.php');
-}
-?>
-<h1 align="center">You have successfully logged out!</h1>
+} ?>
 <?php
-echo
-"<div>
-  
-  <h1 align='center'> Goodbye $fetch_name. See you next time</h1>
+echo "<div class='log'>
+<h1 align='center'>You have successfully logged out!</h1>
+<h1 align='center'> Goodbye $fetch_name. See you next time!</h1>
   </div>"
 ?>
 <div class="successful">
@@ -48,7 +45,7 @@ echo
 <?php include 'inc/parts/footer.php';
 if(isset($_SESSION["loggedUser"])) {
     session_destroy();
-    header("refresh:3; url=index.php");
+    header("refresh:3.5; url=index.php");
 } else {header('location: index.php');
 }
 ?>

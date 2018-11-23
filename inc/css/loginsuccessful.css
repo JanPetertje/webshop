@@ -1,24 +1,6 @@
-div.titlesuccess {
-    front-size: 400px;
-}
-
-a.successful {
-    width: 100%;
-    color: deepskyblue;
-
-}
-a.successful:link {
-    text-decoration: none;
-    color: black;
-}
-a.successful:visited {
-    text-decoration: none;
-    color: deepskyblue;
-}
-a.successful:hover {
-    color: blue;
-}
-a.successful:active {
-    text-decoration: none;
-    font-weight: bold;
+div.log {
+    font-size: larger;
+    padding-top: 9px;
+    text-align: center;
+    color: #00bff6;
 }
