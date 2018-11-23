@@ -38,7 +38,7 @@
             <div class="items">
 <!--    <div class="resultList">-->
         <?php
-        $searchresults = $conn->prepare("SELECT StockItemID, RecommendedRetailPrice, StockItemName FROM stockitems WHERE StockItemName LIKE '%$searchinput%'");
+        $searchresults = $conn->prepare("SELECT StockItemID, RecommendedRetailPrice, StockItemName FROM stockitems WHERE StockItemName LIKE '%$searchinput%' OR StockItemID = '$searchinput'" );
         $searchresults->execute();
         while ($row = $searchresults->fetch()) {
             $productnames = $row["StockItemName"];
