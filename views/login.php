@@ -24,7 +24,7 @@ session_start();
     <div class="container">
         <form method="post" action="login.php">
             <h1>Login</h1>
-            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="Email" placeholder="Email">
             <input type="password" name="password" placeholder="Password">
             <input type="submit" name="login" value="Login">
             <a href="register.php">Register now!</a>
