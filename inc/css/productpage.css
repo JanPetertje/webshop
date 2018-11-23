@@ -36,8 +36,8 @@
 
 .productImage img {
     width: auto;
-    height: 400px !important;
-    max-height: 400px !important;
+    height: 500px !important;
+    max-height: 500px !important;
 }
 
 .info-row {
@@ -47,3 +47,4 @@
 .price span.badge {
     font-size: 2em;
 }
+
