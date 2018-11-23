@@ -54,7 +54,12 @@ a.noproducts {
     text-decoration: none !important;
     padding-right: 360px;
     display:block;text-align:center
+}
 
+a.noproducts:hover {
+    text-decoration: none;
+    color: #00bff6;
+    font-size: 41px;
 }
 
 .product-img {
