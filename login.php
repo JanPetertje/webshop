@@ -7,11 +7,11 @@ include "inc/parts/footer.php";
 
 
 if(isset($_POST["login"])) {
-    $username = trim($_POST["username"]);
+    $email = trim($_POST["username"]);
     $password = hash("sha256", trim($_POST["password"]));
 
-    $stmt = $conn->prepare("SELECT account_id FROM accounts WHERE username = :user AND password = :psw");
-    $stmt->bindParam(":user", $username);
+    $stmt = $conn->prepare("SELECT account_id FROM accounts WHERE email = :email AND password = :psw");
+    $stmt->bindParam(":email", $email);
     $stmt->bindParam(":psw", $password);
 
 
