@@ -38,8 +38,6 @@ if(isset($_GET["buy"])) {
 
     $_SESSION["ShoppingCart"] = $cart;
 }
-
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -56,8 +54,6 @@ if(isset($_GET["buy"])) {
 
     include "inc/parts/menu.php";
 
-
-
     echo '<div class="container-fluid">
         <div class="row info-row">
             <div class="col-lg-5">
@@ -65,11 +61,11 @@ if(isset($_GET["buy"])) {
                     <div class="carousel-inner">
                         <div class="carousel-item active productImage">
                             <img class="d-block w-100 h-100" src="img/products/' . $product . '.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item productImage">
-                            <img class="d-block w-100 h-100" src="https://reviewed-com-res.cloudinary.com/image/fetch/s--7ev_7Hn4--/b_white,c_limit,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_auto,w_642/https://reviewed-production.s3.amazonaws.com/attachment/aa7ee39e5eab474d/air-fryer.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item productImage">
+                        </div>';
+                        if (file_exists('img/products/' . $product . '_1.jpg')) {echo '<div class="carousel-item productImage">
+                            <img class="d-block w-100 h-100" src="img/products/' . $product . '_1.jpg" alt="Second slide">
+                        </div>';}
+                        '<div class="carousel-item productImage">
                             <img class="d-block w-100 h-100" src="https://cdn-images-1.medium.com/max/1600/1*z96WPBDM0g1p59TlibghsA.png" alt="Third slide">
                         </div>
                     </div>
@@ -85,7 +81,7 @@ if(isset($_GET["buy"])) {
             </div>
             <div class="col-lg-7">
                 <form action="productpage.php" method="get">
-                    <ul class="property-list">'
+                    <ul class="property-list">';
                     ?>
                         <?php
 
