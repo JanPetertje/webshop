@@ -19,10 +19,12 @@ if($stmt2->execute()) {
     $result2 = $stmt2->fetch();
 }
 
+if($result["MarketingComments"] == "") {
+    $result["MarketingComments"] = "No description available.";
+}
+
 if(isset($_GET["buy"])) {
-    if($result["MarketingComments"] == "") {
-        $result["MarketingComments"] = "No description available.";
-    }
+
 
     $item = [
         "id" => $result["StockItemID"],
