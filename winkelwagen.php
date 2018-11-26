@@ -41,10 +41,16 @@ if(isset($_POST['change_amount'])){
         }
     }
 }
+foreach($_SESSION["ShoppingCart"] as $item){
+    $item = $item; $products+= 1;
+}
+
+
+if($products >= 1) {
 ?>
 
 <div class="top">
-    <p class="titel" style="clear:both">Shopping Cart <?php foreach($_SESSION["ShoppingCart"] as $item){$item = $item; $products+= 1;} print("(".$products.")"); ?></p>
+    <p class="titel" style="clear:both">Shopping Cart <?php print("(".$products.")"); ?></p>
 </div>
 
 <div class="column-labels" style="clear:both">
@@ -56,39 +62,22 @@ if(isset($_POST['change_amount'])){
 </div>
 
 <?php
-//$sum = 0;
-//$delete = 0;
-//if (isset($_GET["remove"])) {
-//    $getal = $_GET["remove"];
-//    foreach($_SESSION['ShoppingCart'] as $numbre => $buys){
-//         if($buys['id'] == $getal) {
-//            unset($_SESSION['ShoppingCart'][$numbre]);
-//        }
-//    }
-//    $_SESSION['ShoppingCart'] = array_values($_SESSION['ShoppingCart']);
-//}
-//
-//if(isset($_POST['change_amount'])){
-//    foreach($_SESSION['ShoppingCart'] as $numbree => $idd){;
-//        if($_POST['product_idd'] == $idd['id']){
-//            $_SESSION['ShoppingCart'][$numbree]['quantity'] = filter_var($_POST['quantity'], FILTER_SANITIZE_STRING);
-//        }
-//    }
-//}
+
 //print_r($_SESSION['ShoppingCart']);
 //error_reporting(0);
 ?>
 
-<div>
-    <ul style="list-style-type:none">
-        <?php
-        if(isset($_SESSION['ShoppingCart'])){
-            foreach($_SESSION["ShoppingCart"] as $item) {
+<?php
+    ?>
+    <div>
+        <ul style="list-style-type:none">
+            <?php
+            foreach ($_SESSION["ShoppingCart"] as $item) {
                 ?>
                 <li>
                     <div class="product1" style="clear:both">
                         <div class="product-image">
-                            <img class="product-img" src="img/Products/<?php print($item['id'])?>.jpg">
+                            <img class="product-img" src="img/Products/<?php print($item['id']) ?>.jpg">
                         </div>
                         <div class="product-details">
                             <div class="product-title"> <?php echo $item['name']; ?></div>
@@ -97,46 +86,62 @@ if(isset($_POST['change_amount'])){
                         <div class="product-price" name="price"><?php echo "€" . $item['price']; ?></div>
                         <div class="product-quantity">
                             <form method="post">
-                                <input type="number" name="quantity" value="<?php print $item["quantity"];?>" min="1" required>
+                                <input type="number" name="quantity" value="<?php print $item["quantity"]; ?>" min="1"
+                                       required>
                                 <input type="hidden" name="product_idd" value="<?= $item['id']; ?>">
                                 <button type="submit" name="change_amount" value="update">Change amount</button>
                             </form>
                         </div>
                         <div class="product-removal">
-                            <button class="btn btn-danger" onclick="window.location.href='winkelwagen.php?remove=<?php echo $item['id']; ?>'">X</button>
+                            <button class="btn btn-danger"
+                                    onclick="window.location.href='winkelwagen.php?remove=<?php echo $item['id']; ?>'">X
+                            </button>
                         </div>
-                        <div class="product-line-price2"> <?php $subprice = $item['price'] * $item['quantity']; print("€".number_format($subprice,2));?></div>
+                        <div class="product-line-price2"> <?php $subprice = $item['price'] * $item['quantity'];
+                            print("€" . number_format($subprice, 2)); ?></div>
                     </div>
                 </li>
                 <?php
-                $sum+= $subprice;
-                }
-                ?>
-        <?php } ?>
-        <div class="underline">
+                $sum += $subprice;
+            }
+            ?>
+            <div class="underline">
 
-        </div>
+            </div>
 
-        <div class="totalprice" style="clear:both">
+            <div class="totalprice" style="clear:both">
 
-<!--            <label class="subtotal-values"> Subtotal </label>-->
-            <div class="subtotal-values"> <?php print("<u>Subtotal:</u> €".number_format($sum, 2)); ?> </div>
+                <!--            <label class="subtotal-values"> Subtotal </label>-->
+                <div class="subtotal-values"> <?php print("<u>Subtotal:</u> €" . number_format($sum, 2)); ?> </div>
 
-<!--            <label class="subtotal-values"> Tax </label>-->
-            <div class="subtotal-values"><u>Tax:</u> <?php print(" "); ?> 21% </div>
+                <!--            <label class="subtotal-values"> Tax </label>-->
+                <div class="subtotal-values"><u>Tax:</u> <?php print(" "); ?> 21%</div>
 
-<!--            <label class="subtotal-values"> Shipping </label>-->
-            <div class="subtotal-values"> <?php print("<u>Shipping:</u> FREE"); ?> </div>
+                <!--            <label class="subtotal-values"> Shipping </label>-->
+                <div class="subtotal-values"> <?php print("<u>Shipping:</u> FREE"); ?> </div>
 
-<!--            <label class="subtotal-values"> TOTAL </label>-->
-            <div class="subtotal-values"> <?php $total = $sum * 1.21; print("<u>TOTAL:</u> €".number_format($total, 2));?> </div>
+                <!--            <label class="subtotal-values"> TOTAL </label>-->
+                <div class="subtotal-values"> <?php $total = $sum * 1.21;
+                    print("<u>TOTAL:</u> €" . number_format($total, 2)); ?> </div>
 
-        </div>
-        </li>
-        <li>
-            <a href="order.php" class="myButton"><b>order now!</b></a>
-        </li>
-    </ul>
-</div>
+            </div>
+            </li>
+            <li>
+                <a href="order.php" class="myButton"><b>order now!</b></a>
+            </li>
+        </ul>
+    </div>
+    <?php
+}
+else{ ?>
+
+    <div class="product2"><a href="index.php" class="subtotal-valuess">
+        <img src="img/iconfinder_Basket_2205960.png" class="waggie"><br>
+        <div class="subtotal-valuess">There are no products in your shoppingcart</div>
+        <div class="subtotal-valuess">Click here to go back</div>
+        </a>
+    </div>
+
+<?php } ?>
 </body>
 </html>

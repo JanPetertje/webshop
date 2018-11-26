@@ -151,7 +151,25 @@ height: 40px;
     border: 2px solid white;
     border-radius: 10px;
 }
+.subtotal-valuess{
+    font-family: "roboto";
+    font-size: 25px;
+    padding-top: 1.5%;
+    margin-right: 0%;
+    color: grey;
+    text-decoration: none;
+}
 
+
+div.product2{
+    width: 100%;
+    text-align: center;
+}
+
+img.waggie {
+    width: 21%;
+    margin: 0 auto;
+}
 
 div.top {
     width: 100vw;
