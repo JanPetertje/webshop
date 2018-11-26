@@ -23,6 +23,11 @@ if($result["MarketingComments"] == "") {
     $result["MarketingComments"] = "No description available.";
 }
 
+$stmt3 = $conn->prepare("SELECT ROUND(SUM(Temperature)/COUNT(*),1) AS Temperature FROM coldroomtemperatures");
+
+if($stmt3->execute()) {
+    $result3 = $stmt3->fetch();
+}
 if(isset($_GET["buy"])) {
 
 
@@ -159,7 +164,13 @@ if(isset($_GET["buy"])) {
 
                         if (number_format($result2["QuantityOnHand"] >= 1)) {
                                     print("Order today before 10PM, tomorrow delivered!"); } else  { print ("This product is out of stock");
-                        } ?>
+                        }
+
+                        if ($product >= 220 && $product <= 227) {
+                            echo  '<li class="text"> Temprature of the refrigerator: ' . $result3["Temperature"]. '℃ </li> ';
+                        }
+
+                        ?>
 
                         </li>
 
