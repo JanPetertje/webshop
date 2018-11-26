@@ -172,7 +172,6 @@ if(isset($_GET["buy"])) {
 
                         ?>
 
-                        </li>
                     </ul>
                 </form>
             </div>
