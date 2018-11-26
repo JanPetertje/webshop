@@ -8,6 +8,7 @@
         include "inc/parts/menu.php";
         include "inc/parts/db.php";
         include "inc/parts/head.php";
+        include 'inc/parts/footer.php';
         ?>
     </head>
     <body>
@@ -21,9 +22,27 @@
         </h1>
     </div>
 
+
+    <div class="searchproductid">
+        <?php
+        $searchproductids = $conn->prepare("SELECT StockItemID FROM stockitems WHERE StockItemID = '$searchinput'");
+        $searchproductids->execute();
+        while ($row = $searchproductids->fetch()) {
+            $productidsearch = $row["StockItemID"];
+
+            header("Location: productpage.php?productID=$productidsearch");
+
+        }
+
+
+
+        ?>
+
+    </div>
+
     <div class="border">
         <?php
-        $countResults = $conn->prepare("SELECT count(*) AS aantal FROM stockitems WHERE StockItemName LIKE '%$searchinput%' OR StockItemID = '$searchinput' OR Tags LIKE '%$searchinput%' ");
+        $countResults = $conn->prepare("SELECT count(*) AS aantal FROM stockitems WHERE StockItemName LIKE '%$searchinput%' OR Tags LIKE '%$searchinput%' ");
         $countResults->execute();
         while ($row = $countResults->fetch()) {
             $aantal = $row["aantal"];
@@ -37,7 +56,7 @@
         <div class="row">
             <div class="items">
         <?php
-        $searchresults = $conn->prepare("SELECT StockItemID, RecommendedRetailPrice, Tags, StockItemName FROM stockitems WHERE StockItemName LIKE '%$searchinput%' OR StockItemID = '$searchinput' OR Tags LIKE '%$searchinput%' ");
+        $searchresults = $conn->prepare("SELECT StockItemID, RecommendedRetailPrice, Tags, StockItemName FROM stockitems WHERE StockItemName LIKE '%$searchinput%'  OR Tags LIKE '%$searchinput%' ");
         $searchresults->execute();
         while ($row = $searchresults->fetch()) {
             $productnames = $row["StockItemName"];
@@ -53,10 +72,11 @@
                     </div>';
         }
         ?>
-
 </div>
     </div>
         </div>
+
+
     <?php
     $pdo = null;
     print "<div style='height: 200px;'>
@@ -64,6 +84,8 @@
         <h1><a href='ProductGroups.php' class='link'>You just reached the end of this page. If you want to search in productgroups press <b>here</b>.</a></h1>
         </div>";
     ?>
-    <?php include 'inc/parts/footer.php';?>
+
+
+
     </body>
 </html>
