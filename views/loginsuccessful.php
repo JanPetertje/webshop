@@ -42,14 +42,11 @@ echo "<div class='log'>
 <h1 align='center'>Login successful!</h1>
 
 <div class='successful'>
-
-
-  
-  <h1 align='center'> Welcome $fetch_name. Thank you for logging in!</h1>
+<h1 align='center'> Welcome $fetch_name. Thank you for logging in!</h1>
   </div>"
   ?>
+<img src="img/logo.png" alt="Logo" height="200" width="530">
 
-</div>
 <?php include 'inc/parts/footer.php';?>
 </body>
 

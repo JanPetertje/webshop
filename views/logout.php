@@ -38,6 +38,7 @@ else {
 echo "<div class='log'>
 <h1 align='center'>You have successfully logged out!</h1>
 <h1 align='center'> Goodbye $fetch_name. See you next time!</h1>
+<img src=\"img/logo.png\" alt=\"Logo\" height=\"200\" width=\"530\">
   </div>"
 ?>
 <div class="successful">
@@ -45,7 +46,7 @@ echo "<div class='log'>
 <?php include 'inc/parts/footer.php';
 if(isset($_SESSION["loggedUser"])) {
     session_destroy();
-    header("refresh:3.5; url=index.php");
+    header("refresh:3.25; url=index.php");
 } else {header('location: index.php');
 }
 ?>
