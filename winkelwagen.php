@@ -21,7 +21,7 @@ $products = 0;
 <?php
 include "inc/parts/menu.php";
 include "inc/parts/db.php";
-include "inc/parts/footer.php";
+
 $sum = 0;
 $delete = 0;
 if (isset($_GET["remove"])) {
@@ -42,9 +42,9 @@ if(isset($_POST['change_amount'])){
     }
 }
 foreach($_SESSION["ShoppingCart"] as $item){
-    $item = $item; $products+= 1;
+    $item = $item;
+    $products+= 1;
 }
-
 
 if($products >= 1) {
 ?>
@@ -64,7 +64,7 @@ if($products >= 1) {
 <?php
 
 //print_r($_SESSION['ShoppingCart']);
-//error_reporting(0);
+error_reporting(0);
 ?>
 
 <?php
@@ -76,12 +76,14 @@ if($products >= 1) {
                 ?>
                 <li>
                     <div class="product1" style="clear:both">
-                        <div class="product-image">
-                            <img class="product-img" src="img/Products/<?php print($item['id']) ?>.jpg">
-                        </div>
-                        <div class="product-details">
-                            <div class="product-title"> <?php echo $item['name']; ?></div>
-                            <p class="product-description"> <?php echo $item['description']; ?> </p>
+                        <div class="linkie"><a class="linkie" href="productpage.php?productID=<?php print($item)['id'] ?>">
+                            <div class="product-image">
+                                <img class="product-img" src="img/Products/<?php print($item['id']) ?>.jpg">
+                            </div>
+                            <div class="product-details">
+                                <div class="product-title"> <?php echo $item['name']; ?></div>
+                                <p class="product-description"> <?php echo $item['description']; ?> </p>
+                            </div></a>
                         </div>
                         <div class="product-price" name="price"><?php echo "€" . $item['price']; ?></div>
                         <div class="product-quantity">
@@ -89,11 +91,11 @@ if($products >= 1) {
                                 <input type="number" name="quantity" value="<?php print $item["quantity"]; ?>" min="1"
                                        required>
                                 <input type="hidden" name="product_idd" value="<?= $item['id']; ?>">
-                                <button type="submit" name="change_amount" value="update">Change amount</button>
+                                <button type="submit" class="btn btn-danger" name="change_amount" value="update">Change amount</button>
                             </form>
                         </div>
                         <div class="product-removal">
-                            <button class="btn btn-danger"
+                            <button type="button" class="btn btn-danger"
                                     onclick="window.location.href='winkelwagen.php?remove=<?php echo $item['id']; ?>'">X
                             </button>
                         </div>
@@ -111,16 +113,12 @@ if($products >= 1) {
 
             <div class="totalprice" style="clear:both">
 
-                <!--            <label class="subtotal-values"> Subtotal </label>-->
                 <div class="subtotal-values"> <?php print("<u>Subtotal:</u> €" . number_format($sum, 2)); ?> </div>
 
-                <!--            <label class="subtotal-values"> Tax </label>-->
                 <div class="subtotal-values"><u>Tax:</u> <?php print(" "); ?> 21%</div>
 
-                <!--            <label class="subtotal-values"> Shipping </label>-->
                 <div class="subtotal-values"> <?php print("<u>Shipping:</u> FREE"); ?> </div>
 
-                <!--            <label class="subtotal-values"> TOTAL </label>-->
                 <div class="subtotal-values"> <?php $total = $sum * 1.21;
                     print("<u>TOTAL:</u> €" . number_format($total, 2)); ?> </div>
 
@@ -142,6 +140,8 @@ else{ ?>
         </a>
     </div>
 
-<?php } ?>
+<?php }
+include "inc/parts/footer.php";
+?>
 </body>
 </html>
