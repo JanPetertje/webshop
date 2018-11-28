@@ -22,23 +22,27 @@
         </h1>
     </div>
 
-
     <div class="searchproductid">
+
         <?php
-        $searchproductids = $conn->prepare("SELECT StockItemID FROM stockitems WHERE StockItemID = '$searchinput'");
-        $searchproductids->execute();
-        while ($row = $searchproductids->fetch()) {
-            $productidsearch = $row["StockItemID"];
 
-            header("Location: productpage.php?productID=$productidsearch");
+        if (is_numeric($searchinput)) {
 
+            $searchproductids = $conn->prepare("SELECT StockItemID FROM stockitems WHERE StockItemID = '$searchinput'");
+            $searchproductids->execute();
+            while ($row = $searchproductids->fetch()) {
+                $productidsearch = $row["StockItemID"];
+
+                header("Location: productpage.php?productID=$productidsearch");
+
+            }
         }
-
 
 
         ?>
 
     </div>
+
 
     <div class="border">
         <?php
@@ -55,14 +59,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="items">
+
         <?php
-        $searchresults = $conn->prepare("SELECT StockItemID, RecommendedRetailPrice, Tags, StockItemName FROM stockitems WHERE StockItemName LIKE '%$searchinput%'  OR Tags LIKE '%$searchinput%' ");
-        $searchresults->execute();
-        while ($row = $searchresults->fetch()) {
-            $productnames = $row["StockItemName"];
-            $productID = $row["StockItemID"];
-            $Price = $row["RecommendedRetailPrice"];
-            print '<div class="card product-card">
+            $searchresults = $conn->prepare("SELECT StockItemID, RecommendedRetailPrice, Tags, StockItemName FROM stockitems WHERE StockItemName LIKE '%$searchinput%'  OR Tags LIKE '%$searchinput%' ");
+            $searchresults->execute();
+            while ($row = $searchresults->fetch()) {
+                $productnames = $row["StockItemName"];
+                $productID = $row["StockItemID"];
+                $Price = $row["RecommendedRetailPrice"];
+                print '<div class="card product-card">
                           <img class="product-img" src="img/products/' . $productID . '.jpg"alt="Product picture" class="card-img-top">
                           <div class="card-body">
                           <h5 class="card-title">' . $productnames . '</h5>
@@ -70,12 +75,13 @@
                           <a class="btn btn-primary" href="productpage.php?productID=' . $productID . '">Read More!</a>
                         </div>
                     </div>';
-        }
+            }
+
+
         ?>
 </div>
     </div>
         </div>
-
 
     <?php
     $pdo = null;
