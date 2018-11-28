@@ -168,6 +168,6 @@ $products = array(215, 75);
 
 
 
-
+    <?php include 'inc/parts/footer.php';?>
     </body>
 </html>

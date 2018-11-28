@@ -1,11 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-}
-
-h1 {
-    text-align: center;
-    font-family: Roboto;
+    background: #f8fafc;
 
 }
 
@@ -93,7 +89,7 @@ h1 {
     height: 100px;
     line-height: 100px;
     margin-left: 100px;
-    font-family: "Roboto";
+    font-family: Roboto;
     text-transform: uppercase;
     font-size: 1.2em;
     font-weight: 500;

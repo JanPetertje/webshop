@@ -8,41 +8,27 @@
     text-align: center;
     width: 90%;
 }
-
 .myButton {
     background-color: #F0F8FF;
-    border: none;
+    border: 2.5px solid lightblue;
     color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 25px;
     margin: 4px 2px;
     cursor: pointer;
     float:right;
-    /*display:block;*/
-    margin-right: 315px;
+    float: right;
+    margin-bottom: 120px;
     clear:left;
+    margin-right: 250px;
     margin-top: 40px;
-
 }
-
-
-/*.kopje1 {*/
-    /*font-weight: bold;*/
-    /*padding-size: 30px;*/
-    /*display: inline-block;*/
-    /*padding-left: 16.432%;*/
-    /*font-size: 20px;*
-
-     */
-
-
 
 .label-subtotal {
     font-size: 20px;
-
 }
 
 .column-labels{
@@ -52,19 +38,18 @@
 }
 
 .totalprice {
-    width: 40px;
-    height: 42px;
-    padding-left: 1100px;
-    padding-top: 180px;
-
+    /*text-align: center;*/
+    margin-left: 70%;
+    width: 50%;
+    height: 300px;
+    padding-top: 80px;
 }
 
 .subtotal-values {
-    float: left;
-    padding-left: 420px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 20px;
+    font-family: "roboto";
+    font-size: 25px;
+    padding-bottom: 5%;
+    margin-right: 0%;
 }
 
 .totalprice label {
@@ -75,6 +60,8 @@
 .product1 {
     width: 100%;
     font-size: 25px;
+    font-family: "roboto";
+    padding-bottom: 6%;
 }
 
 .product-image {
@@ -85,6 +72,9 @@
 .product-details {
     float: left;
     width: 30%;
+    font-family: "roboto";
+    text-decoration: none;
+
 }
 
 .product-description {
@@ -94,11 +84,15 @@
 .product-price {
     float: left;
     width: 10%;
+    font-family: "roboto";
+
 }
 
 .product-quantity {
     float: left;
     width: 9%;
+    font-family: "roboto";
+
 }
 
 .product-removal {
@@ -109,19 +103,36 @@
 
 .remove-product {
     text-align: center;
+    font-family: "roboto";
+
 }
 
-.product-line-price { float: left; width: 4%; text-align: right;
+.product-line-price {
+    float: left;
+    width: 4%;
+    text-align: right;
     padding-left: 180px;
+    font-family: "roboto";
+
 }
 
-.product-line-price2 { float: left;
+.product-line-price2 {
+    float: left;
    padding-left: 40px;
 }
 
 .product-image  {
     text-align: center;
+    font-family: "roboto";
 }
+
+.underline {
+    padding-top: 30px;
+    margin: 0 auto;
+    width: 90%;
+    border-bottom: 2px solid darkgray;
+}
+
 img.grim {
     width: 70px;
 }
@@ -132,6 +143,37 @@ img.grim {
 
 .column-labels {
 height: 40px;
+}
+
+.product-img {
+    height: 75px;
+    width: 75px;
+    object-fit: cover;
+    /*border: 2px solid white;*/
+    border-radius: 10px;
+}
+.subtotal-valuess{
+    font-family: "roboto";
+    font-size: 25px;
+    padding-top: 1.5%;
+    margin-right: 0%;
+    color: grey;
+    text-decoration: none;
+}
+
+.linkie{
+    text-decoration: none;
+    color: black;
+}
+
+div.product2{
+    width: 100%;
+    text-align: center;
+}
+
+img.waggie {
+    width: 21%;
+    margin: 0 auto;
 }
 
 div.top {
@@ -159,3 +201,7 @@ ul li p {
     display: inline-block;
 }
 
+
+body {
+    overflow-x: hidden;
+}

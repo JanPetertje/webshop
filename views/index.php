@@ -15,11 +15,16 @@
     <body>
 
     <?php
+//    Menu-scherm
     include "inc/parts/menu.php";
     include "inc/parts/db.php";
     include "inc/parts/head.php";
     ?>
-
+<!--    Homepage:
+        - Titel
+        - Productgroups
+        - Afbeeldingen
+        - Footer -->
     <div>
         <h1>Welcome to Wide World Importers</h1>
     </div>
@@ -70,7 +75,9 @@
     </div>
 
 
-
+<?php
+include "inc/parts/footer.php"
+?>
     </body>
 
 </html>

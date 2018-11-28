@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -6,18 +9,33 @@
         <link rel="stylesheet" href="inc/css/productOverview.css">
         <?php
         include "inc/parts/head.php";
+        include "inc/parts/menu.php";
+        include "inc/parts/db.php";
         ?>
-
     </head>
 
     <body>
-    <?php
-    $productGroup = ($_GET);
-    $productGroup = $productGroup["name"];
+        <?php
+        $productGroup = $_GET;
+        $productGroup = $productGroup['name'];
+        if (empty($productGroup)) {
+            header('location: index.php');
+        }
 
-    include "inc/parts/menu.php";
-    include "inc/parts/db.php";
-    ?>
+        $x = 0;
+        $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
+        $productgroups->execute();
+        while ($row = $productgroups->fetch()) {
+            $groupnames = $row["StockGroupName"];
+            if ($productGroup == $groupnames) {
+                $x = 1;
+            }
+        }
+        if ($x == 0) {
+            header('location: ProductGroups.php');
+        }
+        $pdo = NULL;
+        ?>
 
     <div class="top">
         <p class="titel"><?php print $productGroup;?></p>
@@ -42,43 +60,53 @@
         <div class="row">
             <div class="items">
     <?php
-
-
-
-
-
-
-
-    $productname = $conn->prepare("Select StockGroupName, StockItemName, sg. StockGroupID from stockitemstockgroups sg join stockitems s on sg.StockItemId = s.StockItemID join stockgroups st on sg.StockGroupID = st.StockGroupID order by StockGroupID");
+    $productname = $conn->prepare("Select StockGroupName, StockItemName, s.StockItemID, sg. StockGroupID, RecommendedRetailPrice from stockitemstockgroups sg join stockitems s on sg.StockItemId = s.StockItemID join stockgroups st on sg.StockGroupID = st.StockGroupID order by StockGroupID");
     $productname->execute();
     while ($row = $productname->fetch()) {
         $productnames = $row["StockItemName"];
-        $ProductID = $row["StockGroupID"];
+        $ProductID = $row["StockItemID"];
         $group = $row["StockGroupName"];
-
+        $Price = $row["RecommendedRetailPrice"];
 
         if ($productGroup == $group) {
             print '<div class="card product-card">
-                      <img src="https://hlfppt.org/wp-content/uploads/2017/04/placeholder.png" alt="Product picture" class="card-img-top">
+                      <img class="product-img" src="img/products/' . $ProductID . '.jpg" alt="Product picture" class="card-img-top">
                       <div class="card-body">
                       <h5 class="card-title">' . $productnames. '</h5>
+                      <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p>
                       <a class="btn btn-primary" href="productpage.php?productID=' . $ProductID . '">Read More!</a>
                     </div>
                 </div>';
         }
     }
-
-
-
-
-
     ?>
-
 
 
     </div>
         </div>
+    </div>
+
+
+
+    <?php
+
+
+
+    $countids = $conn->prepare("Select count(sg.StockGroupID)totaal, s.StockGroupName from stockitemstockgroups sg right join stockgroups s on sg.StockGroupID = s.StockGroupID group by s.StockGroupID");
+    $countids->execute();
+    while ($row = $countids->fetch()) {
+        $countid = $row["totaal"];
+        $names = $row["StockGroupName"];
+
+        if ($countid <= 0 && $names == $productGroup) print "<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='noproducts'> This productgroup has no products, <br> press this link to enter the productgroupspage. </a></h1></div>";
+    }
+    ?>
+
+        <?php include 'inc/parts/footer.php'; ?>
+
+
     </body>
+
 
 
 </html>

@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -12,18 +17,19 @@
     </head>
     <body>
     <?php
-
+//--------xD----
     include "inc/parts/menu.php";
 
     ?>
     <div class="container">
         <form method="post" action="login.php">
             <h1>Login</h1>
-            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="Email" placeholder="Email">
             <input type="password" name="password" placeholder="Password">
             <input type="submit" name="login" value="Login">
             <a href="register.php">Register now!</a>
         </form>
     </div>
+    <?php include 'inc/parts/footer.php';?>
     </body>
 </html>
