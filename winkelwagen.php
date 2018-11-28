@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 $shoppingCart = $_SESSION["ShoppingCart"];
 $products = 0;
 ?>
@@ -21,6 +22,8 @@ $products = 0;
 <?php
 include "inc/parts/menu.php";
 include "inc/parts/db.php";
+//include "inc/parts/head.php";
+
 
 $sum = 0;
 $delete = 0;
@@ -34,18 +37,26 @@ if (isset($_GET["remove"])) {
     $_SESSION['ShoppingCart'] = array_values($_SESSION['ShoppingCart']);
 }
 
+
 if(isset($_POST['change_amount'])){
-    foreach($_SESSION['ShoppingCart'] as $numbree => $idd){;
-        if($_POST['product_idd'] == $idd['id']){
-            $_SESSION['ShoppingCart'][$numbree]['quantity'] = filter_var($_POST['quantity'], FILTER_SANITIZE_STRING);
+    foreach($_SESSION['ShoppingCart'] as $numbree => $idd){
+        if($_POST['product_idd'] == $idd['id']) {
+//            $_SESSION['ShoppingCart'][$numbree]['quantity'] = 69;
+            if($_POST['quantity'] < $_SESSION['ShoppingCart'][$numbree]["QuantityOnHand"]) {
+                $_SESSION['ShoppingCart'][$numbree]['quantity'] = $_POST['quantity'];
+            }else {
+                $_SESSION['ShoppingCart'][$numbree]["quantity"] = $_SESSION['ShoppingCart'][$numbree]["QuantityOnHand"];
+                //Hier moet nog een popup komen dat dit aantal producten maar beschrikbaar is
+            }
         }
     }
 }
+
 foreach($_SESSION["ShoppingCart"] as $item){
     $item = $item;
     $products+= 1;
 }
-
+//If there are any products the products will be seen in the shoppingcart. Otherwise customers see the empty cart page
 if($products >= 1) {
 ?>
 
@@ -64,7 +75,7 @@ if($products >= 1) {
 <?php
 
 //print_r($_SESSION['ShoppingCart']);
-error_reporting(0);
+//error_reporting(0);
 ?>
 
 <?php
@@ -88,10 +99,9 @@ error_reporting(0);
                         <div class="product-price" name="price"><?php echo "€" . $item['price']; ?></div>
                         <div class="product-quantity">
                             <form method="post">
-                                <input type="number" name="quantity" value="<?php print $item["quantity"]; ?>" min="1"
-                                       required>
-                                <input type="hidden" name="product_idd" value="<?= $item['id']; ?>">
-                                <button type="submit" class="btn btn-danger" name="change_amount" value="update">Change amount</button>
+                                <input type="number" name="quantity" value="<?php print($item["quantity"]); ?>" min="1" required>
+                                <input type="hidden" name="product_idd" value="<?php print($item['id']); ?>">
+                                <button type="submit" name="change_amount" value="update">Change amount</button>
                             </form>
                         </div>
                         <div class="product-removal">

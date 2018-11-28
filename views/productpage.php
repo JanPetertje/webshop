@@ -36,7 +36,8 @@ if(isset($_GET["buy"])) {
         "name" => $result["StockItemName"],
         "price" => $result["RecommendedRetailPrice"],
         "description" => $result["MarketingComments"],
-        "quantity" => "1"
+        "quantity" => "1",
+        "QuantityOnHand" => $result2["QuantityOnHand"]
     ];
 
     $cart = $_SESSION["ShoppingCart"];
