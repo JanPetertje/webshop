@@ -3,7 +3,7 @@ session_start();
 
 $product = $_GET["productID"];
 
-$stmt = $conn->prepare("SELECT StockItemID, StockItemName, RecommendedRetailPrice, MarketingComments FROM stockitems WHERE StockItemID = :id");
+$stmt = $conn->prepare("SELECT StockItemID, StockItemName, RecommendedRetailPrice, MarketingComments, IsChillerStock FROM stockitems WHERE StockItemID = :id");
 
 $stmt->bindParam(":id", $product);
 
@@ -166,12 +166,11 @@ if(isset($_GET["buy"])) {
                                     print("Order today before 10PM, tomorrow delivered!"); } else  { print ("This product is out of stock");
                         }
 
-                        if ($product >= 220 && $product <= 227) {
+                        if ($result["IsChillerStock"] == 1) {
                             echo  '<li class="text"> Temprature of the refrigerator: ' . $result3["Temperature"]. '℃ </li> ';
                         }
-
+                        $pdo = null;
                         ?>
-
                     </ul>
                 </form>
             </div>

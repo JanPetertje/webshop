@@ -18,7 +18,7 @@ if(isset($_POST["register"])) {
     $phone              = trim($_POST["phone"]);
 
 
-    if(!empty($firstName) && !empty($initials) && !empty($lastName) && !empty($email) && !empty($password) && !empty($zip) && !empty($address) && !empty($city) && !empty($country) && !empty($phone)) {
+    if(!empty($firstName) && !empty($lastName) && !empty($email) && !empty($password) && !empty($zip) && !empty($address) && !empty($city) && !empty($country) && !empty($phone)) {
         if(strlen($password) >= 8) {
             if($password == $confirmPassword) {
                 $stmt = $conn->prepare("INSERT INTO accounts (first_name, initials, last_name, email, password, zip, address, city, country, phone)
