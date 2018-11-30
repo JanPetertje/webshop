@@ -30,21 +30,34 @@ if($stmt3->execute()) {
 }
 if(isset($_GET["buy"])) {
 
+//print_r($_SESSION['ShoppingCart']);
 
     $item = [
         "id" => $result["StockItemID"],
         "name" => $result["StockItemName"],
         "price" => $result["RecommendedRetailPrice"],
         "description" => $result["MarketingComments"],
-        "quantity" => "1"
+        "quantity" => "1",
+        "QuantityOnHand" => $result2["QuantityOnHand"]
     ];
 
-    $cart = $_SESSION["ShoppingCart"];
+    $ter = 0;
 
-    array_push($cart, $item);
+    foreach($_SESSION['ShoppingCart'] as $dot => $net){
+        if($_GET['productID'] == $net['id']){
+            $ter = 1;
+        }
+    }
 
-    $_SESSION["ShoppingCart"] = $cart;
+    if($ter == 0){
+        $cart = $_SESSION["ShoppingCart"];
+        array_push($cart, $item);
+        $_SESSION['ShoppingCart'] = $cart;
+    }
 }
+
+print_r($_SESSION['ShoppingCart']);
+
 ?>
 <!doctype html>
 <html lang="en">
