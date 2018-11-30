@@ -17,10 +17,10 @@ session_start();
     </head>
     <body>
     <?php
-//--------xD----
     include "inc/parts/menu.php";
-
     ?>
+
+<!--    Login formulier-->
     <div class="container">
         <form method="post" action="login.php">
             <h1>Login</h1>
