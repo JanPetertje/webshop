@@ -15,6 +15,7 @@ session_start();
     </head>
 
     <body>
+<!--    Verkeerde input verwerken-->
         <?php
         $productGroup = $_GET;
         $productGroup = $productGroup['name'];
@@ -37,6 +38,7 @@ session_start();
         $pdo = NULL;
         ?>
 
+<!--Productgroepen-->
     <div class="top">
         <p class="titel"><?php print $productGroup;?></p>
     </div>
@@ -82,22 +84,19 @@ session_start();
     ?>
 
 
-    </div>
+            </div>
         </div>
     </div>
 
 
 
     <?php
-
-
-
     $countids = $conn->prepare("Select count(sg.StockGroupID)totaal, s.StockGroupName from stockitemstockgroups sg right join stockgroups s on sg.StockGroupID = s.StockGroupID group by s.StockGroupID");
     $countids->execute();
     while ($row = $countids->fetch()) {
         $countid = $row["totaal"];
         $names = $row["StockGroupName"];
-
+        $names = $row["StockGroupName"];
         if ($countid <= 0 && $names == $productGroup) print "<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='noproducts'> This productgroup has no products, <br> press this link to enter the productgroupspage. </a></h1></div>";
     }
     ?>

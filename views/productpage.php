@@ -180,7 +180,7 @@ print_r($_SESSION['ShoppingCart']);
                         }
 
                         if ($result["IsChillerStock"] == 1) {
-                            echo  '<li class="text"> Temprature of the refrigerator: ' . $result3["Temperature"]. '℃ </li> ';
+                            echo  '<li class="text"> Temperature of the refrigerator: ' . $result3["Temperature"]. '℃ </li> ';
                         }
                         $pdo = null;
                         ?>

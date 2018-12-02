@@ -23,6 +23,7 @@ include "inc/parts/db.php";
     <p class="titel">Product Groups</p>
 </div>
 
+<!--Alle productgroepen laten zien-->
 <div class="container-fluid">
     <div class="row">
         <div class="items">
