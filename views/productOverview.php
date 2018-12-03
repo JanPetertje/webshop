@@ -69,10 +69,21 @@ session_start();
         $ProductID = $row["StockItemID"];
         $group = $row["StockGroupName"];
         $Price = $row["RecommendedRetailPrice"];
+        $stockgroupID = $row["StockGroupID"];
 
-        if ($productGroup == $group) {
+        if ($productGroup == $group && (file_exists('img/products/' . $ProductID . '.jpg') == TRUE)) {
             print '<div class="card product-card">
                       <img class="product-img" src="img/products/' . $ProductID . '.jpg" alt="Product picture" class="card-img-top">
+                      <div class="card-body">
+                      <h5 class="card-title">' . $productnames. '</h5>
+                      <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p>
+                      <a class="btn btn-primary" href="productpage.php?productID=' . $ProductID . '">Read More!</a>
+                    </div>
+                </div>';
+
+        } elseif ($productGroup == $group && (file_exists('img/products/' . $ProductID . '.jpg') == false)) {
+            print '<div class="card product-card">
+                      <img class="product-img" src="img/ProductGroups/p' . $stockgroupID . '.jpg" alt="Product picture" class="card-img-top">
                       <div class="card-body">
                       <h5 class="card-title">' . $productnames. '</h5>
                       <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p>
