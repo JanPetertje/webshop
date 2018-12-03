@@ -30,8 +30,6 @@ if($stmt3->execute()) {
 }
 if(isset($_GET["buy"])) {
 
-//print_r($_SESSION['ShoppingCart']);
-
     $item = [
         "id" => $result["StockItemID"],
         "name" => $result["StockItemName"],
@@ -46,17 +44,18 @@ if(isset($_GET["buy"])) {
     foreach($_SESSION['ShoppingCart'] as $dot => $net){
         if($_GET['productID'] == $net['id']){
             $ter = 1;
+            $_SESSION['ShoppingCart'][$net]['quantity'] = $_POST['newquantity'];
         }
     }
 
     if($ter == 0){
+        trim($dot);
         $cart = $_SESSION["ShoppingCart"];
         array_push($cart, $item);
         $_SESSION['ShoppingCart'] = $cart;
     }
 }
 
-print_r($_SESSION['ShoppingCart']);
 
 ?>
 <!doctype html>
