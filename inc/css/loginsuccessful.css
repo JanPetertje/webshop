@@ -3,4 +3,6 @@ div.log {
     padding-top: 9px;
     text-align: center;
     color: #00bff6;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #09a2ff;
 }
