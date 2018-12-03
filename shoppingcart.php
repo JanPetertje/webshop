@@ -106,7 +106,7 @@ if($products >= 1) {
                         </div>
                         <div class="product-removal">
                             <button type="button" class="btn btn-danger"
-                                    onclick="window.location.href='winkelwagen.php?remove=<?php echo $item['id']; ?>'">X
+                                    onclick="window.location.href='shoppingcart.php?remove=<?php echo $item['id']; ?>'">X
                             </button>
                         </div>
                         <div class="product-line-price2"> <?php $subprice = $item['price'] * $item['quantity'];

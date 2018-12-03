@@ -7,7 +7,7 @@ session_start();
     <?php
     include "inc/parts/head.php";
     ?>
-    <link rel="stylesheet" href="inc/css/winkelwagen.css">
+    <link rel="stylesheet" href="inc/css/shoppingcart.css">
     <link rel="stylesheet" href="inc/css/ProductGroupsStyle.css">
 </head>
 
