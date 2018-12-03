@@ -49,7 +49,7 @@ include "inc/parts/db.php";
                             $x = $x + 1;
                         }
                         else {
-                            print ('<img src="img/Products/37.jpg" alt="Product picture" class="card-img-top product-img2">');
+                            print ('<img src="img/Products/38.jpg" alt="Product picture" class="card-img-top product-img2">');
                             $x = $x + 1;
                         }
                     }
@@ -59,7 +59,9 @@ include "inc/parts/db.php";
                       </div>
         </div>');
             }
+
             $pdo = NULL;
+
             ?>
         </div>
     </div>
