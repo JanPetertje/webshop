@@ -15,7 +15,7 @@ $products = 0;
     <title>Shopping cart</title>
     <link rel="stylesheet" href="inc/css/fonts.css">
     <link rel="stylesheet" href="inc/css/main.css">
-    <link rel="stylesheet" href="inc/css/winkelwagen.css">
+    <link rel="stylesheet" href="inc/css/shoppingcart.css">
 </head>
 <body>
 

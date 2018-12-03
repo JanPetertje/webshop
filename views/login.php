@@ -20,7 +20,7 @@ session_start();
     include "inc/parts/menu.php";
     ?>
 
-<!--    Login formulier-->
+<!--    Login register-->
     <div class="container">
         <form method="post" action="login.php">
             <h1>Login</h1>
