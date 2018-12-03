@@ -147,7 +147,7 @@ if($stmt->execute()) {
                                 <p>Tax<span>€ 135</span></p>
                             </li>
                             <li>
-                                <p>Total<span>€ 135</span></p>
+                                <p>Total<span><?php print("€ " . $total);?></span></p>
                             </li>
                         </ul>
                     </div>

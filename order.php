@@ -1,8 +1,15 @@
 <?php
 session_start();
 
+$total=0;
+foreach($_SESSION['ShoppingCart'] as $dik => $zak) {
+    $total += $_SESSION['ShoppingCart'][$dik]['quantity'] * $_SESSION['ShoppingCart'][$dik]['price'];
+
+}
+
 include "inc/parts/db.php";
 include "views/order.php";
+
 
 if(isset($_POST["checkout"])) {
     $first_name = trim($_POST["firstName"]);

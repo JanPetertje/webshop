@@ -132,6 +132,13 @@ if($products >= 1) {
                 <div class="subtotal-values"> <?php $total = $sum * 1.21;
                     print("<u>TOTAL:</u> €" . number_format($total, 2)); ?> </div>
 
+            <?php
+            foreach($_SESSION['ShoppingCart'] as $dik => $zak) {
+                $total += $_SESSION['ShoppingCart'][$dik]['quantity'] * $_SESSION['ShoppingCart'][$dik]['price'];
+
+                }
+            ?>
+
             </div>
             </li>
             <li>
