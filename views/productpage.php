@@ -56,7 +56,6 @@ if(isset($_GET["buy"])) {
     }
 }
 
-print_r($_SESSION['ShoppingCart']);
 
 ?>
 <!doctype html>
