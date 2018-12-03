@@ -20,7 +20,7 @@ if(isset($_POST["login"])) {
 
     if ($result == 1) {
         $usernumber = $stmt->fetch();
-        $_SESSION["loggedUser"] = $usernumber;
+        $_SESSION["loggedUser"] = $usernumber["account_id"];
 
         header("Location: inlogsuccessful.php");
 
