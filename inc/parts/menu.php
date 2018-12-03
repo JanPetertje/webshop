@@ -26,7 +26,7 @@
                 ?>
             </li>
             <li>
-                <a href="winkelwagen.php">
+                <a href="shoppingcart.php">
                     <img src="img/shopping-cart.png" alt="shopping-cart">
                 </a>
             </li>
