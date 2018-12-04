@@ -23,6 +23,7 @@ $products = 0;
 include "inc/parts/menu.php";
 include "inc/parts/db.php";
 include "inc/parts/head.php";
+//include "inc/css/fonts.css";
 
 
 $sum = 0;
@@ -87,9 +88,17 @@ if($products >= 1) {
                 ?>
                 <li>
                     <div class="product1" style="clear:both">
-                        <div class="linkie"><a class="linkie" href="productpage.php?productID=<?php print($item)['id'] ?>">
+                        <div><a class="link" href="productpage.php?productID=<?php print($item)['id']; ?>">
                             <div class="product-image">
-                                <img class="product-img" src="img/Products/<?php print($item['id']) ?>.jpg">
+                                <?php
+                                if(file_exists('img/products/' . $item['id'] . '.jpg') == false){
+                                    ?> <img class="product-img" src="img/errorpage.jpg" class="product-img">
+                                    <?php
+                                }else{
+                                    ?> <img class="product-img" src="img/Products/<?php print($item['id']); ?>.jpg">
+                                    <?php
+                                }
+                                ?>
                             </div>
                             <div class="product-details">
                                 <div class="product-title"> <?php echo $item['name']; ?></div>
@@ -105,8 +114,8 @@ if($products >= 1) {
                             </form>
                         </div>
                         <div class="product-removal">
-                            <button type="button" class="btn btn-danger"
-                                    onclick="window.location.href='shoppingcart.php?remove=<?php echo $item['id']; ?>'">X
+                            <button type="button" id="buton" class="btn btn-outline-danger"
+                                    onclick="window.location.href='shoppingcart.php?remove=<?php echo $item['id']; ?>'">❌
                             </button>
                         </div>
                         <div class="product-line-price2"> <?php $subprice = $item['price'] * $item['quantity'];
@@ -136,7 +145,7 @@ if($products >= 1) {
             </div>
             </li>
             <li>
-                <a href="order.php" class="myButton"><b>order now!</b></a>
+                <a href="order.php" id="myButton" class="btn btn-success"><b>Checkout 🡆</b></a>
             </li>
         </ul>
     </div>
