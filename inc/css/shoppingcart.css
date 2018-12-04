@@ -88,11 +88,18 @@
 
 }
 
+#buttone{
+    font-size: 20px;
+    margin-top: 5px;
+    height:35px;
+    width:120px;
+    border-color: lightgrey;
+}
+
 .product-quantity {
     float: left;
     width: 9%;
     font-family: "roboto";
-
 }
 
 .product-removal {

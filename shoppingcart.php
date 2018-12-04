@@ -22,7 +22,7 @@ $products = 0;
 <?php
 include "inc/parts/menu.php";
 include "inc/parts/db.php";
-//include "inc/parts/head.php";
+include "inc/parts/head.php";
 
 
 $sum = 0;
@@ -99,9 +99,9 @@ if($products >= 1) {
                         <div class="product-price" name="price"><?php echo "€" . $item['price']; ?></div>
                         <div class="product-quantity">
                             <form method="post">
-                                <input type="number" name="quantity" value="<?php print($item["quantity"]); ?>" min="1" required style="width:6em">
+                                <input type="number" name="quantity" value="<?php print($item["quantity"]); ?>" min="1" required style="width:6em; font-size: 20px;">
                                 <input type="hidden" name="product_idd" value="<?php print($item['id']); ?>">
-                                <button type="submit" name="change_amount" value="update">Change amount</button>
+                                <button type="submit" class="btn btn-light" id="buttone" name="change_amount" value="update" style="font-size: 15px;">Change Amount</button>
                             </form>
                         </div>
                         <div class="product-removal">
@@ -132,12 +132,6 @@ if($products >= 1) {
                 <div class="subtotal-values"> <?php $total = $sum * 1.21;
                     print("<u>TOTAL:</u> €" . number_format($total, 2)); ?> </div>
 
-            <?php
-            foreach($_SESSION['ShoppingCart'] as $dik => $zak) {
-                $total += $_SESSION['ShoppingCart'][$dik]['quantity'] * $_SESSION['ShoppingCart'][$dik]['price'];
-
-                }
-            ?>
 
             </div>
             </li>
