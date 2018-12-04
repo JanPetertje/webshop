@@ -28,6 +28,9 @@ $stmt3 = $conn->prepare("SELECT ROUND(SUM(Temperature)/COUNT(*),1) AS Temperatur
 if($stmt3->execute()) {
     $result3 = $stmt3->fetch();
 }
+
+error_reporting(0);
+
 if(isset($_GET["buy"])) {
 
     $item = [
@@ -43,6 +46,7 @@ if(isset($_GET["buy"])) {
 
     foreach($_SESSION['ShoppingCart'] as $dot => $net){
         if($_GET['productID'] == $net['id']){
+            $dot = $dot;
             $ter = 1;
             $_SESSION['ShoppingCart'][$net]['quantity'] = $_POST['newquantity'];
         }

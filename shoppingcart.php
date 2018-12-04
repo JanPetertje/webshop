@@ -67,7 +67,7 @@ if($products >= 1) {
 <div class="column-labels" style="clear:both">
     <label class="product-image">Image</label>
     <label class="product-details">Product</label>
-    <label class="product-price">Price/piece</label>
+    <label class="product-price">Price/each</label>
     <label class="product-quantity">Quantity</label>
     <label class="product-line-price">Price</label>
 </div>
@@ -99,7 +99,7 @@ if($products >= 1) {
                         <div class="product-price" name="price"><?php echo "€" . $item['price']; ?></div>
                         <div class="product-quantity">
                             <form method="post">
-                                <input type="number" name="quantity" value="<?php print($item["quantity"]); ?>" min="1" required>
+                                <input type="number" name="quantity" value="<?php print($item["quantity"]); ?>" min="1" required style="width:6em">
                                 <input type="hidden" name="product_idd" value="<?php print($item['id']); ?>">
                                 <button type="submit" name="change_amount" value="update">Change amount</button>
                             </form>
