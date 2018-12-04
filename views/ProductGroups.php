@@ -43,17 +43,16 @@ include "inc/parts/db.php";
                                                            ");
                     $GroepFoto->execute();
                     while ($row = $GroepFoto->fetch()) {
-
                             $idnr = $row["ID"];
 
                             print ('<img src="img/ProductGroups/p' . $idnr . '.jpg" alt="Product picture" class="card-img-top product-img product-img2">');
                     }
 
                 print ('<div class="card-body">
-                            <h5 class="card-title">' . $groupnames . '</h5>
-                            <a class="btn btn-primary" href="productOverview.php?name=' . $groupnames . '">More Products!</a>
+                      <h5 class="card-title">' . $groupnames . '</h5>
+                      <a class="btn btn-primary" href="productOverview.php?name=' . $groupnames . '">More Products!</a>
                       </div>
-        </div>');
+                    </div>');
             }
 
             $pdo = NULL;
