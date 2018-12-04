@@ -35,24 +35,20 @@ include "inc/parts/db.php";
                 $groupnames = $row["StockGroupName"];
 
                 echo '<div class="card product-card">';
-                    $GroepFoto = $conn->prepare("SELECT s.StockItemID AS ID 
+                    $GroepFoto = $conn->prepare("SELECT distinct st.StockGroupID AS ID 
                                                            FROM stockitemstockgroups sg 
                                                            JOIN stockitems s on sg.StockItemId = s.StockItemID 
-                                                           JOIN stockgroups st on sg.StockGroupID = st.StockGroupID 
+                                                           right JOIN stockgroups st on sg.StockGroupID = st.StockGroupID 
                                                            WHERE StockGroupName = '$groupnames'
-                                                           LIMIT 1");
+                                                           ");
                     $GroepFoto->execute();
                     while ($row = $GroepFoto->fetch()) {
-                        if ($x != 3) {
+
                             $idnr = $row["ID"];
-                            print ('<img src="img/Products/' . $idnr . '.jpg" alt="Product picture" class="card-img-top product-img product-img2">');
-                            $x = $x + 1;
-                        }
-                        else {
-                            print ('<img src="img/Products/37.jpg" alt="Product picture" class="card-img-top product-img2">');
-                            $x = $x + 1;
-                        }
+
+                            print ('<img src="img/ProductGroups/p' . $idnr . '.jpg" alt="Product picture" class="card-img-top product-img product-img2">');
                     }
+
                 print ('<div class="card-body">
                             <h5 class="card-title">' . $groupnames . '</h5>
                             <a class="btn btn-primary" href="productOverview.php?name=' . $groupnames . '">More Products!</a>
