@@ -28,7 +28,7 @@ if($stmt->execute()) {
         <div class="container order-container">
             <div class="row">
                 <div class="col-lg-8">
-                    <form action="order.php" method="post">
+                    <form action="confirm.php" method="post">
                         <?php
 
                         if(isset($_SESSION["loggedUser"]) && !empty($_SESSION["loggedUser"])) {
@@ -133,7 +133,7 @@ if($stmt->execute()) {
                         </div>';
                         }
                         ?>
-                        <input value="Checkout" type="submit" class="btn btn-primary">
+                        <input name="checkout" value="Continue" type="submit" class="btn btn-primary">
                     </form>
                 </div>
                 <div class="col-lg-4">
@@ -141,13 +141,13 @@ if($stmt->execute()) {
                         <h1>Summary</h1>
                         <ul>
                             <li>
-                                <p>Shipping<span>€ 135</span></p>
-                            </li>
-                            <li>
-                                <p>Tax<span>€ 135</span></p>
-                            </li>
-                            <li>
                                 <p>Total<span><?php print("€ " . $total);?></span></p>
+                            </li>
+                            <li>
+                                <p>Tax<span>21%</span></p>
+                            </li>
+                            <li>
+                                <p>Subtotal<span><?php print("€ " . round(1.21 * $total, 2));?></span></p>
                             </li>
                         </ul>
                     </div>
