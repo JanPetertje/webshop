@@ -10,7 +10,6 @@
 }
 
 #myButton {
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -85,8 +84,8 @@
 #buttone{
     font-size: 20px;
     margin-top: 5px;
-    height:35px;
-    width:120px;
+    height: auto;
+    width: auto;
     border-color: lightgrey;
 }
 
