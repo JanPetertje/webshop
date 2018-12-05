@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+$stmt = $conn->prepare("SELECT COUNT(StockItemID) FROM stockitems");
+
+if($stmt->execute()) {
+    $pageResults = $stmt->fetch();
+}
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -10,7 +18,6 @@ session_start();
         <?php
         include "inc/parts/head.php";
         include "inc/parts/menu.php";
-        include "inc/parts/db.php";
         ?>
     </head>
 

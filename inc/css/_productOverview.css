@@ -1,0 +1,14 @@
+.overview-container {
+    margin-top: 50px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+}
+ .custom-list-group {
+     background: #000;
+     color: #fff;
+ }
