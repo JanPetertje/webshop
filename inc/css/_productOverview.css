@@ -12,3 +12,18 @@
      background: #000;
      color: #fff;
  }
+
+a.noproducts {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+    text-decoration: none !important;
+    padding-right: 360px;
+    text-align:center;
+}
+
+a.noproducts:hover {
+    text-decoration: none;
+    color: #00bff6;
+    font-size: 41px;
+}

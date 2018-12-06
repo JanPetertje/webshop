@@ -74,7 +74,7 @@ include "inc/parts/menu.php";
                         }
                     }
                 } else {
-                    print("Nothing available");
+                    print"<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='noproducts'> This productgroup has no products <br> press this link to enter the productgroupspage. </a></h1></div>";
                 }
 
                 ?>
