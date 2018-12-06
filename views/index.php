@@ -34,11 +34,15 @@
         <ul class="list">
             <br><a class="productgroupLink" href="ProductGroups.php">Product Groups  </a><br><br>
             <?php
-            $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
+            $productgroups = $conn->prepare("SELECT StockGroupName, StockGroupID FROM stockgroups");
             $productgroups->execute();
+
+
             while ($row = $productgroups->fetch()) {
                 $groupnames = $row["StockGroupName"];
-                print ("<li><a class='productgroupLink' href='productOverview.php?name=$groupnames'>$groupnames</a></li>");
+                $stockgroupid = $row["StockGroupID"];
+
+                print ("<li><a class='productgroupLink' href='_productOverview.php?id=$stockgroupid'>$groupnames</a></li>");
             }
             $pdo = NULL;
 
