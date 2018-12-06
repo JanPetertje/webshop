@@ -12,7 +12,8 @@
      background: #000;
      color: #ddd;
      transition: all 0.2s;
-     font-size: 1.2em;
+
+     font-size: 26px;
  }
 
 a.noproducts {
@@ -53,4 +54,8 @@ a.noproducts:hover {
 .card-img-top {
     height: 300px;
     object-fit: cover;
+}
+
+.card-title {
+    font-size: 20px;
 }
