@@ -162,6 +162,10 @@ height: 40px;
     text-decoration: none;
 }
 
+.subtotal-valuess:hover{
+    text-decoration: none;
+}
+
 .link{
     text-decoration: none;
     color: black;
