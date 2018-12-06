@@ -54,6 +54,12 @@ include "inc/parts/menu.php";
                 </div>
             </div>
         </div>
+
+    <?php
+
+//    print $stockGroupname["StockGroupName"];
+
+    ?>
         <div class="col-lg-9">
             <div class="product-list">
                 <?php
@@ -85,7 +91,8 @@ include "inc/parts/menu.php";
                         }
                     }
                 } else {
-                    print"<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='noproducts'> This productgroup has no products <br> press this link to enter the productgroupspage. </a></h1></div>";
+                    print"<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='noproducts'> This productgroup has no products  <br> press <i> <b> this link </b> </i> to enter the productgroupspage. </a></h1></div>";
+
                 }
 
                 ?>
