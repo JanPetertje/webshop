@@ -10,7 +10,9 @@
 }
  .custom-list-group {
      background: #000;
-     color: #fff;
+     color: #ddd;
+     transition: all 0.2s;
+     font-size: 1.2em;
  }
 
 a.noproducts {
@@ -39,5 +41,15 @@ a.noproducts:hover {
 }
 
 .product-group-link:hover {
-    color: #00bff6;
+    color: #fff;
+}
+
+.custom-list-group:hover {
+    background: #151515;
+    color: #fff;
+}
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
 }
