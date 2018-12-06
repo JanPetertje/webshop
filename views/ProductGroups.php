@@ -28,11 +28,12 @@ include "inc/parts/db.php";
     <div class="row">
         <div class="items">
             <?php
-            $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
+            $productgroups = $conn->prepare("SELECT StockGroupID, StockGroupName FROM stockgroups");
             $productgroups->execute();
             $x = 0;
             while ($row = $productgroups->fetch()) {
                 $groupnames = $row["StockGroupName"];
+                $stockgroupid = $row["StockGroupID"];
 
                 echo '<div class="card product-card">';
                     $GroepFoto = $conn->prepare("SELECT distinct st.StockGroupID AS ID 
@@ -50,7 +51,7 @@ include "inc/parts/db.php";
 
                 print ('<div class="card-body">
                       <h5 class="card-title">' . $groupnames . '</h5>
-                      <a class="btn btn-primary" href="productOverview.php?name=' . $groupnames . '">More Products!</a>
+                      <a class="btn btn-primary" href="_productOverview.php?id=' . $stockgroupid . '">More Products!</a>
                       </div>
                     </div>');
             }

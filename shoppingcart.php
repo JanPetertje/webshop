@@ -23,9 +23,8 @@ $products = 0;
 include "inc/parts/menu.php";
 include "inc/parts/db.php";
 include "inc/parts/head.php";
-//include "inc/css/fonts.css";
 
-
+//This is the function to remove items from your shoppingcart
 $sum = 0;
 $delete = 0;
 if (isset($_GET["remove"])) {
@@ -38,7 +37,7 @@ if (isset($_GET["remove"])) {
     $_SESSION['ShoppingCart'] = array_values($_SESSION['ShoppingCart']);
 }
 
-
+//This is the function that changes the quantity of products for 1 product ID at a time
 if(isset($_POST['change_amount'])){
     foreach($_SESSION['ShoppingCart'] as $numbree => $idd){
         if($_POST['product_idd'] == $idd['id']) {
@@ -53,6 +52,7 @@ if(isset($_POST['change_amount'])){
     }
 }
 
+//The amount of different products in the shoppingcart is calculated here
 foreach($_SESSION["ShoppingCart"] as $item){
     $item = $item;
     $products+= 1;
@@ -129,7 +129,7 @@ if($products >= 1) {
             <div class="underline">
 
             </div>
-
+<!--These are the totals and tax calculations-->
             <div class="totalprice" style="clear:both">
 
                 <div class="subtotal-values"> <?php print("<u>Subtotal:</u> €" . number_format($sum, 2)); ?> </div>
@@ -152,7 +152,7 @@ if($products >= 1) {
     <?php
 }
 else{ ?>
-
+<!--This shows when there are no products in the shoppingcart-->
     <div class="product2"><a href="index.php" class="subtotal-valuess">
         <img src="img/iconfinder_Basket_2205960.png" class="waggie"><br>
         <div class="subtotal-valuess">There are no products in your shoppingcart</div>
