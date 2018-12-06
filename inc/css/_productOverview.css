@@ -27,3 +27,17 @@ a.noproducts:hover {
     color: #00bff6;
     font-size: 41px;
 }
+
+.product-group-link {
+    padding: 0;
+    margin: 0;
+    display: block;
+    font-size: 2em;
+    color: #ddd;
+    text-decoration: none !important;
+    transition: all 0.2s;
+}
+
+.product-group-link:hover {
+    color: #00bff6;
+}

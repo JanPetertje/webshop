@@ -19,6 +19,9 @@ include "inc/parts/menu.php";
         <div class="col-lg-3">
             <div class="list-group">
                 <div class="stock-group-list">
+                    <div class="list-group-item custom-list-group">
+                        <a href="ProductGroups.php" class="product-group-link">Product groups</a>
+                    </div>
                     <?php
 
                     foreach($productGroupNameResult as $item) {
@@ -26,7 +29,7 @@ include "inc/parts/menu.php";
                     }
 
                     ?>
-                    <div class="list-group-item">
+                    <div class="list-group-item custom-list-group">
                         <div class="btn-group d-flex" role="group">
                             <?php
 
@@ -34,7 +37,7 @@ include "inc/parts/menu.php";
 
                             for($i = 0; $i < $pageResults["COUNT(S.StockItemID)"]; $i += 15) {
                                 $pageCount += 1;
-                                echo '<a href="_productOverview.php?id=' . $category . '&limit=' . $i . '" class="btn btn-light w-100">' . $pageCount . '</a>';
+                                echo '<a href="_productOverview.php?id=' . $category . '&limit=' . $i . '" class="btn btn-primary w-100">' . $pageCount . '</a>';
                             }
 
                             ?>
