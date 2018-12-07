@@ -119,6 +119,6 @@ while ($ordersUpdated < count($IDQuantity)) {
 
 //
 //
-//session_destroy();
+session_destroy();
 header("Location: https://www.ideal.nl/demo/");
 ?>
