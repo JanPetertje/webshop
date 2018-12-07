@@ -24,6 +24,7 @@ include "inc/parts/menu.php";
 include "inc/parts/db.php";
 include "inc/parts/head.php";
 
+
 //This is the function to remove items from your shoppingcart
 $sum = 0;
 $delete = 0;
@@ -132,14 +133,14 @@ if($products >= 1) {
 <!--These are the totals and tax calculations-->
             <div class="totalprice" style="clear:both">
 
-                <div class="subtotal-values"> <?php print("<u>Subtotal:</u> €" . number_format($sum, 2)); ?> </div>
+                <div class="subtotal-values"> <?php print("Subtotal: €" . number_format($sum, 2)); ?> </div>
 
-                <div class="subtotal-values"><u>Tax:</u> <?php print(" "); ?> 21%</div>
+                <div class="subtotal-values">Tax: <?php print(" "); ?> 21%</div>
 
-                <div class="subtotal-values"> <?php print("<u>Shipping:</u> FREE"); ?> </div>
+                <div class="subtotal-values"> <?php print("Shipping: FREE"); ?> </div>
 
                 <div class="subtotal-values"> <?php $total = $sum * 1.21;
-                    print("<u>TOTAL:</u> €" . number_format($total, 2)); ?> </div>
+                    print("TOTAL: €" . number_format($total, 2)); ?> </div>
 
 
             </div>
