@@ -15,6 +15,7 @@
                 </form>
             </li>
             <li>
+                //-----If session loggedUser is filled with a value the login will change to logout---
                 <?php
 
                 if(isset($_SESSION["loggedUser"])) {

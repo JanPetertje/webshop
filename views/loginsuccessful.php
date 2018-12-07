@@ -41,7 +41,7 @@ else {
 echo "<div class='log'>
 
 <h1 align='center'>Login successful!</h1>
-
+//------- Shows the name of the user that logged in.
 <div class='successful'>
 <h1 align='center'> Welcome $fetch_name. Thank you for logging in!</h1>
   </div>"
