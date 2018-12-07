@@ -15,9 +15,9 @@
                 </form>
             </li>
             <li>
-                //-----If session loggedUser is filled with a value the login will change to logout---
-                <?php
 
+                <?php
+                //-----If session loggedUser is filled with a value the login will change to logout---
                 if(isset($_SESSION["loggedUser"])) {
                   $user_id = $_SESSION["loggedUser"];
                   echo '<a class="loginLink" href="logout.php">Logout</a>';
