@@ -18,18 +18,17 @@
 
 a.noproducts {
     text-decoration: none;
-    color: black;
-    font-size: 0.8em;
+    color: #101010;
+    font-size: 30px;
     text-decoration: none !important;
     padding-right: 660px;
     inline:block; text-align:center;
-    transition: all 0.2s;
 }
 
 a.noproducts:hover {
     text-decoration: none;
     color: #00bff6;
-    font-size: 0.8em;
+    font-size: 41px;
 
 }
 
@@ -48,7 +47,7 @@ a.noproducts:hover {
 }
 
 .custom-list-group:hover {
-    background: #151515;
+    background: #000000;
     color: #fff;
 }
 
@@ -59,10 +58,4 @@ a.noproducts:hover {
 
 .card-title {
     font-size: 20px;
-}
-
-.stock-group-header {
-    margin: 0;
-    padding: 0;
-    padding-bottom: 15px;
 }
