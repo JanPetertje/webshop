@@ -95,7 +95,7 @@ include "inc/parts/menu.php";
                             </div>
                             ';
                         }
-                    }
+                    } print "<br>";
                 } else {
                     print"<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='noproducts'> This productgroup has no products  <br> press <i> <b> this link </b> </i> to enter the productgroupspage. </a></h1></div>";
 
