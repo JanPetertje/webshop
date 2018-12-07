@@ -12,6 +12,7 @@
     <?php
 
     include "inc/parts/head.php";
+    include 'inc/parts/footer.php';
 
     ?>
     <link rel="stylesheet" href="inc/css/_productOverview.css">
