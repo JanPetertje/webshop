@@ -57,6 +57,10 @@ while ($ordersUpdated < count($IDQuantity)) {
     $ordersUpdated++;
 }
 
+//session_destroy();
+
+unset($_SESSION['ShoppingCart']);
+
 header("Location: https://www.ideal.nl/demo/");
 
 // MEER TEST

@@ -1,7 +1,4 @@
 <?php
-
-session_start();
-
 include "inc/parts/db.php";
 
 // Product groups
