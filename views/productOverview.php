@@ -4,7 +4,7 @@ session_start();
 $stmt = $conn->prepare("SELECT COUNT(StockItemID) FROM stockitems");
 
 if($stmt->execute()) {
-    $pageResults = $stmt->fetch();
+$pageResults = $stmt->fetch();
 }
 
 

@@ -38,6 +38,7 @@ else {
 ?>
 
 <?php
+//------- Shows the name of the user that logged in.---
 echo "<div class='log'>
 
 <h1 align='center'>Login successful!</h1>
