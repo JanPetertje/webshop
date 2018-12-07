@@ -57,6 +57,8 @@ while ($ordersUpdated < count($IDQuantity)) {
     $ordersUpdated++;
 }
 
+session_destroy();
+
 header("Location: https://www.ideal.nl/demo/");
 
 // MEER TEST
