@@ -62,6 +62,11 @@ include "inc/parts/menu.php";
 
     ?>
         <div class="col-lg-9">
+            <?php
+
+            echo '<h1 class="stock-group-header">' . $currentStockGroup["StockGroupName"] . '</h1>';
+
+            ?>
             <div class="product-list">
                 <?php
 

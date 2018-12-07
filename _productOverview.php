@@ -68,4 +68,14 @@ if($stmt->execute()) {
     $pageResults = $stmt->fetch();
 }
 
+// Current stock group
+
+$stmt = $conn->prepare("SELECT StockGroupName FROM stockgroups WHERE StockGroupID = :id");
+
+$stmt->bindParam(":id", $category);
+
+if($stmt->execute()) {
+    $currentStockGroup = $stmt->fetch();
+}
+
 include "views/_productOverview.php";
