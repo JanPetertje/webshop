@@ -5,20 +5,7 @@ include "inc/parts/db.php";
 session_start();
 $items = ($_SESSION['ShoppingCart']);
 
-$y = 0;
-$CurrentID = array();
-$IDQuantity = array();
-while ($y < count($_SESSION['ShoppingCart'])) {
-    foreach ($items[$y] AS $key => $value) {
-        if ($key == 'id') {
-            $CurrentID[$y] = $value;
-        }
-        if ($key == 'quantity') {
-            $IDQuantity[$y] = $value;
-        }
-    }
-    $y++;
-}
+
 
 /* TESTMATERIAAL OM TE ZIEN OF DE UPDATE WERKT*/
 
@@ -39,15 +26,15 @@ while ($y < count($_SESSION['ShoppingCart'])) {
 //        }
 //    }
 //}
-//
-$productgroups = $conn->prepare("SELECT StockItemID, QuantityOnHand q FROM stockitemholdings LIMIT 2");
-$productgroups->execute();
-while ($row = $productgroups->fetch()) {
-    $id = $row["StockItemID"];
-    $stock = $row["q"];
-    print $id. " - " .$stock . '<br>';
-}
-$pdo = NULL;
+////
+//$productgroups = $conn->prepare("SELECT StockItemID, QuantityOnHand q FROM stockitemholdings LIMIT 2");
+//$productgroups->execute();
+//while ($row = $productgroups->fetch()) {
+//    $id = $row["StockItemID"];
+//    $stock = $row["q"];
+//    print $id. " - " .$stock . '<br>';
+//}
+//$pdo = NULL;
 // MEER TEST
 //$productgroups = $conn->prepare("SELECT StockItemID, QuantityOnHand q FROM stockitemholdings LIMIT 2");
 //$productgroups->execute();
@@ -57,43 +44,40 @@ $pdo = NULL;
 //    print "<br>".$id. " - " .$stock . '<br>';
 //}
 //$pdo = NULL;
+$UserID = $_SESSION["loggedUser"];
+$UserID = $UserID[0];
 
-//print_r($items);
-//$y=0;
-//while ($y < count($_SESSION['ShoppingCart'])) {
-//    foreach ($items[$y] AS $key => $value) {
-//        if ($key == 'id') {
-//            $StockItemID = $value;
-//            print '<br>ID: ' . $StockItemID;
-//        }
-//        if ($key == 'description') {
-//            $description = $value;
-//            print '<br>' . $description;
-//        }
-//        if ($key == 'quantity') {
-//            $quantity = $value;
-//            print '<br>' . $quantity;
-//        }
-//        if ($key == 'price') {
-//            $UnitPrice = $value;
-//            print '<br>' . $UnitPrice;
-//        }
-//    }
-//    $MaxOrderID = $conn->prepare("SELECT max(OrderID) as Y FROM orders");
-//    $MaxOrderID->execute();
-//    while ($row = $MaxOrderID->fetch()) {
-//        $OrderID = $row['Y'] + 1;
-//        $InsertOrder = $conn->prepare("INSERT INTO orders (OrderID) VALUES ($OrderID)");
-//        $InsertOrder->execute();
-//    }
-//}
-
+$y=0;
+while ($y < count($_SESSION['ShoppingCart'])) {
+    foreach ($items[$y] AS $key => $value) {
+        if ($key == 'id') {
+            $StockItemID = $value;
+            print '<br>ID: ' . $StockItemID;
+        }
+        if ($key == 'quantity') {
+            $quantity = $value;
+            print '<br>' . $quantity;
+        }
+        if ($key == 'price') {
+            $UnitPrice = $value;
+            print '<br>' . $UnitPrice;
+        }
+    }
+}
+$MaxOrderID = $conn->prepare("SELECT max(OrderID) as Y FROM new_orders");
+$MaxOrderID->execute();
+while ($row = $MaxOrderID->fetch()) {
+    $OrderID = $row['Y'];
+    $OrderID = $OrderID + 1;
+    $InsertOrder = $conn->prepare("INSERT INTO new_orders VALUES ($OrderID, $UserID, $StockItemID, $quantity, $UnitPrice)");
+    $InsertOrder->execute();
+    $PDO = NULL;
+}
 
 
 
 
-//
-//
+
 //    $OrderLine=0;
 //    $OrderID=0;
 //    $MaxOrderlineID = $conn->prepare("SELECT max(OrderLineID) as X, max(OrderID) as Y FROM orderlines");
@@ -109,16 +93,33 @@ $pdo = NULL;
 //    $y++;
 //}
 
-$ordersUpdated = 0;
-while ($ordersUpdated < count($IDQuantity)) {
-    $updateQuantityOnHand = $conn->prepare("UPDATE stockitemholdings SET QuantityOnHand = QuantityOnHand - ($IDQuantity[$ordersUpdated]) WHERE StockItemID = ($CurrentID[$ordersUpdated])");
-    $updateQuantityOnHand->execute();
-    $pdo = NULL;
-    $ordersUpdated++;
-}
 
+// UPDATE STOCK HIERONDER WERKT
+
+//$y = 0;
+//$CurrentID = array();
+//$IDQuantity = array();
+//while ($y < count($_SESSION['ShoppingCart'])) {
+//    foreach ($items[$y] AS $key => $value) {
+//        if ($key == 'id') {
+//            $CurrentID[$y] = $value;
+//        }
+//        if ($key == 'quantity') {
+//            $IDQuantity[$y] = $value;
+//        }
+//    }
+//    $y++;
+//}
+//$ordersUpdated = 0;
+//while ($ordersUpdated < count($IDQuantity)) {
+//    $updateQuantityOnHand = $conn->prepare("UPDATE stockitemholdings SET QuantityOnHand = QuantityOnHand - ($IDQuantity[$ordersUpdated]) WHERE StockItemID = ($CurrentID[$ordersUpdated])");
+//    $updateQuantityOnHand->execute();
+//    $pdo = NULL;
+//    $ordersUpdated++;
+//}
 //
 //
-session_destroy();
-header("Location: https://www.ideal.nl/demo/");
+//
+//session_destroy();
+//header("Location: https://www.ideal.nl/demo/");
 ?>

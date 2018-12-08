@@ -18,7 +18,10 @@
 
     session_start();
     $data = $_POST;
+    $UserID = $_SESSION["loggedUser"];
+    print($UserID);
     ?>
+
 
     <div class="top-screen">
         Confirm your order:
@@ -95,14 +98,14 @@
             foreach($_SESSION['ShoppingCart'] as $x => $product) {
                 $total += $_SESSION['ShoppingCart'][$x]['quantity'] * $_SESSION['ShoppingCart'][$x]['price'];
             }
-            print "<tr><td></td><td></td><td><b>Total: €" . $total . "</b></td><td></td></tr>";
+            print "<tr><td></td><td></td><td><b>Total: €" . round($total * 1.21, 2  ) . "</b></td><td></td></tr>";
             ?>
             </table>
             </div>
         </div>
 
     <div class="check">
-        <form action="UpdateStock.php">
+        <form action="UpdateStock.php" method="post">
         <a>
             <input type="submit" id="button" class="myButton" value="iDEAL">
         </a>
