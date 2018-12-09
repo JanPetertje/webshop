@@ -11,16 +11,17 @@ session_start();
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Login</title>
+<!--        Style Sheets-->
         <link rel="stylesheet" href="inc/css/fonts.css">
         <link rel="stylesheet" href="inc/css/main.css">
         <link rel="stylesheet" href="inc/css/login.css">
     </head>
     <body>
     <?php
-//--------xD----
     include "inc/parts/menu.php";
-
     ?>
+
+<!--    Login register-->
     <div class="container">
         <form method="post" action="login.php">
             <h1>Login</h1>

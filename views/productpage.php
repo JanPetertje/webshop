@@ -2,7 +2,7 @@
 session_start();
 
 $product = $_GET["productID"];
-
+//statement for stockitem
 $stmt = $conn->prepare("SELECT StockItemID, StockItemName, RecommendedRetailPrice, MarketingComments, IsChillerStock FROM stockitems WHERE StockItemID = :id");
 
 $stmt->bindParam(":id", $product);
@@ -10,7 +10,7 @@ $stmt->bindParam(":id", $product);
 if ($stmt->execute()) {
     $result = $stmt->fetch();
 }
-
+// statement for product Quantity
 $stmt2 = $conn->prepare("SELECT QuantityOnHand FROM stockitemholdings WHERE StockItemID = :id");
 
 $stmt2->bindParam(":id", $product);
@@ -22,14 +22,16 @@ if($stmt2->execute()) {
 if($result["MarketingComments"] == "") {
     $result["MarketingComments"] = "No description available.";
 }
-
+// statement for temperature
 $stmt3 = $conn->prepare("SELECT ROUND(SUM(Temperature)/COUNT(*),1) AS Temperature FROM coldroomtemperatures");
 
 if($stmt3->execute()) {
     $result3 = $stmt3->fetch();
 }
-if(isset($_GET["buy"])) {
 
+error_reporting(0);
+
+if(isset($_GET["buy"])) {
 
     $item = [
         "id" => $result["StockItemID"],
@@ -40,12 +42,32 @@ if(isset($_GET["buy"])) {
         "QuantityOnHand" => $result2["QuantityOnHand"]
     ];
 
-    $cart = $_SESSION["ShoppingCart"];
+    $ter = 0;
 
-    array_push($cart, $item);
+    foreach($_SESSION['ShoppingCart'] as $dot => $net){
+        if($_GET['productID'] == $net['id']){
+            $dot = $dot;
+            $ter = 1;
+            $_SESSION['ShoppingCart'][$net]['quantity'] = $_POST['newquantity'];
+        }
+    }
 
-    $_SESSION["ShoppingCart"] = $cart;
+    if($ter == 0){
+        trim($dot);
+        $cart = $_SESSION["ShoppingCart"];
+        array_push($cart, $item);
+        $_SESSION['ShoppingCart'] = $cart;
+    }
 }
+
+$stmt4 = $conn->prepare("select StockGroupID, StockItemID from stockitemstockgroups where StockItemID = '$product'");
+$stmt4->execute();
+while ($row = $stmt4->fetch()) {
+
+$productgroupid = $row["StockGroupID"];
+$stockitemid = $row["StockItemID"];
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -62,6 +84,8 @@ if(isset($_GET["buy"])) {
 
     include "inc/parts/menu.php";
 
+
+//    checks if pictures are available
     if (file_exists('img/products/' . $product . '_2.jpg') == TRUE)
         echo '<div class="container-fluid">
         <div class="row info-row">
@@ -119,7 +143,7 @@ if(isset($_GET["buy"])) {
                 <form action="productpage.php" method="get">
                     <ul class="property-list">';
 
-    elseif ((file_exists('img/products/' . $product . '_1.jpg') == FALSE) && (file_exists('img/products/' . $product . '_2.jpg') == FALSE))
+    elseif ((file_exists('img/products/' . $product . '_1.jpg') == FALSE) && (file_exists('img/products/' . $product . '_2.jpg') == FALSE) && (file_exists('img/products/' . $product . '.jpg') == TRUE))
         echo '<div class="container-fluid">
         <div class="row info-row">
             <div class="col-lg-5">
@@ -142,8 +166,33 @@ if(isset($_GET["buy"])) {
             <div class="col-lg-7">
                 <form action="productpage.php" method="get">
                     <ul class="property-list">';
+
+    elseif ((file_exists('img/products/' . $stockitemid . '.jpg') == FALSE))
+        echo '<div class="container-fluid">
+        <div class="row info-row">
+            <div class="col-lg-5">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active productImage">
+                            <img class="d-block w-100 h-100" src="img/productgroups/p' . $productgroupid . '.jpg" alt="First slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <form action="productpage.php" method="get">
+                    <ul class="property-list">';
                     ?>
 
+<!--product information-->
                         <?php
 
                         echo '<li>
@@ -168,7 +217,7 @@ if(isset($_GET["buy"])) {
                         }
 
                         if ($result["IsChillerStock"] == 1) {
-                            echo  '<li class="text"> Temprature of the refrigerator: ' . $result3["Temperature"]. '℃ </li> ';
+                            echo  '<li class="text"> Temperature of the refrigerator: ' . $result3["Temperature"]. '℃ </li> ';
                         }
                         $pdo = null;
                         ?>

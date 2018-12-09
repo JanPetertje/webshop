@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+$stmt = $conn->prepare("SELECT COUNT(StockItemID) FROM stockitems");
+
+if($stmt->execute()) {
+$pageResults = $stmt->fetch();
+}
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -10,11 +18,11 @@ session_start();
         <?php
         include "inc/parts/head.php";
         include "inc/parts/menu.php";
-        include "inc/parts/db.php";
         ?>
     </head>
 
     <body>
+<!--    Verkeerde input verwerken-->
         <?php
         $productGroup = $_GET;
         $productGroup = $productGroup['name'];
@@ -37,6 +45,7 @@ session_start();
         $pdo = NULL;
         ?>
 
+<!--Productgroepen-->
     <div class="top">
         <p class="titel"><?php print $productGroup;?></p>
     </div>
@@ -67,10 +76,21 @@ session_start();
         $ProductID = $row["StockItemID"];
         $group = $row["StockGroupName"];
         $Price = $row["RecommendedRetailPrice"];
+        $stockgroupID = $row["StockGroupID"];
 
-        if ($productGroup == $group) {
+        if ($productGroup == $group && (file_exists('img/products/' . $ProductID . '.jpg') == TRUE)) {
             print '<div class="card product-card">
                       <img class="product-img" src="img/products/' . $ProductID . '.jpg" alt="Product picture" class="card-img-top">
+                      <div class="card-body">
+                      <h5 class="card-title">' . $productnames. '</h5>
+                      <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p>
+                      <a class="btn btn-primary" href="productpage.php?productID=' . $ProductID . '">Read More!</a>
+                    </div>
+                </div>';
+
+        } elseif ($productGroup == $group && (file_exists('img/products/' . $ProductID . '.jpg') == false)) {
+            print '<div class="card product-card">
+                      <img class="product-img" src="img/ProductGroups/p' . $stockgroupID . '.jpg" alt="Product picture" class="card-img-top">
                       <div class="card-body">
                       <h5 class="card-title">' . $productnames. '</h5>
                       <p class="card-text">€ ' . $row["RecommendedRetailPrice"] . '</p>
@@ -82,22 +102,19 @@ session_start();
     ?>
 
 
-    </div>
+            </div>
         </div>
     </div>
 
 
 
     <?php
-
-
-
     $countids = $conn->prepare("Select count(sg.StockGroupID)totaal, s.StockGroupName from stockitemstockgroups sg right join stockgroups s on sg.StockGroupID = s.StockGroupID group by s.StockGroupID");
     $countids->execute();
     while ($row = $countids->fetch()) {
         $countid = $row["totaal"];
         $names = $row["StockGroupName"];
-
+        $names = $row["StockGroupName"];
         if ($countid <= 0 && $names == $productGroup) print "<div style='height: 200px;'> <h1><a href='ProductGroups.php' class='noproducts'> This productgroup has no products, <br> press this link to enter the productgroupspage. </a></h1></div>";
     }
     ?>

@@ -15,8 +15,9 @@
                 </form>
             </li>
             <li>
-                <?php
 
+                <?php
+                //-----If session loggedUser is filled with a value the login will change to logout.---
                 if(isset($_SESSION["loggedUser"])) {
                   $user_id = $_SESSION["loggedUser"];
                   echo '<a class="loginLink" href="logout.php">Logout</a>';
@@ -26,7 +27,7 @@
                 ?>
             </li>
             <li>
-                <a href="winkelwagen.php">
+                <a href="shoppingcart.php">
                     <img src="img/shopping-cart.png" alt="shopping-cart">
                 </a>
             </li>

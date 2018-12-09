@@ -7,7 +7,7 @@ session_start();
     <?php
     include "inc/parts/head.php";
     ?>
-    <link rel="stylesheet" href="inc/css/winkelwagen.css">
+    <link rel="stylesheet" href="inc/css/shoppingcart.css">
     <link rel="stylesheet" href="inc/css/ProductGroupsStyle.css">
 </head>
 
@@ -23,42 +23,41 @@ include "inc/parts/db.php";
     <p class="titel">Product Groups</p>
 </div>
 
+<!--Shows all productgroups-->
 <div class="container-fluid">
     <div class="row">
         <div class="items">
             <?php
-            $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
+            $productgroups = $conn->prepare("SELECT StockGroupID, StockGroupName FROM stockgroups");
             $productgroups->execute();
             $x = 0;
             while ($row = $productgroups->fetch()) {
                 $groupnames = $row["StockGroupName"];
+                $stockgroupid = $row["StockGroupID"];
 
                 echo '<div class="card product-card">';
-                    $GroepFoto = $conn->prepare("SELECT s.StockItemID AS ID 
+                    $GroepFoto = $conn->prepare("SELECT distinct st.StockGroupID AS ID 
                                                            FROM stockitemstockgroups sg 
                                                            JOIN stockitems s on sg.StockItemId = s.StockItemID 
-                                                           JOIN stockgroups st on sg.StockGroupID = st.StockGroupID 
+                                                           right JOIN stockgroups st on sg.StockGroupID = st.StockGroupID 
                                                            WHERE StockGroupName = '$groupnames'
-                                                           LIMIT 1");
+                                                           ");
                     $GroepFoto->execute();
                     while ($row = $GroepFoto->fetch()) {
-                        if ($x != 3) {
                             $idnr = $row["ID"];
-                            print ('<img src="img/Products/' . $idnr . '.jpg" alt="Product picture" class="card-img-top product-img product-img2">');
-                            $x = $x + 1;
-                        }
-                        else {
-                            print ('<img src="img/Products/37.jpg" alt="Product picture" class="card-img-top product-img2">');
-                            $x = $x + 1;
-                        }
+// Picture of the productgroup
+                            print ('<img src="img/ProductGroups/p' . $idnr . '.jpg" alt="Product picture" class="card-img-top product-img product-img2">');
                     }
+
                 print ('<div class="card-body">
-                            <h5 class="card-title">' . $groupnames . '</h5>
-                            <a class="btn btn-primary" href="productOverview.php?name=' . $groupnames . '">More Products!</a>
+                      <h5 class="card-title">' . $groupnames . '</h5>
+                      <a class="btn btn-primary" href="_productOverview.php?id=' . $stockgroupid . '">More Products!</a>
                       </div>
-        </div>');
+                    </div>');
             }
+
             $pdo = NULL;
+
             ?>
         </div>
     </div>

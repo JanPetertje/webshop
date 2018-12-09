@@ -3,28 +3,21 @@
     padding: 0px;
     margin:  0 auto;
     margin-top: 20px;
-    font-family: "roboto";
+    font-family: "Roboto";
     border-bottom: 2px solid grey;
     text-align: center;
     width: 90%;
 }
-.myButton {
-    background-color: #F0F8FF;
-    border: 2.5px solid lightblue;
-    color: black;
-    padding: 15px 32px;
+
+#myButton {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 25px;
-    margin: 4px 2px;
-    cursor: pointer;
-    float:right;
     float: right;
-    margin-bottom: 120px;
     clear:left;
+    margin-bottom: 120px;
     margin-right: 250px;
-    margin-top: 40px;
+    margin-top: 95px;
 }
 
 .label-subtotal {
@@ -61,7 +54,7 @@
     width: 100%;
     font-size: 25px;
     font-family: "roboto";
-    padding-bottom: 6%;
+    padding-bottom: 8%;
 }
 
 .product-image {
@@ -88,17 +81,29 @@
 
 }
 
+#buttone{
+    font-size: 20px;
+    margin-top: 5px;
+    height: auto;
+    width: auto;
+    border-color: lightgrey;
+}
+
+#buton:hover{
+    background-color: orangered;
+}
+
 .product-quantity {
     float: left;
     width: 9%;
     font-family: "roboto";
-
 }
 
 .product-removal {
     float: left;
     width: 9%;
     text-align: center;
+    display: inline-block;
 }
 
 .remove-product {
@@ -113,7 +118,7 @@
     text-align: right;
     padding-left: 180px;
     font-family: "roboto";
-
+    float: left;
 }
 
 .product-line-price2 {
@@ -137,10 +142,6 @@ img.grim {
     width: 70px;
 }
 
-.remove-product{
-    float: right;
-}
-
 .column-labels {
 height: 40px;
 }
@@ -161,8 +162,16 @@ height: 40px;
     text-decoration: none;
 }
 
-.linkie{
+.subtotal-valuess:hover{
     text-decoration: none;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover{
     color: black;
 }
 
