@@ -2,7 +2,7 @@
 session_start();
 
 $product = $_GET["productID"];
-
+//statement for stockitem
 $stmt = $conn->prepare("SELECT StockItemID, StockItemName, RecommendedRetailPrice, MarketingComments, IsChillerStock FROM stockitems WHERE StockItemID = :id");
 
 $stmt->bindParam(":id", $product);
@@ -10,7 +10,7 @@ $stmt->bindParam(":id", $product);
 if ($stmt->execute()) {
     $result = $stmt->fetch();
 }
-
+// statement for product Quantity
 $stmt2 = $conn->prepare("SELECT QuantityOnHand FROM stockitemholdings WHERE StockItemID = :id");
 
 $stmt2->bindParam(":id", $product);
@@ -22,7 +22,7 @@ if($stmt2->execute()) {
 if($result["MarketingComments"] == "") {
     $result["MarketingComments"] = "No description available.";
 }
-
+// statement for temperature
 $stmt3 = $conn->prepare("SELECT ROUND(SUM(Temperature)/COUNT(*),1) AS Temperature FROM coldroomtemperatures");
 
 if($stmt3->execute()) {
@@ -84,6 +84,8 @@ $stockitemid = $row["StockItemID"];
 
     include "inc/parts/menu.php";
 
+
+//    checks if pictures are available
     if (file_exists('img/products/' . $product . '_2.jpg') == TRUE)
         echo '<div class="container-fluid">
         <div class="row info-row">
@@ -190,7 +192,7 @@ $stockitemid = $row["StockItemID"];
                     <ul class="property-list">';
                     ?>
 
-
+<!--product information-->
                         <?php
 
                         echo '<li>

@@ -23,7 +23,7 @@ include "inc/parts/db.php";
     <p class="titel">Product Groups</p>
 </div>
 
-<!--Alle productgroepen laten zien-->
+<!--Shows all productgroups-->
 <div class="container-fluid">
     <div class="row">
         <div class="items">
@@ -45,7 +45,7 @@ include "inc/parts/db.php";
                     $GroepFoto->execute();
                     while ($row = $GroepFoto->fetch()) {
                             $idnr = $row["ID"];
-
+// Picture of the productgroup
                             print ('<img src="img/ProductGroups/p' . $idnr . '.jpg" alt="Product picture" class="card-img-top product-img product-img2">');
                     }
 
