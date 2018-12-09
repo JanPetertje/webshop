@@ -24,6 +24,7 @@
 
     <div class="searchproductid">
 
+<!--        Redirect when someone searches a productid-->
         <?php
 
         if (is_numeric($searchinput)) {
@@ -45,6 +46,8 @@
 
 
     <div class="border">
+
+<!--        counts amount of search results-->
         <?php
         $countResults = $conn->prepare("SELECT count(*) AS aantal FROM stockitems WHERE StockItemName LIKE '%$searchinput%' OR Tags LIKE '%$searchinput%' ");
         $countResults->execute();
@@ -60,6 +63,7 @@
         <div class="row">
             <div class="items">
 
+<!--                print the results-->
         <?php
             $searchresults = $conn->prepare("SELECT StockItemID, RecommendedRetailPrice, Tags, StockItemName FROM stockitems WHERE StockItemName LIKE '%$searchinput%'  OR Tags LIKE '%$searchinput%' ");
             $searchresults->execute();
@@ -82,6 +86,8 @@
 </div>
     </div>
         </div>
+
+<!--    end of the page -->
 
     <?php
     $pdo = null;
