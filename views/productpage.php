@@ -224,8 +224,18 @@ $stockitemid = $row["StockItemID"];
                     </ul>
                 </form>
             </div>
-        </div>
-    </div>
+    <form action="welcome_get.php" method="get">
+   Review: <br>
+        Stars <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select> <br>
+     Comment:   <textarea rows="4" cols="40" type="text" name="name"></textarea>
+        <input type="submit">
+    </form>
     <?php
 
     include "inc/parts/footer.php";
