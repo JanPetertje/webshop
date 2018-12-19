@@ -1,6 +1,10 @@
 <?php
 
-$rating = $_POST['rating'];
+$rating = $_POST['value'];
 $content = $_POST['content'];
 
-$sql =
+$sql = "INSERT INTO Review (StockItemID,Rating,Content) VALUES ('$ProductID','$rating', $content)";
+
+header ("refresh:1; url=productpage.php?productID=' . $ProductID . '");
+
+?>
