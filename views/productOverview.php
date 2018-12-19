@@ -16,12 +16,15 @@ $pageResults = $stmt->fetch();
         <link rel="stylesheet" href="inc/css/main.css">
         <link rel="stylesheet" href="inc/css/productOverview.css">
         <?php
-        include "inc/parts/head.php";
         include "inc/parts/menu.php";
         ?>
     </head>
 
     <body>
+    <?php
+        include "inc/parts/head.php";
+        ?>
+
 <!--    Verkeerde input verwerken-->
         <?php
         $productGroup = $_GET;
@@ -32,7 +35,7 @@ $pageResults = $stmt->fetch();
 
         $x = 0;
         $productgroups = $conn->prepare("SELECT StockGroupName FROM stockgroups");
-        $productgroups->execute();
+            $productgroups->execute();
         while ($row = $productgroups->fetch()) {
             $groupnames = $row["StockGroupName"];
             if ($productGroup == $groupnames) {
