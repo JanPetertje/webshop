@@ -3,8 +3,9 @@
 include "inc/parts/db.php";
 
 $ProductID =  $_POST['ID'];
-$rating = $_POST['value'];
+$rating = $_POST['rating'];
 $content = $_POST['content'];
+
 
 $sql = "INSERT INTO Review (StockItemID,Rating,Content) VALUES ($ProductID,$rating,'$content')";
 

@@ -225,12 +225,7 @@ $stockitemid = $row["StockItemID"];
                 </form>
 
     <form action="Update_Review.php" method="post">
-        Stars <select name="rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+       Stars <input type="number" name="rating" value="5" min="1" max="5>" >
             <input type="number" name="ID" value="<?php print $product;?>" min="<?php print $product;?>" max="<?php print $product;?>" >
         </select>
         <br>
