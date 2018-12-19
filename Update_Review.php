@@ -7,8 +7,9 @@ $rating = $_POST['rating'];
 $content = $_POST['content'];
 
 
-$sql = "INSERT INTO Review (StockItemID,Rating,Content) VALUES ($ProductID,$rating,'$content')";
-
-header ("refresh:1; url=productpage.php?productID= . $ProductID . ");
+$stmt5 = $conn->prepare ("INSERT INTO Review (StockItemID,Rating,Content) VALUES ($ProductID,$rating,'$content')");
+$stmt5->execute();
+$pdo = NULL;
+header ("refresh:1; url=index.php");
 
 ?>

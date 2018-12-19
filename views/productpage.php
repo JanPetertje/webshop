@@ -29,7 +29,7 @@ if($stmt3->execute()) {
     $result3 = $stmt3->fetch();
 }
 
-error_reporting(0);
+//error_reporting(0);
 
 if(isset($_GET["buy"])) {
 
@@ -225,7 +225,7 @@ $stockitemid = $row["StockItemID"];
                 </form>
 
     <form action="Update_Review.php" method="post">
-       Stars <input type="number" name="rating" value="5" min="1" max="5>" >
+       Stars <input type="number" name="rating" value="5" min="1" max="5">
             <input type="number" name="ID" value="<?php print $product;?>" min="<?php print $product;?>" max="<?php print $product;?>" >
         </select>
         <br>
@@ -234,15 +234,17 @@ $stockitemid = $row["StockItemID"];
     </form>
     <?php
 //    connect statement for review
-    $stmt5 = $conn->prepare("SELECT * FROM Review WHERE StockItemID = '$product'");
-    $result = $stmt5->fetch();
+    $stmt5 = $conn->prepare("SELECT Rating,Content FROM Review WHERE StockItemID = '$product'");
+    $stmt5->execute();
     while ($row = $stmt5->fetch()) {
+        $rating = $row["Rating"];
+        $Content = $row["Content"];
         echo '
     <div>
-    rating:' . $row["Rating"] . ' . stars<br>
-    Review:' . $row["Content"] .
+    rating: ' . $rating  . '  stars<br>
+    Review: ' . $Content .
 
-            '</div>'
+            '</div><br>'
     ;}
     ?>
             </div>
