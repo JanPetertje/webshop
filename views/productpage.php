@@ -219,15 +219,39 @@ $stockitemid = $row["StockItemID"];
                         if ($result["IsChillerStock"] == 1) {
                             echo  '<li class="text"> Temperature of the refrigerator: ' . $result3["Temperature"]. '℃ </li> ';
                         }
-                        $pdo = null;
+
                         ?>
                     </ul>
                 </form>
-            </div>
-        </div>
-    </div>
-    <?php
 
+    <form action="Update_Review.php" method="post">
+        Stars <select name="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select> <br>
+        Comment:   <textarea rows="4" cols="40" type="text" name="content"></textarea>
+        <input type="submit">
+    </form>
+    <?php
+//    connect statement for review
+    $stmt5 = $conn->prepare("SELECT * FROM Review WHERE StockItemID = '$product'");
+    $result = $stmt5->fetch();
+    while ($row = $stmt5->fetch()) {
+        echo '
+    <div>
+    rating:' . $row["Rating"] . ' . stars<br>
+    Review:' . $row["Content"] .
+
+            '</div>'
+    ;}
+    ?>
+            </div>
+
+    <?php
+    $pdo = null;
     include "inc/parts/footer.php";
 
     ?>
