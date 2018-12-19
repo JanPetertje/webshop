@@ -1,5 +1,6 @@
 <?php
 
+$ProductID =  $_POST['ID'];
 $rating = $_POST['value'];
 $content = $_POST['content'];
 

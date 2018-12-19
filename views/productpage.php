@@ -231,7 +231,9 @@ $stockitemid = $row["StockItemID"];
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select> <br>
+            <input type="number" name="ID" value="<?php print $product;?>" min="<?php print $product;?>" max="<?php print $product;?>" >
+        </select>
+        <br>
         Comment:   <textarea rows="4" cols="40" type="text" name="content"></textarea>
         <input type="submit">
     </form>
