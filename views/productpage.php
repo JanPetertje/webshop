@@ -225,8 +225,17 @@ $stockitemid = $row["StockItemID"];
                 </form>
 
     <form action="Update_Review.php" method="post">
-       Stars <input type="number" name="rating" value="5" min="1" max="5">
-            <input type="number" name="ID" value="<?php print $product;?>" min="<?php print $product;?>" max="<?php print $product;?>" >
+       Stars <select name="rating">
+            <?php
+            $maxrating = 5;
+            $minrating = 1;
+            while ($minrating <= $maxrating) {
+                print ("<option>$maxrating</option>");
+                $maxrating = $maxrating -1;
+            }
+            ?>
+        </select>
+            <input type="hidden" name="ID" value="<?php print $product;?>" min="<?php print $product;?>" max="<?php print $product;?>" >
         </select>
         <br>
         Comment:   <textarea rows="4" cols="40" type="text" name="content"></textarea>
